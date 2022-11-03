@@ -54,6 +54,10 @@
     padding: 7px;
 }
 
+.input::placeholder{
+    color: #9C9C9C;
+}
+
 .botones{
     text-align: center;
 }

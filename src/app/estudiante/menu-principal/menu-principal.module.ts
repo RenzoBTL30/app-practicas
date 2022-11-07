@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MenuPrincipalComponent } from './menu-principal.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    MenuPrincipalComponent
+  ],
   imports: [
     CommonModule
   ]

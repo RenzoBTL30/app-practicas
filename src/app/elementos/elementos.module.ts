@@ -12,6 +12,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    HeaderComponent,
+    SidebarComponent
   ]
 })
 export class ElementosModule { }

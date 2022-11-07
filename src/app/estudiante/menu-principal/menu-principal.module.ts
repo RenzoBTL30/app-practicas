@@ -10,6 +10,9 @@ import { MenuPrincipalComponent } from './menu-principal.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    MenuPrincipalComponent
   ]
 })
 export class MenuPrincipalModule { }

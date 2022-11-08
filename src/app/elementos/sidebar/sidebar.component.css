@@ -1,11 +1,9 @@
 .sidecolor{
     background-color: rgb(1, 71, 118);
 }
-.espacio-salir{
- 
-}
+
 #sidebar-wrapper {
-    height: 100vh;
+    height: 100%;
     margin-left: -15rem;
     border-radius: 10px;
     -webkit-transition: margin .25s ease-out;

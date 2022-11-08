@@ -1,23 +1,47 @@
-<div class="container">
-    <p class="title">Practicas Sector Público</p>
-    <a href="">Ver solicitud realizada</a>
-    <div class="mt-5">
-        <p class="subir-doc">SUBIR DOCUMENTO DE FINALIZACIÓN DE PRÁCTICAS</p>
-        <label
-            class="btn btn-success rounded-pill mb-0"
-            type="button"
-            style="font-size: 12px; background-color: #f0a017; color: white"
-            for="inputGroupFile02"
-            >
-            SUBIR <span class="material-icons-outlined">
-                file_upload
-            </span>
-        </label>
-        <input
-            type="file"
-            class="form-control"
-            id="inputGroupFile02"
-            hidden
-        />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 g-0">
+            <app-header></app-header>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 g-0">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-7">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12 d-flex mt-5 mb-4">
+                        <span class="material-icons-outlined">
+                            keyboard_return
+                        </span>
+                        <p class=" mx-3 return">Revisar Solicitudes</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p class="title">PRACTICAS SECTOR PÚBLICO</p>
+                        <a href="">VER SOLICITUD REALIZADA</a>
+                        <div class="mt-5">
+                            <p class="subir-doc">SUBIR DOCUMENTO DE FINALIZACIÓN DE PRÁCTICAS</p>
+                            <label class="btn btn-success rounded-pill mb-0" type="button" style="font-size: 12px; background-color: #f0a017; color: white; 
+                        text-align: center;" for="inputGroupFile02">
+
+                                SUBIR<span class="material-icons-outlined" style="margin-left: 3px;">
+                                    file_upload
+                                </span>
+                            </label>
+                            <input type="file" class="form-control" id="inputGroupFile02" hidden />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <embed type="application/pdf" class="documento">
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>

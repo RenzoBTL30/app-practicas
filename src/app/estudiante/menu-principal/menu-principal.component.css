@@ -1,0 +1,28 @@
+.espacio-trabajo{
+    padding-top: 70px;
+    position: relative;
+    
+}
+#section{
+    display: flex;
+    gap: 70px;
+    padding: 60px;
+    
+}
+
+.sombra-suave{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+a:link, a:visited, a:active{
+    text-decoration: none; color: black; text-align: center;
+}
+.img-opcion{
+    margin: auto;
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    font-size: 100px;
+}

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RevisarSolicitudesComponent } from './estudiante/revisar-solicitudes/revisar-solicitudes.component';
 import { DetalleSolicitudComponent } from './estudiante/revisar-solicitudes/detalle-solicitud/detalle-solicitud.component';
-import { ElementosModule } from './elementos/elementos.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import { ElementosModule } from './elementos/elementos.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ElementosModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,166 @@
+<div class="todo">
+    <div id="cuerpo">
+        <div class="mb-2 row">
+            <div class="col-3">
+                <label class="form-label">TIPO DE CONTRIBUYENTE</label>
+                <select name="idtipopersona" class="form-select" aria-label="Default select example">
+                    <option>Seleccionar tipo practica</option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-2 row">
+            <div class="col-3">
+                <label class="form-label">DATOS PERSONALES DEL SUPERVISOR</label>
+                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Nombres y Apellidos">
+            </div>
+            <div class="col-3">
+                <label class="form-label">.</label>
+                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Correo Electronico">
+            </div>
+        </div>
+        <div class="mb-2 row">
+            <div class="col-auto">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="PLAN DE ACTIVIDADES">
+          </div>
+          <div class="col-auto">
+            <input type="date" class="form-control" id="inputPassword2" placeholder="FECHA INICIO">
+          </div>
+          <div class="col-auto">
+            <input type="date" class="form-control" id="inputPassword2" placeholder="FECHA FIN">
+          </div>
+        </div>
+        <div class="mb-2 row">
+            <div class="col-auto">
+                <label
+                class="btn btn-success rounded-pill mb-0"
+                type="button"
+                style="font-size: 12px; background-color:aliceblue; color: black"
+                for="inputGroupFile02"
+            >
+                SUBIR
+            </label>
+            <input
+                type="file"
+                class="form-control"
+                id="inputGroupFile02"
+                hidden
+            />
+        </div>
+        
+        <div class="mb-2 row">
+            <div class="col-3">
+                <label class="form-label">DATOS DEL CENTRO DE PRACTICAS</label>
+                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Nombre de la Institución">
+            </div>
+            <div class="col-3">
+                <label class="form-label">.</label>
+                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Dirección">
+            </div>
+        </div>
+
+        <div class="botones">
+            <div class="right">
+                <div type="button" class="btn btn-primary">GUARDAR</div>
+            </div>
+        </div>
+
+
+
+        <form id="sec">
+
+            <div class="mb-2 casilla">
+                <label class="form-label">NOMBRE</label>
+                <div class="casilla" type="button">
+                    <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <div class="mb-2 casilla">
+                <label class="form-label">APELLIDO PATERNO</label>
+                <div class="casilla" type="button">
+                    <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <div class="mb-2 casilla">
+                <label class="form-label">APELLIDO MATERNO</label>
+                <div class="casilla" type="button">
+                    <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <!-- </form> -->
+
+            <!-- <form id="sec"> -->
+            <div class="mb-2 casilla">
+                <label class="form-label">N° RUC</label>
+                <div class="casilla" type="button">
+                    <input name="ruc" type="text" class="form-control" aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <div class="mb-2 casilla">
+                <label class="form-label">TIPO DOCUMENTO</label>
+                <select name="idtipodocumento" class="form-select" aria-label="Default select example">
+                    <option>Tipo de documento</option>
+                </select>
+            </div>
+            <div class="mb-2 casilla">
+                <label class="form-label">N° DE DOCUMENTO</label>
+                <div class="casilla" type="button">
+                    <input name="numdocumento" type="text" class="form-control" aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <!-- </form> -->
+            <!-- <form id="sec"> -->
+            <div class="mb-2 casilla">
+                <label class="form-label">DIRECCIÓN DE NOTIFICACIÓN</label>
+                <div class="casilla" type="button">
+                    <input name="direccion_notificacion" type="text" class="form-control"
+                        aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <div class="mb-2 casilla">
+                <label class="form-label">CORREO ELECTRÓNICO</label>
+                <div class="casilla" type="button">
+                    <input name="correo" type="text" class="form-control" aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <div class="mb-2 casilla">
+                <label class="form-label">TELÉFONO</label>
+                <div class="casilla" type="button">
+                    <input name="telefono" type=" text" class="form-control" aria-label="Text input with checkbox">
+                </div>
+            </div>
+        </form>
+
+        <!-- localidad -->
+        <form id="sec">
+            <div class="mb-2 casilla">
+                <label class="form-label">DIRECCION</label>
+                <div class="casilla" type="button">
+                    <input name="direccion" type="text" class="form-control" aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <div class="mb-2 casilla">
+                <label class="form-label">REFERENCIA</label>
+                <div class="casilla" type="button">
+                    <input name="referencia" type="text" class="form-control" aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <div class="mb-2 casilla">
+                <label class="form-label">DISTRITO</label>
+                <select name="iddistrito" class="form-select" aria-label="Default select example">
+                    <option>Distrito</option>
+
+                </select>
+            </div>
+        </form>
+
+        <div class="botones">
+            <div class="left">
+                <div id="fondo-boton" type="button" class="btn btn-primary" [routerLink]="['/']">Regresar</div>
+            </div>
+            <div class="right">
+                <div type="button" class="btn btn-success">Confirmar</div>
+            </div>
+        </div>
+    </div>
+
+</div>

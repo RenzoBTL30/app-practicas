@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'registrar-solicitud', component: RegistrarSolicitudComponent },
   { path: 'menu-principal', component: MenuPrincipalComponent },
   { path: 'revisar-solicitud', component: RevisarSolicitudesComponent },
+  { path: 'validar-solicitud', component: RevisarSolicitudesComponent },
   { path: 'detalle-solicitud', component: DetalleSolicitudComponent }
 
 ];

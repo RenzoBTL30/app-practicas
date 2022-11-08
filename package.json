@@ -20,6 +20,7 @@
     "@angular/router": "^14.1.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
+    "material-icons": "^1.12.1",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.6.5",
     "tslib": "^2.3.0",

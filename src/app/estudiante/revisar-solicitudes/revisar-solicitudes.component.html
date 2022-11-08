@@ -1,14 +1,27 @@
-<label
-class="btn btn-success rounded-pill mb-0"
-type="button"
-style="font-size: 12px; background-color: #8e1a45; color: white"
-for="inputGroupFile02"
->
-CARGAR ARCHIVO | +
-</label>
-<input
-    type="file"
-    class="form-control"
-    id="inputGroupFile02"
-    hidden
-/>
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 d-flex align-items-center">
+            
+        </div>
+    </div>
+
+    <div class="row">
+            <div [routerLink]="['/detalle-solicitud']" class="col-6 d-flex align-items-center justify-content-center sector-publico">
+                <span class="detalle">Practicas sector público</span>
+                <span class="material-icons-outlined ms-auto">
+                    insert_drive_file
+                </span>
+            </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 mt-4 d-flex align-items-center justify-content-center sector-privado">
+            <span class="detalle">Practicas sector privado</span>
+            <span class="material-icons-outlined ms-auto">
+                insert_drive_file
+            </span>
+        </div>
+    </div>
+</div>
+

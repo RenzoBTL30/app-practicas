@@ -7,13 +7,15 @@ import { RegistrarSolicitudComponent } from './estudiante/registrar-solicitud/re
 import { RevisarSolicitudesComponent } from './estudiante/revisar-solicitudes/revisar-solicitudes.component';
 import { DetalleSolicitudComponent } from './estudiante/revisar-solicitudes/detalle-solicitud/detalle-solicitud.component';
 import { ElementosModule } from './elementos/elementos.module';
+import { ValidarSolicitudComponent } from './estudiante/validar-solicitud/validar-solicitud.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrarSolicitudComponent,
     RevisarSolicitudesComponent,
-    DetalleSolicitudComponent
+    DetalleSolicitudComponent,
+    ValidarSolicitudComponent
   ],
   imports: [
     BrowserModule,

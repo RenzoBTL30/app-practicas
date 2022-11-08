@@ -1,14 +1,53 @@
-<label
-class="btn btn-success rounded-pill mb-0"
-type="button"
-style="font-size: 12px; background-color: #8e1a45; color: white"
-for="inputGroupFile02"
->
-CARGAR ARCHIVO | +
-</label>
-<input
-    type="file"
-    class="form-control"
-    id="inputGroupFile02"
-    hidden
-/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 g-0">
+            <app-header></app-header>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 g-0">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-7">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12 d-flex mt-5 mb-4">
+                        <span class="material-icons-outlined">
+                            keyboard_return
+                        </span>
+                        <p class=" mx-3 return">Revisar Solicitudes</p>
+                    </div>
+                </div>
+
+                <div class="main">
+                    <div class="row">
+                        <div class="col-12 d-flex align-items-center">
+                            
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                            <div [routerLink]="['/detalle-solicitud']" class="col-7 d-flex align-items-center justify-content-center sector-publico">
+                                <span class="detalle">Practicas sector público</span>
+                                <span class="material-icons-outlined ms-auto">
+                                    insert_drive_file
+                                </span>
+                            </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col-7 mt-4 d-flex align-items-center justify-content-center sector-privado">
+                            <span class="detalle">Practicas sector privado</span>
+                            <span class="material-icons-outlined ms-auto">
+                                insert_drive_file
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>            
+        </div>
+    </div>
+</div>

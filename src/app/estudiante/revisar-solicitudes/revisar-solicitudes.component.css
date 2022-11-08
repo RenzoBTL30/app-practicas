@@ -1,0 +1,19 @@
+.linea{
+    border-bottom: 1px black solid;
+}
+
+.sector-publico, .sector-privado{
+    background-color: rgb(211, 212, 213);
+    padding: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.detalle{
+    display: block;
+    font-size: 18px;
+}
+
+.return{
+    font-size: 18px;
+}

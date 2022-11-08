@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrarSolicitudComponent } from './estudiante/registrar-solicitud/registrar-solicitud.component';
 import { RevisarSolicitudesComponent } from './estudiante/revisar-solicitudes/revisar-solicitudes.component';
+import { DetalleSolicitudComponent } from './estudiante/revisar-solicitudes/detalle-solicitud/detalle-solicitud.component';
+import { ElementosModule } from './elementos/elementos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrarSolicitudComponent,
-    RevisarSolicitudesComponent
+    RevisarSolicitudesComponent,
+    DetalleSolicitudComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ElementosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

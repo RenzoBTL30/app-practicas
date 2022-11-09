@@ -1,15 +1,106 @@
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
-    <div>
-      <label for="exampleInputEmail1" class="form-label">N° RUC</label>
-      <div class="input-group">
-        <input
-          type="email"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          formControlName="ruc"
-        />
-        <button type="button" class="btn btn-info">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 g-0">
+      <app-header></app-header>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 g-0">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="container" style="background-color: rgb(190, 190, 190) ;">
+      <div class="row">
+        <div class="col-7">
+          <div class="row">
+            <div class="col-4"><p class="title">BUSCAR SOLICITUD</p></div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <form class="form">
+                <input type="text" required>
+                <label class="lbl-nombre">
+                  <span class="text-nomb">INGRESE EL CÓDIGO DEL ALUMNO</span>
+                </label>
+              </form>
+            </div>
+            <div class="col-4">
+              <button type="button" class="btn btn-primary">BUSCAR</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <table class="content-table">
+                <thead>
+                  <tr>
+                    <th>CÓDIGO</th>
+                    <th>NOMBRES Y APELLIDOS</th>
+                    <th>SOLICITUD</th>
+                    <th>OBSERVACINES</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Josias Brick Alva Linares</td>
+                    <td>
+                      <span class="material-icons-outlined">
+                        insert_drive_file
+                      </span>
+                    </td>
+                    <td>
+                      <span class="material-icons-outlined">
+                        edit
+                      </span>
+                    </td>
+                  </tr>
+                  <tr class="active-row">
+                    <td>2</td>
+                    <td>Josue Esteban Valverde Ayte</td>
+                    <td>
+                      <span class="material-icons-outlined">
+                        insert_drive_file
+                      </span>
+                    </td>
+                    <td>
+                      <span class="material-icons-outlined">
+                        edit
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>David Vega Vega</td>
+                    <td>
+                      <span class="material-icons-outlined">
+                        insert_drive_file
+                      </span>
+                    </td>
+                    <td>
+                      <span class="material-icons-outlined">
+                        edit
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="col-4"><p class="title">PREVISUALIZACIÓN DE LA SOLICITUD</p></div>
+          <div class="visualizar" style="background-color: azure;">
+            <div>
+              <img
+                src="https://www.viafirma.com/blog-xnoccio/wp-content/uploads/sites/3/2021/08/Auditori%CC%81a-de-firma.png"
+                alt="">
+            </div>
+          </div>
+          <div class="d-flex">
+              <button type="button" class="btn btn-outline-danger">&#20034;</button>
+              <button type="button" class="btn btn-outline-success ms-auto">&#10004;</button>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</div>

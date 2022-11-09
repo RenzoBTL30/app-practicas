@@ -5,6 +5,7 @@ import { MenuPrincipalModule } from './estudiante/menu-principal/menu-principal.
 import { RegistrarSolicitudComponent } from './estudiante/registrar-solicitud/registrar-solicitud.component';
 import { DetalleSolicitudComponent } from './estudiante/revisar-solicitudes/detalle-solicitud/detalle-solicitud.component';
 import { RevisarSolicitudesComponent } from './estudiante/revisar-solicitudes/revisar-solicitudes.component';
+import { ValidarSolicitudComponent } from './estudiante/validar-solicitud/validar-solicitud.component';
 import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
 
@@ -14,8 +15,7 @@ const routes: Routes = [
   { path: 'registrar-solicitud', component: RegistrarSolicitudComponent },
   { path: 'menu-principal', component: MenuPrincipalComponent },
   { path: 'revisar-solicitud', component: RevisarSolicitudesComponent },
-  { path: 'validar-solicitud', component: RevisarSolicitudesComponent },
-  { path: 'detalle-solicitud', component: DetalleSolicitudComponent }
+  { path: 'validar-solicitud', component: ValidarSolicitudComponent }
 
 ];
 
@@ -24,6 +24,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     LoginModule,
     MenuPrincipalModule
+
   ],
   exports: [RouterModule]
 })

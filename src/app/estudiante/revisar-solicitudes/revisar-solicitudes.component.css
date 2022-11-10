@@ -1,5 +1,29 @@
-.linea{
-    border-bottom: 1px black solid;
+.espacio-trabajo{
+    padding-top: 80px;
+    position: relative;
+    height: 100vh;
+}
+#espacio-principal{
+    padding: 30px;
+    padding-top: 35px;
+    height: 100%;
+}
+
+.icon-return{
+    font-size: 28px;
+    margin-top: 3px;
+}
+
+.title{
+    font-size: 20px;
+}
+
+.space-options{
+    background-color: #B2B1A7;
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 15px;
+    height: 85%;
 }
 
 .sector-publico, .sector-privado{
@@ -12,4 +36,75 @@
 .detalle{
     display: block;
     font-size: 18px;
+}
+
+.icon-document{
+    font-size: 30px;
+}
+
+a:link, a:visited, a:active{
+    text-decoration: none; color: black; text-align: center;
+}
+
+
+/* ------------- Stepper ------------- */
+
+
+.wrapper-progressBar {
+    width: 100%
+}
+
+
+.progressBar li {
+    list-style-type: none;
+    float: left;
+    width: 33%;
+    position: relative;
+    text-align: center;
+    transition: 2s all;
+}
+
+.progressBar li:before {
+    position: relative;
+    content: " ";
+    line-height: 30px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px;
+    background-color: white;
+    z-index: 2;
+    transition: 2s all;
+}
+
+.progressBar li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #ddd;
+    top: 15px;
+    left: -50%;
+    z-index: 1;
+    transition: 2s all;
+}
+
+.progressBar li:first-child:after {
+    content: none;
+}
+
+.progressBar li.active {
+    color: dodgerblue;
+}
+
+.progressBar li.active:before {
+    border-color: dodgerblue;
+    background-color: dodgerblue
+}
+
+.progressBar .active:after {
+    background-color: dodgerblue;
 }

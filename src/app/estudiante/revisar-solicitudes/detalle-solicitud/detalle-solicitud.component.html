@@ -1,23 +1,65 @@
-<div class="container">
-    <p class="title">Practicas Sector Público</p>
-    <a href="">Ver solicitud realizada</a>
-    <div class="mt-5">
-        <p class="subir-doc">SUBIR DOCUMENTO DE FINALIZACIÓN DE PRÁCTICAS</p>
-        <label
-            class="btn btn-success rounded-pill mb-0"
-            type="button"
-            style="font-size: 12px; background-color: #f0a017; color: white"
-            for="inputGroupFile02"
-            >
-            SUBIR <span class="material-icons-outlined">
-                file_upload
-            </span>
-        </label>
-        <input
-            type="file"
-            class="form-control"
-            id="inputGroupFile02"
-            hidden
-        />
-    </div>
+<app-header></app-header>
+
+<div class="d-flex espacio-trabajo">
+    <app-sidebar></app-sidebar>
+
+    <main class="flex-grow-1">
+        <div id="espacio-principal">
+
+            <div class="btn-return d-inline-flex gap-3">
+                <a [routerLink]="['/menu-principal']">
+                    <span class="material-icons-outlined icon-return">
+                        arrow_back
+                    </span>
+                </a>
+                <p class="title">Revisar Solicitudes</p>
+            </div>
+
+
+            <div class="container space-options">
+
+                <div class="row" style="height: 100%;">
+                    <div class="col-6">
+                        <p class="title">Practicas Sector Público</p>
+
+                        <a href="" style="color: blue; text-decoration: underline;">Ver solicitud realizada</a>
+
+                        <div class="mt-5">
+                            <p class="subir-doc">SUBIR DOCUMENTO DE FINALIZACIÓN DE PRÁCTICAS</p>
+                            <!--
+                        <label 
+                        class="btn btn-success rounded-pill mb-0" 
+                        type="button"
+                        style="font-size: 12px; background-color: #f0a017; color: white" 
+                        for="inputGroupFile02"
+                        >
+                            SUBIR 
+                            <span class="material-icons-outlined me-2">
+                                file_upload
+                            </span>
+                        </label>
+
+                        <input type="file" class="form-control" id="inputGroupFile02" hidden />
+
+                    -->
+                            <button type="button" class="btn btn-success d-flex" id="btnSubir">
+                                SUBIR
+                                <span class="material-icons-outlined ms-2">
+                                    file_upload
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <embed src="https://d1wqtxts1xzle7.cloudfront.net/34546906/XP_Agil-with-cover-page-v2.pdf?Expires=1668054346&Signature=EM95D0tPCx6yB3qwm3GYHFK~00WPaMTdTQI68cilErcmwjM0KrNBxPA0GaIY5q6-rdR3l9pAW9-MUs~FjocG~6uzOfoi4uPH6LwxE5UsqXYMYC4gGTUaaOYIkn9q4VddEkS6vTOftSwrvDfn2vhUZyTPldDLnnp00pCL-6uPPQJgoe8j4icQRmB3VacVIbc3Xv3U~TvMhM3HaeDeXTA4lvfXyA1AoeRpfn4wPFa5aL2ToX454wKUf8XXbvzBqGSLtCkej1PSqgPuA3Nwjmb3NqCyJZnIzVn2ZR8mSs1puGqNZ5K-JP-skBQa3ZGlOqyfYJiD-clIdV4RQrK2m4Twcw__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" type="application/pdf" width="100%" height="100%">
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </main>
+
 </div>

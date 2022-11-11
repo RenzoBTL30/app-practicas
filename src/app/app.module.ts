@@ -13,11 +13,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     RevisarSolicitudesModule,
     RegistrarSolicitudModule,
     ValidarSolicitudModule,
-    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

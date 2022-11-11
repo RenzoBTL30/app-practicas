@@ -1,7 +1,17 @@
+div.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
 
 .main{
     height: 100vh;
     background-color: #CCCCCC;
+}
+
+.section-login{
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
 }
 
 .fondo-universidad{
@@ -28,10 +38,6 @@
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    top: 60%;
-    left: 80%;
-    position: absolute;
-    transform: translate(-50%, -60%);
 }
 
 .icono-login{
@@ -40,7 +46,7 @@
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     position: absolute;
-    top: -80px;
+    top: 60px;
     left: calc(50% - 80px);
 }
 

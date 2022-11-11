@@ -3,7 +3,7 @@ import { Component, ElementRef, OnInit, AfterViewInit, Renderer2, ViewChild  } f
 @Component({
   selector: 'app-revisar-solicitudes',
   templateUrl: './revisar-solicitudes.component.html',
-  styleUrls: ['./revisar-solicitudes.component.css']
+  styleUrls: ['./revisar-solicitudes.component.scss']
 })
 export class RevisarSolicitudesComponent implements OnInit, AfterViewInit{
 

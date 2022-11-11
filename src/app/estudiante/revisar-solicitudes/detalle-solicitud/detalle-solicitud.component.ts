@@ -4,7 +4,7 @@ import { Component, ElementRef, OnInit, AfterViewInit, Renderer2, ViewChild  } f
 @Component({
   selector: 'app-detalle-solicitud',
   templateUrl: './detalle-solicitud.component.html',
-  styleUrls: ['./detalle-solicitud.component.css']
+  styleUrls: ['./detalle-solicitud.component.scss']
 })
 export class DetalleSolicitudComponent implements OnInit {
 

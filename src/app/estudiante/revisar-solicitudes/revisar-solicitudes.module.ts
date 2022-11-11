@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RevisarSolicitudesComponent } from './revisar-solicitudes.component';
 import { DetalleSolicitudComponent } from './detalle-solicitud/detalle-solicitud.component';
 import { ElementosModule } from 'src/app/elementos/elementos.module';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({

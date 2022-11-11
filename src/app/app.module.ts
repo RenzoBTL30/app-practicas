@@ -3,20 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RevisarSolicitudesModule } from './estudiante/revisar-solicitudes/revisar-solicitudes.module';
-import { RegistrarSolicitudComponent } from './estudiante/registrar-solicitud/registrar-solicitud.component';
-import { ElementosModule } from './elementos/elementos.module';
-import { ValidarSolicitudComponent } from './estudiante/validar-solicitud/validar-solicitud.component';
+import { RegistrarSolicitudModule } from './estudiante/registrar-solicitud/registrar-solicitud.module';
+import { ValidarSolicitudModule } from './estudiante/validar-solicitud/validar-solicitud.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrarSolicitudComponent,
-    ValidarSolicitudComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RevisarSolicitudesModule
+    RevisarSolicitudesModule,
+    RegistrarSolicitudModule,
+    ValidarSolicitudModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

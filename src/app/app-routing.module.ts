@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'registrar-solicitud', component: RegistrarSolicitudComponent },
   { path: 'menu-principal', component: MenuPrincipalComponent },
   { path: 'revisar-solicitud', component: RevisarSolicitudesComponent },
+  { path: 'detalle-solicitud', component: DetalleSolicitudComponent },
   { path: 'validar-solicitud', component: ValidarSolicitudComponent }
 
 ];
@@ -23,8 +24,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     LoginModule,
-    MenuPrincipalModule
-
+    MenuPrincipalModule,
   ],
   exports: [RouterModule]
 })

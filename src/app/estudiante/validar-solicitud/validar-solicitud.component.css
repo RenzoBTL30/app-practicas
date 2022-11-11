@@ -95,3 +95,29 @@
     text-transform: uppercase;
     text-align: center;
 }
+
+
+
+.espacio-trabajo{
+    padding-top: 80px;
+    position: relative;
+    height: 100vh;
+}
+#espacio-principal{
+    padding: 30px;
+    padding-top: 35px;
+    height: 100%;
+}
+
+.detalle{
+    display: block;
+    font-size: 18px;
+}
+
+.icon-document{
+    font-size: 30px;
+}
+
+a:link, a:visited, a:active{
+    text-decoration: none; color: black; text-align: center;
+}

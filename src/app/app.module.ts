@@ -4,8 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RevisarSolicitudesModule } from './estudiante/revisar-solicitudes/revisar-solicitudes.module';
 import { RegistrarSolicitudModule } from './estudiante/registrar-solicitud/registrar-solicitud.module';
-import { ValidarSolicitudModule } from './estudiante/validar-solicitud/validar-solicitud.module';
+import { ValidarSolicitudModule } from './secretaria/validar-solicitud/validar-solicitud.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeSecretariaModule } from './secretaria/home/home-secretaria.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RevisarSolicitudesModule,
     RegistrarSolicitudModule,
     ValidarSolicitudModule,
+    HomeSecretariaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

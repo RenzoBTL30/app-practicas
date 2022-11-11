@@ -10,13 +10,13 @@
                 <img src="/assets/img/frutas.jpg" class="icono-login" alt="...">
                 <form class="formulario">
                       <div class="mb-4 mb-xxl-0">
-                        <input type="text" class="form-control input" id="usuario" placeholder="USUARIO">
+                        <input type="text" [(ngModel)]="usuario" name="usuario" class="form-control input" id="usuario" placeholder="USUARIO">
                       </div>
                       <div class="mb-4 mb-xxl-0">
-                        <input type="password" class="form-control input" id="password" placeholder="CONTRASEÑA">
+                        <input type="password" [(ngModel)]="contra" name="contra" class="form-control input" id="password" placeholder="CONTRASEÑA">
                       </div>
                       <div class="botones">
-                        <button mat-raised-button [routerLink]="['/menu-principal']" class="btn boton-login mt-1" id="login" type="button">INGRESAR</button>
+                        <button mat-raised-button (click)="login()" class="btn boton-login mt-1" id="login" type="button">INGRESAR</button>
                       </div>
                 </form>
             </div>

@@ -7,12 +7,31 @@ declare interface RouteInfo {
     icon: string;
     class: string;
 }
-export const ROUTES: RouteInfo[] = [
-    { path: '/pages/home', title: 'Home',  icon: 'home', class: '' },
-    { path: '/pages/validar-solicitud', title: 'Validar Solicitudes',  icon:'verified', class: '' },
-    { path: '/pages/agregar-carta', title: 'Agregar Carta presentación',  icon:'add_circle_outline', class: '' },
-    { path: '/pages/gestionar-postulantes', title: 'Gestionar Postulantes',  icon:'manage_accounts', class: '' },
+
+
+// ---- Rutas de secretaria ----
+export const ROUTES1: RouteInfo[] = [
+    { path: '/secretaria/pages/home', title: 'Home',  icon: 'home', class: '' },
+    { path: '/secretaria/pages/validar-solicitud', title: 'Validar Solicitudes',  icon:'verified', class: '' },
+    { path: '/secretaria/pages/agregar-carta', title: 'Agregar Carta presentación',  icon:'add_circle_outline', class: '' },
+    { path: '/secretaria/pages/gestionar-postulantes', title: 'Gestionar Postulantes',  icon:'manage_accounts', class: '' },
     { path: '', title: 'SALIR',  icon:'unarchive', class: 'active-pro' },
+];
+
+
+// ---- Rutas de supervisor ----
+export const ROUTES2: RouteInfo[] = [
+  { path: '/supervisor/pages/validar-plaza', title: 'Validar plazas',  icon: 'home', class: '' },
+  { path: '/supervisor/pages/validar-practicas', title: 'Validar prácticas',  icon:'verified', class: '' },
+  { path: '', title: 'SALIR',  icon:'unarchive', class: 'active-pro' },
+];
+
+
+// ---- Rutas de admin ----
+export const ROUTES3: RouteInfo[] = [
+  { path: '/admin/pages/home', title: 'Home',  icon: 'home', class: '' },
+  { path: '/admin/pages/gestionar-supervisores', title: 'Gestionar Supervisores',  icon:'verified', class: '' },
+  { path: '', title: 'SALIR',  icon:'unarchive', class: 'active-pro' },
 ];
 
 @Component({
@@ -23,11 +42,32 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarTrabajadorComponent implements OnInit {
 
   menuItems?: any[];
+  rol?: any;
 
   constructor() { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.rol = localStorage.getItem('rol');
+    this.cambioRol(this.rol);
+  }
+
+  cambioRol(rol:any){
+    switch (rol) {
+      case 'secretaria':
+        this.menuItems = ROUTES1.filter(menuItem => menuItem);
+        break;
+
+      case 'supervisor':
+        this.menuItems = ROUTES2.filter(menuItem => menuItem);
+        break;
+
+      case 'admin':
+        this.menuItems = ROUTES3.filter(menuItem => menuItem);
+        break;
+    
+      default:
+        break;
+    }
   }
 
 }

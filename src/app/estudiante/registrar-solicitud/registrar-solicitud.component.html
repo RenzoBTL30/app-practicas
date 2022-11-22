@@ -1,86 +1,69 @@
-<app-header></app-header>
+<div class="container space-options">
 
-<div class="d-flex espacio-trabajo">
-    <app-sidebar></app-sidebar>
-
-    <div class="flex-grow-1">
-        <div id="espacio-principal">
-            
-            <div class="container space-options">
-
-                <div class="todo">
-                    <div id="cuerpo">
-                        <div class="mb-4 row">
-                            <div class="col-6">
-                                <label class="form-label">TIPO DE CONTRIBUYENTE</label>
-                                <select name="idtipopersona" class="form-select" aria-label="Default select example">
-                                    <option>Seleccionar tipo practica</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-4 row">
-                            <div class="col-6">
-                                <label class="form-label">DATOS PERSONALES DEL SUPERVISOR</label>
-                                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Nombres y Apellidos">
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">.</label>
-                                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Correo Electronico">
-                            </div>
-                        </div>
-                        <div class="mb-4 row">
-                            <div class="col-auto">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="PLAN DE ACTIVIDADES">
-                          </div>
-                          <div class="col-auto">
-                            <input type="date" class="form-control" id="inputPassword2" placeholder="FECHA INICIO">
-                          </div>
-                          <div class="col-auto">
-                            <input type="date" class="form-control" id="inputPassword2" placeholder="FECHA FIN">
-                          </div>
-                        </div>
-                        <div class="mb-4 row">
-                            <div class="col-auto">
-                                <label
-                                class="btn btn-success rounded-pill mb-4"
-                                type="button"
-                                style="font-size: 12px; background-color:aliceblue; color: black"
-                                for="inputGroupFile02"
-                            >
-                                SUBIR
-                            </label>
-                            <input
-                                type="file"
-                                class="form-control"
-                                id="inputGroupFile02"
-                                hidden
-                            />
-                        </div>
-                        
-                        <div class="mb-4 row">
-                            <div class="col-6">
-                                <label class="form-label">DATOS DEL CENTRO DE PRACTICAS</label>
-                                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Nombre de la Institución">
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">.</label>
-                                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Dirección">
-                            </div>
-                        </div>
-                
-                        <div class="botones">
-                            <div class="right">
-                                <div type="button" class="btn btn-primary">GUARDAR</div>
-                            </div>
-                        </div>
-                
-                    </div>
-                </div>  
+    <div class="todo">
+        <div id="cuerpo">
+            <div class="mb-4 row">
+                <div class="col-6">
+                    <label class="form-label">TIPO DE CONTRIBUYENTE</label>
+                    <select name="idtipopersona" class="form-select" aria-label="Default select example">
+                        <option>Seleccionar tipo practica</option>
+                    </select>
+                </div>
             </div>
+            <div class="mb-4 row">
+                <div class="col-6">
+                    <label class="form-label">DATOS PERSONALES DEL SUPERVISOR</label>
+                    <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox"
+                        placeholder="Nombres y Apellidos">
+                </div>
+                <div class="col-6">
+                    <label class="form-label">.</label>
+                    <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox"
+                        placeholder="Correo Electronico">
+                </div>
+            </div>
+            <div class="mb-4 row">
+                <div class="col-auto">
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail2"
+                        value="PLAN DE ACTIVIDADES">
+                </div>
+                <div class="col-auto">
+                    <input type="date" class="form-control" id="inputPassword2" placeholder="FECHA INICIO">
+                </div>
+                <div class="col-auto">
+                    <input type="date" class="form-control" id="inputPassword2" placeholder="FECHA FIN">
+                </div>
+            </div>
+            <div class="mb-4 row">
+                <div class="col-auto">
+                    <label class="btn btn-success rounded-pill mb-4" type="button"
+                        style="font-size: 12px; background-color:aliceblue; color: black" for="inputGroupFile02">
+                        SUBIR
+                    </label>
+                    <input type="file" class="form-control" id="inputGroupFile02" hidden />
+                </div>
 
+                <div class="mb-4 row">
+                    <div class="col-6">
+                        <label class="form-label">DATOS DEL CENTRO DE PRACTICAS</label>
+                        <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox"
+                            placeholder="Nombre de la Institución">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">.</label>
+                        <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox"
+                            placeholder="Dirección">
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <div class="right">
+                        <div type="button" class="btn btn-primary">GUARDAR</div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-
     </div>
 
 </div>

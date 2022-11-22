@@ -31,14 +31,31 @@ export class LoginComponent implements OnInit {
   //    Usuario: alvaro
   //    Contra: alvaro123
 
+  // 4. Rol: Admin
+  //    Usuario: davicho
+  //    Contra: 12345
+
+
 
   login(){
+
+    localStorage.setItem('usuario',this.usuario!);
+
     if (this.usuario == "lucho" && this.contra == "12345") {
-        this.router.navigate(['/menu-principal']);
+        localStorage.setItem('rol','estudiante');
+        this.router.navigate(['/estudiante/pages/home']);
+
     } else if (this.usuario == "secretaria" && this.contra == "secre123") {
-        this.router.navigate(['/pages/home']);
+        localStorage.setItem('rol','secretaria');
+        this.router.navigate(['/secretaria/pages/home']);
+
     } else if (this.usuario == "alvaro" && this.contra == "alvaro123") {
+        localStorage.setItem('rol','supervisor');
+        this.router.navigate(['/supervisor/pages/validar-plaza']);
+
+    } else if (this.usuario == "renzo" && this.contra == "12345") {
+        localStorage.setItem('rol','admin');
+        this.router.navigate(['/admin/pages/home']);
     }
   }
-
 }

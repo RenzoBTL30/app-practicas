@@ -1,100 +1,105 @@
-<div class="container space-options">
-
-  <div class="row">
-    <div class="col-7">
-      <div class="row">
-        <div class="col-4">
-          <p class="title">BUSCAR SOLICITUD</p>
+<div class="col-lg-12 col-md-12">
+  <div class="card">
+    <div class="card-header card-header-tabs card-header-primary">
+      <div class="nav-tabs-navigation">
+        <div class="nav-tabs-wrapper">
+          <ul class="nav nav-tabs" data-tabs="tabs">
+            <li class="nav-item">
+                <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
+                    Solicitudes Pendientes de Validación
+                    <div class="ripple-container"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a mat-button class="nav-link" href="#messages" data-toggle="tab">
+                    Solicitudes Observadas
+                    <div class="ripple-container"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a mat-button class="nav-link" href="#settings" data-toggle="tab">
+                    Solicitudes Validadas
+                    <div class="ripple-container"></div>
+                </a>
+            </li>
+        </ul>
         </div>
       </div>
-      <div class="row">
-        <div class="col-4">
-          <form class="form">
-            <input type="text" required>
-            <label class="lbl-nombre">
-              <span class="text-nomb">INGRESE EL CÓDIGO DEL ALUMNO</span>
-            </label>
-          </form>
+    </div>
+    <div class="card-body">
+      <div class="tab-content">
+        <div class="row mb-4 mt-4 mx-4">
+          <div class="col-4 d-inline-flex">
+            <span class="material-icons-outlined mt-1 mx-3 btn-filtro">
+              filter_list
+            </span>
+            <select class="form-control" id="select-filtro">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="col-3"></div>
+          <div class="col-5 d-inline-flex align-items-center">
+            <input type="text" value="" placeholder="Regular" class="form-control" />
+            <button type="button" class="btn btn-primary btn-buscar">Primary</button>
+          </div>
         </div>
-        <div class="col-4">
-          <button type="button" class="btn btn-primary">BUSCAR</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-8">
-          <table class="content-table">
-            <thead>
-              <tr>
-                <th>CÓDIGO</th>
-                <th>NOMBRES Y APELLIDOS</th>
-                <th>SOLICITUD</th>
-                <th>OBSERVACINES</th>
-              </tr>
+        <div class="tab-pane active" id="profile">
+          <table class="table">
+            <thead class="text-danger">
+              <th>Código Alumn.</th>
+              <th>Nombre del Postulante</th>
+              <th style="text-align: center;">Acción</th>
             </thead>
             <tbody>
               <tr>
-                <td>1</td>
-                <td>Josias Brick Alva Linares</td>
-                <td>
-                  <span class="material-icons-outlined">
-                    insert_drive_file
-                  </span>
-                </td>
-                <td>
-                  <span class="material-icons-outlined">
-                    edit
-                  </span>
-                </td>
-              </tr>
-              <tr class="active-row">
-                <td>2</td>
-                <td>Josue Esteban Valverde Ayte</td>
-                <td>
-                  <span class="material-icons-outlined">
-                    insert_drive_file
-                  </span>
-                </td>
-                <td>
-                  <span class="material-icons-outlined">
-                    edit
-                  </span>
+                <td>Dakota Rice</td>
+                <td>Niger</td>
+                <td style="text-align: center;">
+                  <button type="button" class="btn btn-primary btn-validar">Validar</button>
                 </td>
               </tr>
               <tr>
-                <td>3</td>
-                <td>David Vega Vega.</td>
-                <td>
-                  <span class="material-icons-outlined">
-                    insert_drive_file
-                  </span>
+                <td>Minerva Hooper</td>
+                <td>Curaçao</td>
+                <td style="text-align: center;">
+                  <button type="button" class="btn btn-primary btn-validar">Validar</button>
                 </td>
-                <td>
-                  <span class="material-icons-outlined">
-                    edit
-                  </span>
+              </tr>
+              <tr>
+                <td>Sage Rodriguez</td>
+                <td>Netherlands</td>
+                <td style="text-align: center;">
+                  <button type="button" class="btn btn-primary btn-validar">Validar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Philip Chaney</td>
+                <td>Korea, South</td>
+                <td style="text-align: center;">
+                  <button type="button" class="btn btn-primary btn-validar">Validar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Doris Greene</td>
+                <td>Malawi</td>
+                <td style="text-align: center;">
+                  <button type="button" class="btn btn-primary btn-validar">Validar</button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
-    <div class="col-5">
-      <div class="col-4">
-        <p class="title">PREVISUALIZACIÓN DE LA SOLICITUD</p>
-      </div>
-      <div class="visualizar" style="background-color: azure;">
-        <div>
-          <img
-            src="https://www.viafirma.com/blog-xnoccio/wp-content/uploads/sites/3/2021/08/Auditori%CC%81a-de-firma.png"
-            width="70%" alt="">
+        <div class="tab-pane" id="messages">
+
         </div>
-      </div>
-      <div class="d-flex">
-        <button type="button" class="btn btn-outline-danger">&#20034;</button>
-        <button type="button" class="btn btn-outline-success ms-auto">&#10004;</button>
+        <div class="tab-pane" id="settings">
+
+        </div>
       </div>
     </div>
   </div>
-
 </div>

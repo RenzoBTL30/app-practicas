@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { SecretariaLayoutRoutingModule } from './secretaria-layout.routing';
 import { SecretariaLayoutComponent } from './secretaria-layout.component';
 import { ElementosModule } from 'src/app/elementos/elementos.module';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -13,7 +16,9 @@ import { ElementosModule } from 'src/app/elementos/elementos.module';
   imports: [
     CommonModule,
     ElementosModule,
-    SecretariaLayoutRoutingModule
+    SecretariaLayoutRoutingModule,
+    FormsModule,
+    MatTooltipModule
   ],
   exports: [
     SecretariaLayoutComponent

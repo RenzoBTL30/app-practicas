@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule, Routes } from '@angular/router';
 import { AgregarCartaPresentacionComponent } from 'src/app/secretaria/agregar-carta-presentacion/agregar-carta-presentacion.component';
 import { GestionarPostulantesComponent } from 'src/app/secretaria/gestionar-postulantes/gestionar-postulantes.component';
@@ -13,7 +14,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes)  
+  ],
   exports: [RouterModule]
 })
 export class SecretariaLayoutRoutingModule { }

@@ -17,7 +17,8 @@ import { ValidarSolicitudPendienteComponent } from './validar-solicitud-pendient
   ],
   exports: [
     AgregarPostulanteComponent,
-    EditarPostulanteComponent
+    EditarPostulanteComponent,
+    ValidarSolicitudPendienteComponent
   ]
 })
 export class ModalsModule { }

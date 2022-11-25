@@ -1,12 +1,14 @@
-.btn-filtro{
-    border-radius: 100%;
-    padding: 3px;
+.form-control{
+    background-image: none;
+}
+
+
+.icon-filtro{
+    border-radius: 50%;
+    padding: 2px;
     border: 1px black solid;
 }
 
-#select-filtro{
-    border: 1px black solid;
-}
 .btn-buscar{
     box-shadow: 0;
 }
@@ -49,6 +51,22 @@
     color: white;
 }
 
+.select-filtro{
+    width: 10em;
+    border: 1px black solid;
+    background-color: #dadada;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.input-codigo{
+    width: 20em;
+    border: 1px black solid;
+    background-color: #dadada;
+    border-radius: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
 
 .table td{
     padding: 10px 8px;

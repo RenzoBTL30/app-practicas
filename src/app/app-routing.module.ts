@@ -7,6 +7,7 @@ import { EstudianteLayoutComponent } from './layouts/estudiante-layout/estudiant
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { SupervisorLayoutComponent } from './layouts/supervisor-layout/supervisor-layout.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ModalsModule } from './secretaria/modals/modals.module';
 
 
 const routes: Routes = [
@@ -61,7 +62,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    LoginModule  
+    LoginModule,
+    ModalsModule
   ],
   exports: [RouterModule]
 })

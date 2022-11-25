@@ -5,19 +5,19 @@
         <div class="nav-tabs-wrapper">
           <ul class="nav nav-tabs" data-tabs="tabs">
             <li class="nav-item">
-                <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
+                <a class="nav-link active" href="#pendientes" data-toggle="tab">
                     Solicitudes Pendientes de Validación
                     <div class="ripple-container"></div>
                 </a>
             </li>
             <li class="nav-item">
-                <a mat-button class="nav-link" href="#messages" data-toggle="tab">
+                <a class="nav-link" href="#observadas" data-toggle="tab">
                     Solicitudes Observadas
                     <div class="ripple-container"></div>
                 </a>
             </li>
             <li class="nav-item">
-                <a mat-button class="nav-link" href="#settings" data-toggle="tab">
+                <a class="nav-link" href="#validadas" data-toggle="tab">
                     Solicitudes Validadas
                     <div class="ripple-container"></div>
                 </a>
@@ -26,80 +26,135 @@
         </div>
       </div>
     </div>
-    <div class="card-body">
+    <div class="card-body pt-4">
       <div class="tab-content">
-        <div class="row mb-4 mt-4 mx-4">
-          <div class="col-4 d-inline-flex">
-            <span class="material-icons-outlined mt-1 mx-3 btn-filtro">
-              filter_list
-            </span>
-            <select class="form-control" id="select-filtro">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
+        <div class="tab-pane active" id="pendientes">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+                filter_list
+              </i>
+              <select class="form-control select-filtro">
+                <option>Todos</option>
+                <option>Hace un mes</option>
+              </select>
+            </div>
+            
+            <div class="d-flex align-items-center ml-auto">
+              <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
+              <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+            </div>
+
           </div>
-          <div class="col-3"></div>
-          <div class="col-5 d-inline-flex align-items-center">
-            <input type="text" value="" placeholder="Regular" class="form-control" />
-            <button type="button" class="btn btn-primary btn-buscar">Primary</button>
-          </div>
-        </div>
-        <div class="tab-pane active" id="profile">
-          <table class="table">
+          <table class="table mt-3">
             <thead class="text-danger">
-              <th>Código Alumn.</th>
+              <th>Código de Alumno</th>
               <th>Nombre del Postulante</th>
               <th style="text-align: center;">Acción</th>
             </thead>
             <tbody>
               <tr>
-                <td>Dakota Rice</td>
-                <td>Niger</td>
-                <td style="text-align: center;">
-                  <button type="button" class="btn btn-primary btn-validar">Validar</button>
-                </td>
+                <td>90231231</td>
+                <td>Josias Alva</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Validar</button></td>
+
               </tr>
               <tr>
-                <td>Minerva Hooper</td>
-                <td>Curaçao</td>
-                <td style="text-align: center;">
-                  <button type="button" class="btn btn-primary btn-validar">Validar</button>
-                </td>
+                <td>90231231</td>
+                <td>Renzo Berrios</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Validar</button></td>
+    
               </tr>
               <tr>
-                <td>Sage Rodriguez</td>
-                <td>Netherlands</td>
-                <td style="text-align: center;">
-                  <button type="button" class="btn btn-primary btn-validar">Validar</button>
-                </td>
+                <td>90231231</td>
+                <td>Josue Dominguez</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Validar</button></td>
+    
               </tr>
               <tr>
-                <td>Philip Chaney</td>
-                <td>Korea, South</td>
-                <td style="text-align: center;">
-                  <button type="button" class="btn btn-primary btn-validar">Validar</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Doris Greene</td>
-                <td>Malawi</td>
-                <td style="text-align: center;">
-                  <button type="button" class="btn btn-primary btn-validar">Validar</button>
-                </td>
+                <td>90231231</td>
+                <td>David Vega</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Validar</button></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="tab-pane" id="messages">
+        <div class="tab-pane" id="observadas">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+                filter_list
+              </i>
+              <select class="form-control select-filtro">
+                <option>Todos</option>
+                <option>Hace un mes</option>
+              </select>
+            </div>
+            
+            <div class="d-flex align-items-center ml-auto">
+              <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
+              <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+            </div>
 
+          </div>
+          <table class="table mt-3">
+            <thead class="text-danger">
+              <th>Código de Alumno</th>
+              <th>Nombre del Postulante</th>
+              <th style="text-align: center;">Acción</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>90231231</td>
+                <td>Alvaron</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Validar</button></td>
+    
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="tab-pane" id="settings">
+        <div class="tab-pane" id="validadas">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+                filter_list
+              </i>
+              <select class="form-control select-filtro">
+                <option>Todos</option>
+                <option>Hace un mes</option>
+              </select>
+            </div>
+            
+            <div class="d-flex align-items-center ml-auto">
+              <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
+              <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+            </div>
 
+          </div>
+          <table class="table mt-3">
+            <thead class="text-danger">
+              <th>Código de Alumno</th>
+              <th>Nombre del Postulante</th>
+              <th style="text-align: center;">Acción</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>90231231</td>
+                <td>Quinteros</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Ver</button></td>
+    
+              </tr>
+              <tr>
+                <td>90231231</td>
+                <td>Poma</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Ver</button></td>
+    
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
 </div>
+

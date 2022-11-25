@@ -1,0 +1,63 @@
+  <div class="col-lg-12 col-md-12">
+    <div class="card">
+        <div class="card-header d-inline-flex align-items-center card-header-primary">
+          <h4 class="card-title">Lista de Postulantes</h4>
+          <button mat-raised-button class="btn btn-success d-inline-flex align-items-center ml-auto">
+            <i class="material-icons-outlined mr-2">
+            person_add_alt</i>Añadir Postulante
+          </button>
+        </div>
+        <div class="card-body table-responsive pt-4">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+                filter_list
+              </i>
+              <select class="form-control select-filtro">
+                <option>Todos</option>
+                <option>Hace un mes</option>
+              </select>
+            </div>
+            
+            <div class="d-flex align-items-center ml-auto">
+              <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
+              <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+            </div>
+  
+          </div>
+          <table class="table mt-3">
+            <thead class="text-danger">
+              <th>Código de Alumno</th>
+              <th>Nombre del Postulante</th>
+              <th style="text-align: center;">Acción</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>90231231</td>
+                <td>Pomajulca</td>
+                <td style="text-align: center;">
+                  <i class="material-icons-outlined icon-edit">edit</i>
+                  <i class="material-icons-outlined ml-4 icon-delete">delete</i>
+                </td>
+              </tr>
+              <tr>
+                <td>90231231</td>
+                <td>Brickkk</td>
+                <td style="text-align: center;">
+                  <i class="material-icons-outlined icon-edit">edit</i>
+                  <i class="material-icons-outlined ml-4 icon-delete">delete</i>
+                </td>  
+              </tr>
+              <tr>
+                <td>90231231</td>
+                <td>Jorgito Quispe Sumire</td>
+                <td style="text-align: center;">
+                  <i class="material-icons-outlined icon-edit">edit</i>
+                  <i class="material-icons-outlined ml-4 icon-delete">delete</i>
+                </td>  
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</div>

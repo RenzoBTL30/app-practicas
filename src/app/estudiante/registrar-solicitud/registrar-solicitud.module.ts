@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ElementosModule } from 'src/app/elementos/elementos.module';
 import { RegistrarSolicitudComponent } from './registrar-solicitud.component';
+import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -11,7 +13,9 @@ import { RegistrarSolicitudComponent } from './registrar-solicitud.component';
   ],
   imports: [
     CommonModule,
-    ElementosModule
+    ElementosModule,
+    RouterModule,
+    MatButtonModule
   ],
   exports: [
     RegistrarSolicitudComponent

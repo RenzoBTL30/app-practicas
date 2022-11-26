@@ -1,0 +1,133 @@
+a:link, a:visited, a:active{
+    text-decoration: none; color: black; text-align: center;
+}
+
+.icon-return{
+    font-size: 28px;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+.icon-filtro{
+    border-radius: 50%;
+    padding: 2px;
+    border: 1px black solid;
+}
+
+.btn-buscar{
+    box-shadow: 0;
+}
+
+.card .card-body{
+    padding: 0.9575rem 20px;
+}
+
+.card [class*=card-header-]:not(.card-header-icon):not(.card-header-text):not(.card-header-image){
+    padding: 20px;
+}
+
+.card .card-header-primary:not(.card-header-icon):not(.card-header-text){
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 34%);
+}
+
+.nav-tabs{
+    display: table;
+    width: 100%;
+}
+
+.nav-tabs .nav-item{
+    display: table-cell;
+    white-space: nowrap;
+}
+
+.nav-tabs-wrapper .nav-item a{
+    color: #464646;
+}
+
+.nav-tabs-wrapper a{
+    color: #464646;
+    background-color: #9C9C9C;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.nav-tabs .nav-item .nav-link.active{
+    color: white;
+    background-color: #014776;
+}
+
+.nav-tabs[_ngcontent-sbl-c99] .nav-item[_ngcontent-sbl-c99] .nav-link.active[_ngcontent-sbl-c99]{
+    color: white;
+}
+
+.select-practicas{
+    width: 15em;
+    border: 1px black solid;
+    background-color: #dadada;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.card-title{
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.mat-raised-button.btn, .mat-raised-button.btn:not([class*=mat-elevation-z]), .btn{
+    padding: 8px 13px;
+}
+
+.btn-descargar{
+    background-color: #ffffff;
+    color: black;
+}
+
+.icon-download{
+    border-radius: 50%;
+    padding: 4px;
+    border: 1px;
+    color: white;
+    background-color: #014776;
+}
+
+.title-section{
+    font-weight: 500;
+    color: black;
+}
+
+.btn-subir{
+    background-color: #ffffff;
+    padding: 0;
+    color: black;
+}
+
+.detalle-btn{
+    padding: 8px 16px;
+    margin: 0;
+    color: black;
+}
+
+.file-upload[type="file"]{
+    display: none;
+}
+
+.icon-upload{
+    color: #014776;
+}
+
+.card-body .btn-registrar{
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 13px;
+}
+
+.card-body .btn-subir{
+    padding: 0;
+    color: black;
+}

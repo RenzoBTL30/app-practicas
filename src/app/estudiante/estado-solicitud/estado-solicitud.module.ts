@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EstadoSolicitudComponent } from './estado-solicitud.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -9,7 +10,8 @@ import { EstadoSolicitudComponent } from './estado-solicitud.component';
     EstadoSolicitudComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     EstadoSolicitudComponent

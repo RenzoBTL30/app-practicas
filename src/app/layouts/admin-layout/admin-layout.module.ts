@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdminLayoutRoutingModule } from './admin-layout-routing.module';
 import { AdminLayoutComponent } from './admin-layout.component';
 import { ElementosModule } from 'src/app/elementos/elementos.module';
+import { GestionarSupervisoresModule } from 'src/app/admin/gestionar-supervisores/gestionar-supervisores.module';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { ElementosModule } from 'src/app/elementos/elementos.module';
   imports: [
     CommonModule,
     ElementosModule,
+    GestionarSupervisoresModule,
     AdminLayoutRoutingModule
   ],
   exports: [

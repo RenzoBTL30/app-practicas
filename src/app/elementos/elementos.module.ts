@@ -5,6 +5,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarTrabajadorComponent } from './sidebar-trabajador/sidebar-trabajador.component';
 import { RouterModule } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -17,7 +18,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   imports: [
     CommonModule,
     RouterModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatButtonModule
   ],
   exports:[
     HeaderComponent,

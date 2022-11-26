@@ -21,8 +21,8 @@ export const ROUTES1: RouteInfo[] = [
 
 // ---- Rutas de supervisor ----
 export const ROUTES2: RouteInfo[] = [
-  { path: '/supervisor/pages/validar-plaza', title: 'Validar plazas',  icon: 'home', class: '' },
-  { path: '/supervisor/pages/validar-practicas', title: 'Validar prácticas',  icon:'verified', class: '' },
+  { path: '/supervisor/pages/validar-plaza', title: 'Validar plazas',  icon: 'verified', class: '' },
+  { path: '/supervisor/pages/validar-practicas', title: 'Validar prácticas',  icon:'add_circle_outline', class: '' },
   { path: '', title: 'SALIR',  icon:'', class: 'active-pro' },
 ];
 
@@ -30,7 +30,7 @@ export const ROUTES2: RouteInfo[] = [
 // ---- Rutas de admin ----
 export const ROUTES3: RouteInfo[] = [
   { path: '/admin/pages/home', title: 'Home',  icon: 'home', class: '' },
-  { path: '/admin/pages/gestionar-supervisores', title: 'Gestionar Supervisores',  icon:'verified', class: '' },
+  { path: '/admin/pages/gestionar-supervisores', title: 'Gestionar Supervisores',  icon:'manage_accounts', class: '' },
   { path: '', title: 'SALIR',  icon:'', class: 'active-pro' },
 ];
 

@@ -1,0 +1,178 @@
+.icon-edit{
+    background-color: #014776;
+}
+
+.icon-delete{
+    background-color: red;
+}
+
+.icon-edit, .icon-delete{
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-control{
+    background-image: none;
+}
+
+
+.icon-filtro{
+    border-radius: 50%;
+    padding: 2px;
+    border: 1px black solid;
+}
+
+.btn-buscar{
+    box-shadow: 0;
+}
+
+.card .card-body{
+    padding: 0.9575rem 20px;
+}
+
+.card [class*=card-header-]:not(.card-header-icon):not(.card-header-text):not(.card-header-image){
+    padding: 20px;
+}
+
+.card .card-header-primary:not(.card-header-icon):not(.card-header-text){
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 34%);
+}
+
+.nav-tabs{
+    display: table;
+    width: 100%;
+}
+
+.nav-tabs .nav-item{
+    display: table-cell;
+    white-space: nowrap;
+}
+
+.nav-tabs-wrapper .nav-item a{
+    color: #464646;
+}
+
+.nav-tabs-wrapper a{
+    color: #464646;
+    background-color: #9C9C9C;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.nav-tabs .nav-item .nav-link.active{
+    color: white;
+    background-color: #014776;
+}
+
+.nav-tabs[_ngcontent-sbl-c99] .nav-item[_ngcontent-sbl-c99] .nav-link.active[_ngcontent-sbl-c99]{
+    color: white;
+}
+
+.select-filtro{
+    width: 10em;
+    border: 1px black solid;
+    background-color: #dadada;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.input-dni{
+    width: 20em;
+    border: 1px black solid;
+    background-color: #dadada;
+    border-radius: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.table td{
+    padding: 10px 8px;
+}
+
+.btn-validar{
+    background-color: #014776;
+    transition: none;
+}
+
+.btn-validar:hover{
+    background-color: #03426c;
+    box-shadow: none;
+}
+
+.card-title{
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.mat-raised-button.btn, .mat-raised-button.btn:not([class*=mat-elevation-z]), .btn{
+    padding: 8px 13px;
+}
+
+
+// ----- Estilos del Switcher ----- //
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

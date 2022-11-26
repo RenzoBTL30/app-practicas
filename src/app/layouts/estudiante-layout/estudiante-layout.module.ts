@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { EstudianteLayoutRoutingModule } from './estudiante-layout-routing.module';
 import { EstudianteLayoutComponent } from './estudiante-layout.component';
 import { ElementosModule } from 'src/app/elementos/elementos.module';
+import { HomeEstudianteModule } from 'src/app/estudiante/home-estudiante/home-estudiante.module';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { ElementosModule } from 'src/app/elementos/elementos.module';
   imports: [
     CommonModule,
     ElementosModule,
+    HomeEstudianteModule,
     EstudianteLayoutRoutingModule
   ],
   exports: [

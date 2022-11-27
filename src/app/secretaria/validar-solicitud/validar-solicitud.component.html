@@ -1,100 +1,166 @@
-<div class="container space-options">
+<div class="col-lg-12 col-md-12">
+  <div class="card">
+    <div class="card-header card-header-tabs card-header-primary">
+      <div class="nav-tabs-navigation">
+        <div class="nav-tabs-wrapper">
+          <ul class="nav nav-tabs" data-tabs="tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#pendientes" data-toggle="tab">
+                    Solicitudes Pendientes de Validación
+                    <div class="ripple-container"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#observadas" data-toggle="tab">
+                    Solicitudes Observadas
+                    <div class="ripple-container"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#validadas" data-toggle="tab">
+                    Solicitudes Validadas
+                    <div class="ripple-container"></div>
+                </a>
+            </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card-body pt-4">
+      <div class="tab-content">
+        <div class="tab-pane active" id="pendientes">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+                filter_list
+              </i>
+              <select class="form-control select-filtro">
+                <option>Todos</option>
+                <option>Hace un mes</option>
+              </select>
+            </div>
+            
+            <div class="d-flex align-items-center ml-auto">
+              <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
+              <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+            </div>
 
-  <div class="row">
-    <div class="col-7">
-      <div class="row">
-        <div class="col-4">
-          <p class="title">BUSCAR SOLICITUD</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <form class="form">
-            <input type="text" required>
-            <label class="lbl-nombre">
-              <span class="text-nomb">INGRESE EL CÓDIGO DEL ALUMNO</span>
-            </label>
-          </form>
-        </div>
-        <div class="col-4">
-          <button type="button" class="btn btn-primary">BUSCAR</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-8">
-          <table class="content-table">
-            <thead>
-              <tr>
-                <th>CÓDIGO</th>
-                <th>NOMBRES Y APELLIDOS</th>
-                <th>SOLICITUD</th>
-                <th>OBSERVACINES</th>
-              </tr>
+          </div>
+          <table class="table mt-3">
+            <thead class="text-danger">
+              <th>Código de Alumno</th>
+              <th>Nombre del Postulante</th>
+              <th style="text-align: center;">Acción</th>
             </thead>
             <tbody>
               <tr>
-                <td>1</td>
-                <td>Josias Brick Alva Linares</td>
-                <td>
-                  <span class="material-icons-outlined">
-                    insert_drive_file
-                  </span>
+                <td>90231231</td>
+                <td>Josias Alva</td>
+                <td style="text-align: center;">
+                  <button mat-raised-button class="btn btn-info" data-toggle="modal"
+                    data-target="#validarSolicitudPendiente" (click)="EsParaValidar(true)">Validar
+                  </button>
                 </td>
-                <td>
-                  <span class="material-icons-outlined">
-                    edit
-                  </span>
-                </td>
-              </tr>
-              <tr class="active-row">
-                <td>2</td>
-                <td>Josue Esteban Valverde Ayte</td>
-                <td>
-                  <span class="material-icons-outlined">
-                    insert_drive_file
-                  </span>
-                </td>
-                <td>
-                  <span class="material-icons-outlined">
-                    edit
-                  </span>
-                </td>
+
               </tr>
               <tr>
-                <td>3</td>
-                <td>David Vega Vega.</td>
-                <td>
-                  <span class="material-icons-outlined">
-                    insert_drive_file
-                  </span>
-                </td>
-                <td>
-                  <span class="material-icons-outlined">
-                    edit
-                  </span>
-                </td>
+                <td>90231231</td>
+                <td>Renzo Berrios</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Validar</button></td>
+    
+              </tr>
+              <tr>
+                <td>90231231</td>
+                <td>Josue Dominguez</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Validar</button></td>
+    
+              </tr>
+              <tr>
+                <td>90231231</td>
+                <td>David Vega</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Validar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" id="observadas">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+                filter_list
+              </i>
+              <select class="form-control select-filtro">
+                <option>Todos</option>
+                <option>Hace un mes</option>
+              </select>
+            </div>
+            
+            <div class="d-flex align-items-center ml-auto">
+              <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
+              <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+            </div>
+
+          </div>
+          <table class="table mt-3">
+            <thead class="text-danger">
+              <th>Código de Alumno</th>
+              <th>Nombre del Postulante</th>
+              <th style="text-align: center;">Acción</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>90231231</td>
+                <td>Alvaron</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Validar</button></td>
+    
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" id="validadas">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+                filter_list
+              </i>
+              <select class="form-control select-filtro">
+                <option>Todos</option>
+                <option>Hace un mes</option>
+              </select>
+            </div>
+            
+            <div class="d-flex align-items-center ml-auto">
+              <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
+              <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+            </div>
+
+          </div>
+          <table class="table mt-3">
+            <thead class="text-danger">
+              <th>Código de Alumno</th>
+              <th>Nombre del Postulante</th>
+              <th style="text-align: center;">Acción</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>90231231</td>
+                <td>Quinteros</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
+                  data-target="#validarSolicitudPendiente" (click)="EsParaValidar(false)">Ver</button></td>
+    
+              </tr>
+              <tr>
+                <td>90231231</td>
+                <td>Poma</td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Ver</button></td>
+    
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-    <div class="col-5">
-      <div class="col-4">
-        <p class="title">PREVISUALIZACIÓN DE LA SOLICITUD</p>
-      </div>
-      <div class="visualizar" style="background-color: azure;">
-        <div>
-          <img
-            src="https://www.viafirma.com/blog-xnoccio/wp-content/uploads/sites/3/2021/08/Auditori%CC%81a-de-firma.png"
-            width="70%" alt="">
-        </div>
-      </div>
-      <div class="d-flex">
-        <button type="button" class="btn btn-outline-danger">&#20034;</button>
-        <button type="button" class="btn btn-outline-success ms-auto">&#10004;</button>
-      </div>
-    </div>
   </div>
-
 </div>
+
+<app-validar-solicitud-pendiente [ParaValidar]="validator"></app-validar-solicitud-pendiente>

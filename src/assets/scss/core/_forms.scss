@@ -218,6 +218,7 @@ form {
 // default floating size/location without a form-group (will skip form-group styles, and just render default sizing variation) - IMPORTANT for non-form-group spacing such as radio/checkbox/switch
 @include bmd-form-size-variant($font-size-base, $bmd-label-top-margin-base, $input-padding-y, $bmd-form-line-height);
 
+/*
 select {
   &,
   &.form-control{
@@ -226,6 +227,7 @@ select {
     -webkit-appearance: none;
   }
 }
+*/
 
 // Input files - hide actual input - requires specific markup in the sample.
 //.bmd-form-group input[type=file] {

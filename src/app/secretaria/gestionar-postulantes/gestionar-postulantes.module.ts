@@ -4,7 +4,12 @@ import {MatSelect, MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { GestionarPostulantesComponent } from './gestionar-postulantes.component';
 import { ModalsModule } from '../modals/modals.module';
-import { MatOptionModule } from '@angular/material/core';
+import { MatOptionModule, MatRippleModule } from '@angular/material/core';
+import { MatTooltipModule, _MatTooltipBase } from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,10 +21,16 @@ import { MatOptionModule } from '@angular/material/core';
   imports: [
     CommonModule,
     ModalsModule,
-    MatSelectModule,
+    FormsModule,
+    BrowserAnimationsModule,
     MatSelectModule,
     MatOptionModule,
-    MatFormFieldModule
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatRippleModule,
+    MatInputModule,
+    MatTooltipModule,
   ],
   exports: [
     GestionarPostulantesComponent

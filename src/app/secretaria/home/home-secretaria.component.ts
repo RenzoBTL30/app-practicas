@@ -9,7 +9,8 @@ export class HomeSecretariaComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+      
   }
 
 }

@@ -1,95 +1,66 @@
-<div class="card">
-  <div class="card-header card-header-info d-inline-flex align-items-center">
-    <h4 class="card-title">Lista de Postulantes</h4>
-    <button mat-raised-button class="btn btn-success ml-auto d-inline-flex align-items-center"><span class="material-icons-outlined mb-2 mx-3">
-      person_add_alt</span>Añadir Participante</button>
-  </div>
-  <div class="card-content table-responsive table-full-width">
-    <div class="row mb-4 mt-4 mx-4">
-        <div class="col-4 d-inline-flex">
-          <span class="material-icons-outlined mt-1 mx-3 btn-filtro">
-            filter_list
-            </span>    
-          <select class="form-control" id="select-filtro">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+  <div class="col-lg-12 col-md-12">
+    <div class="card">
+        <div class="card-header d-inline-flex align-items-center card-header-primary">
+          <h4 class="card-title">Lista de Postulantes</h4>
+          <button mat-raised-button class="btn btn-success d-inline-flex align-items-center ml-auto" data-toggle="modal"
+            data-target="#añadirPostulante">
+            <i class="material-icons-outlined mr-2">
+            person_add_alt</i>Añadir Postulante
+          </button>
         </div>
-        <div class="col-3"></div>
-      <div class="col-5 d-inline-flex align-items-center">
-          <input type="text" value="" placeholder="Regular" class="form-control" />
-          <button type="button" class="btn btn-primary btn-buscar">Primary</button>
+        <div class="card-body table-responsive pt-4">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+                filter_list
+              </i>
+              <select class="form-control select-filtro">
+                <option>Todos</option>
+                <option>Hace un mes</option>
+              </select>
+            </div>
+            
+            <div class="d-flex align-items-center ml-auto">
+              <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
+              <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+            </div>
+  
+          </div>
+          <table class="table mt-3">
+            <thead class="text-danger">
+              <th>Código de Alumno</th>
+              <th>Nombre del Postulante</th>
+              <th style="text-align: center;">Acción</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>90231231</td>
+                <td>Pomajulca</td>
+                <td style="text-align: center;">
+                  <i class="material-icons-outlined icon-edit">edit</i>
+                  <i class="material-icons-outlined ml-4 icon-delete">delete</i>
+                </td>
+              </tr>
+              <tr>
+                <td>90231231</td>
+                <td>Brickkk</td>
+                <td style="text-align: center;">
+                  <i class="material-icons-outlined icon-edit">edit</i>
+                  <i class="material-icons-outlined ml-4 icon-delete">delete</i>
+                </td>  
+              </tr>
+              <tr>
+                <td>90231231</td>
+                <td>Jorgito Quispe Sumire</td>
+                <td style="text-align: center;">
+                  <i class="material-icons-outlined icon-edit">edit</i>
+                  <i class="material-icons-outlined ml-4 icon-delete">delete</i>
+                </td>  
+              </tr>
+            </tbody>
+          </table>
+        </div>
     </div>
-  <table class="table">
-    <thead class="text-danger">
-      <th>Código</th>
-      <th>Nombre del Postulante</th>
-      <th colspan="2" style="text-align: center;">Acción</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Dakota Rice</td>
-        <td>Niger</td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          edit
-          </span></td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          delete_forever
-          </span></td>
-      </tr>
-      <tr>
-        <td>Minerva Hooper</td>
-        <td>Curaçao</td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          edit
-          </span></td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          delete_forever
-          </span></td>
-      </tr>
-      <tr>
-        <td>Sage Rodriguez</td>
-        <td>Netherlands</td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          edit
-          </span></td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          delete_forever
-          </span></td>
-      </tr>
-      <tr>
-        <td>Philip Chaney</td>
-        <td>Korea, South</td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          edit
-          </span></td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          delete_forever
-          </span></td>
-      </tr>
-      <tr>
-        <td>Doris Greene</td>
-        <td>Malawi</td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          edit
-          </span></td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          delete_forever
-          </span></td>
-      </tr>
-      <tr>
-        <td>Mason Porter</td>
-        <td>Chile</td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          edit
-          </span></td>
-        <td style="text-align: center;"><span class="material-icons-outlined">
-          delete_forever
-          </span></td>
-      </tr>
-    </tbody>
-  </table>
 </div>
+
+<app-agregar-postulante></app-agregar-postulante>

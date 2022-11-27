@@ -1,65 +1,133 @@
-.todo {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 3rem;
-    margin-right: 3rem;
-    margin-top: 3rem;;
-    background-color: rgb(190, 190, 190);
+a:link, a:visited, a:active{
+    text-decoration: none; color: black; text-align: center;
+}
+
+.icon-return{
+    font-size: 18px;
+}
+
+.title{
+    font-size: 15px;
+    font-weight: 400;
 }
 
 
-#cuerpo {
-    margin-top: 6rem;
-    /* margin-left: 1rem;
-    margin-right: 1rem; */
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    
+.icon-filtro{
+    border-radius: 50%;
+    padding: 2px;
+    border: 1px black solid;
 }
 
-#centro {
-    display: flex;
-    justify-content: center;
+.btn-buscar{
+    box-shadow: 0;
 }
 
-#sec {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #E8E8E8;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    padding-top: 1.2rem;
-    border-radius: 0.3rem;
+.card .card-body{
+    padding: 0.9575rem 20px;
 }
 
-.casilla {
-    min-width: 14rem;
+.card [class*=card-header-]:not(.card-header-icon):not(.card-header-text):not(.card-header-image){
+    padding: 20px;
 }
 
-@media (max-width: 575px) {
-    .casilla {
-        min-width: 100%;
-    }
+.card .card-header-primary:not(.card-header-icon):not(.card-header-text){
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 34%);
 }
 
-.botones {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+.nav-tabs{
+    display: table;
+    width: 100%;
 }
 
-.right {
-    display: flex;
-    gap: 1rem;
+.nav-tabs .nav-item{
+    display: table-cell;
+    white-space: nowrap;
 }
 
-#fondo-boton {
-    background-color: #0167A7;
+.nav-tabs-wrapper .nav-item a{
+    color: #464646;
+}
+
+.nav-tabs-wrapper a{
+    color: #464646;
+    background-color: #9C9C9C;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.nav-tabs .nav-item .nav-link.active{
+    color: white;
+    background-color: #014776;
+}
+
+.nav-tabs[_ngcontent-sbl-c99] .nav-item[_ngcontent-sbl-c99] .nav-link.active[_ngcontent-sbl-c99]{
+    color: white;
+}
+
+.select-practicas{
+    width: 15em;
+    border: 1px black solid;
+    background-color: #dadada;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.card-title{
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.mat-raised-button.btn, .mat-raised-button.btn:not([class*=mat-elevation-z]), .btn{
+    padding: 8px 13px;
+}
+
+.btn-descargar{
+    background-color: #ffffff;
+    color: black;
+}
+
+.icon-download{
+    border-radius: 50%;
+    padding: 4px;
+    border: 1px;
+    color: white;
+    background-color: #014776;
+}
+
+.title-section{
+    font-weight: 500;
+    color: black;
+}
+
+.btn-subir{
+    background-color: #ffffff;
+    padding: 0;
+    color: black;
+}
+
+.detalle-btn{
+    padding: 8px 16px;
+    margin: 0;
+    color: black;
+}
+
+.file-upload[type="file"]{
+    display: none;
+}
+
+.icon-upload{
+    color: #014776;
+}
+
+.card-body .btn-registrar{
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 13px;
+}
+
+.card-body .btn-subir{
+    padding: 0;
+    color: black;
 }

@@ -1,1 +1,117 @@
-<p>agregar-carta-presentacion works!</p>
+<div class="col-lg-12 col-md-12">
+    <div class="card">
+      <div class="card-header card-header-tabs card-header-primary">
+        <div class="nav-tabs-navigation">
+          <div class="nav-tabs-wrapper">
+            <ul class="nav nav-tabs" data-tabs="tabs">
+              <li class="nav-item">
+                  <a class="nav-link active" href="#pendientes" data-toggle="tab">
+                      Solicitudes Pendientes de Carta Presentación
+                      <div class="ripple-container"></div>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#listas" data-toggle="tab">
+                    Solicitudes ya con Carta Presentación
+                      <div class="ripple-container"></div>
+                  </a>
+              </li>
+          </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card-body pt-4">
+        <div class="tab-content">
+          <div class="tab-pane active" id="pendientes">
+            <div class="d-flex align-items-center">
+              <div class="d-flex align-items-center">
+                <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+                  filter_list
+                </i>
+                <select class="form-control select-filtro">
+                  <option>Todos</option>
+                  <option>Hace un mes</option>
+                </select>
+              </div>
+              
+              <div class="d-flex align-items-center ml-auto">
+                <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
+                <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+              </div>
+  
+            </div>
+            <table class="table mt-3">
+              <thead class="text-danger">
+                <th>Código de Alumno</th>
+                <th>Nombre del Postulante</th>
+                <th style="text-align: center;">Acción</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>90231231</td>
+                  <td>Pomajulca</td>
+                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
+                    data-target="#agregarCartaPresentacion">Agregar Carta Presentación</button></td>
+  
+                </tr>
+                <tr>
+                  <td>90231231</td>
+                  <td>Brickkk</td>
+                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Agregar Carta Presentación</button></td>
+      
+                </tr>
+                <tr>
+                  <td>90231231</td>
+                  <td>Jorgito Quispe Sumire</td>
+                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Agregar Carta Presentación</button></td>
+      
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane" id="listas">
+            <div class="d-flex align-items-center">
+              <div class="d-flex align-items-center">
+                <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+                  filter_list
+                </i>
+                <select class="form-control select-filtro">
+                  <option>Todos</option>
+                  <option>Hace un mes</option>
+                </select>
+              </div>
+              
+              <div class="d-flex align-items-center ml-auto">
+                <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
+                <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+              </div>
+  
+            </div>
+            <table class="table mt-3">
+              <thead class="text-danger">
+                <th>Código de Alumno</th>
+                <th>Nombre del Postulante</th>
+                <th style="text-align: center;">Acción</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>90231231</td>
+                  <td>Alvaron</td>
+                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Ver Solicitud</button></td>
+      
+                </tr>
+                <tr>
+                    <td>90231231</td>
+                    <td>Benja</td>
+                    <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Ver Solicitud</button></td>
+        
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<app-agregar-carta-presentacion-modal></app-agregar-carta-presentacion-modal>

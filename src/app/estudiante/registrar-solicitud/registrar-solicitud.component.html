@@ -1,86 +1,106 @@
-<app-header></app-header>
 
-<div class="d-flex espacio-trabajo">
-    <app-sidebar></app-sidebar>
 
-    <div class="flex-grow-1">
-        <div id="espacio-principal">
-            
-            <div class="container space-options">
+<div class="d-flex w-100">
+    <a href="" [routerLink]="['/estudiante/pages/mis-solicitudes']">
+        <div class="d-inline-flex align-items-center mt-3 gap-3">
+            <span class="material-icons-outlined icon-return mr-2">
+                arrow_back
+            </span>
+            <span class="title">Volver</span>
+        </div>
+    </a>
+    <button type="button" mat-raised-button class="btn btn-white btn-subir ml-auto mr-3" style="text-transform: none; color: black;">
+        <i class="material-icons-outlined icon-upload mr-2">
+            file_download
+        </i>
+        Descargar solicitud
+    </button>
+</div>
 
-                <div class="todo">
-                    <div id="cuerpo">
-                        <div class="mb-4 row">
-                            <div class="col-6">
-                                <label class="form-label">TIPO DE CONTRIBUYENTE</label>
-                                <select name="idtipopersona" class="form-select" aria-label="Default select example">
-                                    <option>Seleccionar tipo practica</option>
+
+<div class="col-lg-12 col-md-12">
+    <div class="card">
+        <div class="card-header d-inline-flex align-items-center card-header-primary">
+            <h4 class="card-title">Registrar Solicitud de Prácticas</h4>
+        </div>
+        <div class="card-body table-responsive pt-4">
+            <form action="">
+                <div class="row">
+                    <div class="col-4">
+                        <p class="title-section">NUTRICIONISTA SUPERVISOR</p>
+                        <input type="text" class="form-control mb-3" id="" placeholder="Nombres Completos">
+                        <input type="email" class="form-control mb-3" id="" placeholder="Correo Electrónico">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Teléfono">
+                    </div>
+                    <div class="col-4">
+                        <p class="title-section">REMITENTE</p>
+                        <input type="text" class="form-control mb-3" id="" placeholder="Nombres Completos">
+                        <input type="email" class="form-control mb-3" id="" placeholder="Cargo">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Correo Electrónico">
+                    </div>
+                    <div class="col-4">
+                        <p class="title-section">DATOS DEL CENTRO</p>
+                        <input type="text" class="form-control mb-3" id="" placeholder="Nombre del Centro">
+                        <input type="email" class="form-control mb-3" id="" placeholder="Correo Electrónico">
+                        <div class="d-inline-flex mb-3">
+                            <input type="text" style="width: 60%;" class="form-control mr-4" id=""
+                                placeholder="Teléfono">
+                            <input type="text" class="form-control" id="" placeholder="Dirección">
+                        </div>
+                        <input type="text" class="form-control mb-3" id="" placeholder="Departamento">
+                    </div>
+
+                    <div class="col-12 mt-4">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="title-section" for="fecha-inicio">Fecha inicio:</label>
+                                <input type="date" class="form-control" id="fecha-inicio" placeholder="Fecha inicio">
+                            </div>
+    
+                            <div class="col-3 px-md-4">
+                                <label class="title-section" for="fecha-fin">Fecha fin:</label>
+                                <input type="date" class="form-control" id="fecha-fin" placeholder="Fecha fin">
+                            </div>
+    
+                            <div class="col-3 px-md-4 d-flex align-items-center">
+                                <select class="form-control select-practicas">
+                                    <option ></option>
+                                    <option>Prácticas Clínicas</option>
+                                    <option>Prácticas Comunitarias</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="mb-4 row">
-                            <div class="col-6">
-                                <label class="form-label">DATOS PERSONALES DEL SUPERVISOR</label>
-                                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Nombres y Apellidos">
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">.</label>
-                                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Correo Electronico">
-                            </div>
-                        </div>
-                        <div class="mb-4 row">
-                            <div class="col-auto">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="PLAN DE ACTIVIDADES">
-                          </div>
-                          <div class="col-auto">
-                            <input type="date" class="form-control" id="inputPassword2" placeholder="FECHA INICIO">
-                          </div>
-                          <div class="col-auto">
-                            <input type="date" class="form-control" id="inputPassword2" placeholder="FECHA FIN">
-                          </div>
-                        </div>
-                        <div class="mb-4 row">
-                            <div class="col-auto">
-                                <label
-                                class="btn btn-success rounded-pill mb-4"
-                                type="button"
-                                style="font-size: 12px; background-color:aliceblue; color: black"
-                                for="inputGroupFile02"
-                            >
-                                SUBIR
-                            </label>
-                            <input
-                                type="file"
-                                class="form-control"
-                                id="inputGroupFile02"
-                                hidden
-                            />
-                        </div>
-                        
-                        <div class="mb-4 row">
-                            <div class="col-6">
-                                <label class="form-label">DATOS DEL CENTRO DE PRACTICAS</label>
-                                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Nombre de la Institución">
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">.</label>
-                                <input name="nombre" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Dirección">
-                            </div>
-                        </div>
-                
-                        <div class="botones">
-                            <div class="right">
-                                <div type="button" class="btn btn-primary">GUARDAR</div>
-                            </div>
-                        </div>
-                
                     </div>
-                </div>  
-            </div>
 
+                    <div class="col-12 mt-5">
+                        <div class="row">
+                            <div class="col-5">
+                                <label class="title-section" for="fecha-inicio">Descripción de actividades:</label>
+                                <p>Describir actividades</p>
+
+                                <button type="button" mat-raised-button class="btn btn-white btn-subir ml-auto mr-3"
+                                    style="text-transform: none;">
+                                    <label class="detalle-btn d-inline-flex align-items-center" for="file-upload" style="cursor: pointer;">
+                                        <i class="material-icons-outlined icon-upload mr-2">
+                                            file_upload
+                                        </i>
+                                        Subir archivo
+                                    </label>
+                                    
+                                </button>
+                                <input id="file-upload" type="file" hidden/>
+                            </div>
+                            
+                            <div class="col-12 d-flex flex-row-reverse">
+                                <button mat-raised-button type="button" class="btn btn-info btn-registrar">REGISTRAR</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </form>
         </div>
-
-
     </div>
-
 </div>

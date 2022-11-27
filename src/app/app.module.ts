@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RevisarSolicitudesModule } from './estudiante/revisar-solicitudes/revisar-solicitudes.module';
-import { RegistrarSolicitudModule } from './estudiante/registrar-solicitud/registrar-solicitud.module';
-import { ValidarSolicitudModule } from './secretaria/validar-solicitud/validar-solicitud.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeSecretariaModule } from './secretaria/home/home-secretaria.module';
+import { ModalsModule } from './secretaria/modals/modals.module';
+import { CountUpModule } from 'ngx-countup';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -16,10 +16,10 @@ import { HomeSecretariaModule } from './secretaria/home/home-secretaria.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    RevisarSolicitudesModule,
-    RegistrarSolicitudModule,
-    ValidarSolicitudModule,
-    HomeSecretariaModule
+    CountUpModule,
+    MatFormFieldModule,
+    MatTableModule,
+    ModalsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

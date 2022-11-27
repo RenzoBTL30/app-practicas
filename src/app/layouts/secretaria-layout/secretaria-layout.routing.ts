@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule, Routes } from '@angular/router';
 import { AgregarCartaPresentacionComponent } from 'src/app/secretaria/agregar-carta-presentacion/agregar-carta-presentacion.component';
 import { GestionarPostulantesComponent } from 'src/app/secretaria/gestionar-postulantes/gestionar-postulantes.component';
 import { HomeSecretariaComponent } from 'src/app/secretaria/home/home-secretaria.component';
+import { ModalsModule } from 'src/app/secretaria/modals/modals.module';
 import { ValidarSolicitudComponent } from 'src/app/secretaria/validar-solicitud/validar-solicitud.component';
 
 const routes: Routes = [
@@ -13,7 +15,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes),
+    ModalsModule
+  ],
   exports: [RouterModule]
 })
 export class SecretariaLayoutRoutingModule { }

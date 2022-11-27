@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+declare var $:any;
 
 @Component({
   selector: 'app-validar-solicitud-pendiente',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ValidarSolicitudPendienteComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild("close_modal1") close_modal1?:ElementRef
+  @ViewChild("close_modal2") close_modal2?:ElementRef
+
+  @Input() ParaValidar?: boolean;
+
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    
   }
+  
+
+  ocultarModal1(){
+    $('#validarSolicitudPendiente').modal('hide');
+  }
+
+  backToModal1(){
+    this.close_modal2?.nativeElement.click();
+    $('#validarSolicitudPendiente').modal('show');
+  }
+
+  
 
 }

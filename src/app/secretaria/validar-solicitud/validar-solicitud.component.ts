@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ValidarSolicitudComponent implements OnInit {
 
+  validator?:boolean;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  EsParaValidar(validator:boolean){
+    this.validator = validator;
   }
 
 }

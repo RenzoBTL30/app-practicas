@@ -3,11 +3,11 @@ a:link, a:visited, a:active{
 }
 
 .icon-return{
-    font-size: 28px;
+    font-size: 18px;
 }
 
 .title{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 400;
 }
 
@@ -130,4 +130,25 @@ a:link, a:visited, a:active{
 .card-body .btn-subir{
     padding: 0;
     color: black;
+}
+
+.icon-filtro{
+    border-radius: 50%;
+    padding: 2px;
+    border: 1px black solid;
+}
+.select-filtro{
+    width: 13em;
+    border: 1px black solid;
+    background-color: #dadada;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.btn-info{
+    text-transform: none;
+}
+
+.icono-view{
+    color: #014776;
 }

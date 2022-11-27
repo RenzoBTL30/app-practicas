@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+declare var $:any;
 
 @Component({
   selector: 'app-agregar-postulante',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarPostulanteComponent implements OnInit {
 
+  selectValor:any;
+  @ViewChild('tipoDoc') tipoDoc?:ElementRef;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  showDNIorCarnet(){
+    this.selectValor = this.tipoDoc?.nativeElement.value;
+  }
+
+
 
 }

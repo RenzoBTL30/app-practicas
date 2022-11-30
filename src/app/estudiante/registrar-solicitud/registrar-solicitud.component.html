@@ -28,29 +28,67 @@
                 <div class="row">
                     <div class="col-4">
                         <p class="title-section">NUTRICIONISTA SUPERVISOR</p>
-                        <input type="text" class="form-control mb-3" id="" placeholder="Nombres Completos">
-                        <input type="email" class="form-control mb-3" id="" placeholder="Correo Electrónico">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Teléfono">
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="text" placeholder="Nombres Completos">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="email" placeholder="Correo Electrónico">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="text" placeholder="Teléfono">
+                        </mat-form-field>
+
+
+                        <!--
+                            <input type="text" class="form-control mb-3" id="" placeholder="Nombres Completos">
+                            <input type="email" class="form-control mb-3" id="" placeholder="Correo Electrónico">
+                            <input type="text" class="form-control mb-3" id="" placeholder="Teléfono">
+                        -->
+                        
                     </div>
                     <div class="col-4">
                         <p class="title-section">REMITENTE</p>
-                        <input type="text" class="form-control mb-3" id="" placeholder="Nombres Completos">
-                        <input type="email" class="form-control mb-3" id="" placeholder="Cargo">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Correo Electrónico">
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="text" placeholder="Nombres Completos">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="text" placeholder="Cargo">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="email" placeholder="Correo Electrónico">
+                        </mat-form-field>
+
+                        <!--
+                            ---- Inputs de Bootstrap ----
+                            <input type="text" class="form-control mb-3" id="" placeholder="Nombres Completos">
+                            <input type="email" class="form-control mb-3" id="" placeholder="Cargo">
+                            <input type="text" class="form-control mb-3" id="" placeholder="Correo Electrónico">
+                        -->
+                        
                     </div>
                     <div class="col-4">
                         <p class="title-section">DATOS DEL CENTRO</p>
-                        <input type="text" class="form-control mb-3" id="" placeholder="Nombre del Centro">
-                        <input type="email" class="form-control mb-3" id="" placeholder="Correo Electrónico">
-                        <div class="d-inline-flex mb-3">
-                            <input type="text" style="width: 60%;" class="form-control mr-4" id=""
-                                placeholder="Teléfono">
-                            <input type="text" class="form-control" id="" placeholder="Dirección">
+
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="text" placeholder="Nombres del Centro">
+                        </mat-form-field>
+
+
+                        <div class="d-flex">
+                            <mat-form-field style="width: 45%;" class="example-full-width mr-4">
+                                <input matInput type="text" placeholder="Distrito">
+                            </mat-form-field>
+                            <mat-form-field style="width: 45%;" class="example-full-width">
+                                <input matInput type="text" placeholder="Provincia">
+                            </mat-form-field>
                         </div>
-                        <input type="text" class="form-control mb-3" id="" placeholder="Departamento">
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="text" placeholder="Departamento">
+                        </mat-form-field>
+                        
                     </div>
 
-                    <div class="col-12 mt-4">
+                    <div class="col-12 mt-5">
                         <div class="row">
                             <div class="col-3">
                                 <label class="title-section" for="fecha-inicio">Fecha inicio:</label>
@@ -64,7 +102,7 @@
     
                             <div class="col-3 px-md-4 d-flex align-items-center">
                                 <select class="form-control select-practicas">
-                                    <option ></option>
+                                    <option >--- Seleccione el tipo de prácticas ---</option>
                                     <option>Prácticas Clínicas</option>
                                     <option>Prácticas Comunitarias</option>
                                 </select>

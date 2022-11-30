@@ -18,8 +18,7 @@ import { MatOptionModule } from '@angular/material/core';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatOptionModule,
-    ModalsModule
+    MatOptionModule
   ],
   exports: [
     AgregarCartaPresentacionComponent

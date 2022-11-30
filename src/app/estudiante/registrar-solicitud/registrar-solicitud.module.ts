@@ -4,6 +4,8 @@ import { ElementosModule } from 'src/app/elementos/elementos.module';
 import { RegistrarSolicitudComponent } from './registrar-solicitud.component';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -15,7 +17,9 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     ElementosModule,
     RouterModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     RegistrarSolicitudComponent

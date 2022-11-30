@@ -5,6 +5,8 @@ import { EditarPostulanteComponent } from './editar-postulante/editar-postulante
 import { ValidarSolicitudPendienteComponent } from './validar-solicitud-pendiente/validar-solicitud-pendiente.component';
 import { MatButtonModule } from '@angular/material/button';
 import { AgregarCartaPresentacionModalComponent } from './agregar-carta-presentacion-modal/agregar-carta-presentacion-modal.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { AgregarCartaPresentacionModalComponent } from './agregar-carta-presenta
   ],
   imports: [
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
     
   ],
   exports: [

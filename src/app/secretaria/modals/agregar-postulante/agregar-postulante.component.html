@@ -22,15 +22,28 @@
                                 <option value="2">Carnet de extranjería</option>
                             </select>
                         </div>
-                        <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-center" style="position: relative;">
+
+                        <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-center">
+                            <mat-form-field class="example-full-width" id="nroDoc" style="position: relative;">
+                                <input matInput type="text" placeholder="DNI">
+                            </mat-form-field>
+                        </div>
+                        
+
+                        <!--
+                            <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-center" style="position: relative;">
                             <input type="text" class="form-control" id="nroDoc" placeholder="DNI">
-                        </div>
-                        <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-start" style="position: relative;">
-                            <button style="display: block;" type="button" mat-raised-button id="btn-buscar" class="btn btn-info" >Buscar</button>
-                        </div>
-                        <div *ngIf="selectValor == 2" class="col-3 d-flex justify-content-center" style="position: relative;">
-                            <input type="text" class="form-control" id="nroDoc" placeholder="Carnet de extranjería">
-                        </div>
+                            </div>
+                            <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-start" style="position: relative;">
+                                <button style="display: block;" type="button" mat-raised-button id="btn-buscar" class="btn btn-info" >Buscar</button>
+                            </div>
+                            <div *ngIf="selectValor == 2" class="col-3 d-flex justify-content-center" style="position: relative;">
+                                <input type="text" class="form-control" id="nroDoc" placeholder="Carnet de extranjería">
+                            </div>
+                        -->
+                        
+
+
                     </div>
 
                     <div class="mb-5">

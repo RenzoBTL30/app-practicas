@@ -2,7 +2,8 @@
   <div class="card">
       <div class="card-header d-inline-flex align-items-center card-header-primary">
         <h4 class="card-title">Lista de Supervisores</h4>
-        <button mat-raised-button class="btn btn-success d-inline-flex align-items-center ml-auto">
+        <button mat-raised-button class="btn btn-success d-inline-flex align-items-center ml-auto" data-toggle="modal"
+        data-target="#registrarSupervisor">
           <i class="material-icons-outlined mr-2">
           person_add_alt</i>Registrar Supervisor
         </button>
@@ -77,3 +78,5 @@
       </div>
   </div>
 </div>
+
+<app-registrar-supervisor-modal></app-registrar-supervisor-modal>

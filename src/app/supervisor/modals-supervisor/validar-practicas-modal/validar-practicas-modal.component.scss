@@ -1,0 +1,50 @@
+.icon-cancel{
+    font-size: 30px;
+}
+
+.section-title{
+    background-color: #014776;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 35px;
+    p {
+        margin: 0;
+    }
+}
+
+.modal-body .section-title:first-child{
+    margin-top: 10px;
+}
+
+.section{
+    margin-top: 18px;
+}
+
+.label{
+    color: #014776;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+
+.modal-content{
+    padding: 15px;
+}
+
+.botones{
+    width: 100%;
+    gap: 10px;
+}
+
+.title-validar-nro-practicas{
+    font-weight: 500;
+    color: black;
+}
+
+.input-nros{
+    background-color: #dadada;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}

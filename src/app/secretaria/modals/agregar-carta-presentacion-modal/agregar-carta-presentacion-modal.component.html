@@ -108,10 +108,24 @@
                     </div>
                 </div>
                 <div class="botones d-inline-flex justify-content-end mt-5">
-                    <button mat-raised-button type="button" class="btn btn-warning">AÑADIR GUÍA DE PRÁCTICAS</button>
-                    <button mat-raised-button type="button" class="btn btn-warning">AÑADIR CARTA PRESENTACIÓN</button>
-                    <button mat-raised-button type="button" class="btn btn-success">ENVIAR</button>
+                    <button mat-raised-button type="button" class="btn btn-warning p-0">
+                        <label class="detalle-btn d-inline-flex align-items-center h-100" for="file-upload-guia">
+                            AÑADIR GUÍA DE PRÁCTICAS
+                        </label>
+                    </button>
+
+                    <button mat-raised-button type="button" class="btn btn-warning p-0">
+                        <label class="detalle-btn d-inline-flex align-items-center h-100" for="file-upload-carta">
+                            AÑADIR CARTA PRESENTACIÓN
+                        </label>
+                    </button>
+
+                    <button mat-raised-button type="button" id="btnEnviar" class="btn btn-success" disabled>ENVIAR</button>
                 </div>
+
+                <!--Cada vez que haya un cambio en el input, se ejecutara la funcion puesta en el (change)-->
+                <input (change)="archivosListosParaSubir()" id="file-upload-guia" type="file" hidden/>
+                <input (change)="archivosListosParaSubir()" id="file-upload-carta" type="file" hidden/>
             </div>
         </div>
         <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal1></button>

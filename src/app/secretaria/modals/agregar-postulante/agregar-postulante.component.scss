@@ -8,10 +8,12 @@
 
 .lbl-tipoDoc{
     color: black;
+    font-size: 15px;
 }
 
 .lbl-nom{
     color: black;
+    font-size: 15px;
 }
 
 .input-nom{
@@ -51,13 +53,12 @@ form{
     font-size: 17px;
 }
 
-#nroDoc{
+.nroDoc{
     position: absolute;
-    bottom: 0px
+    bottom: -13px;
 }
 
 #btn-buscar{
     position: absolute;
     bottom: 0px;
-    margin-bottom: 0;
 }

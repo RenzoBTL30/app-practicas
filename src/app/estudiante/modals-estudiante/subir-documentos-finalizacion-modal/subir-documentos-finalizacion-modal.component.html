@@ -1,1 +1,44 @@
-<p>subir-documentos-finalizacion-modal works!</p>
+<div class="modal fade" id="subirDocPracticas" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header p-1 justify-content-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="material-icons-outlined icon-cancel">
+                        cancel
+                    </i>
+                </button>
+            </div>
+            <div class="modal-body text">
+                <div class="section-title">
+                    <p>SUBIR DOCUMENTOS DE FINALIZACIÓN DE PRÁCTICAS</p>
+                </div>
+                <div class="row section">
+                    <div class="col-12">
+                        <button mat-raised-button class="btn btn-white w-100">
+                            <label class="detalle-btn d-flex align-items-center" for="file-upload-informe">
+                                    Informes
+                                    <i class="material-icons-outlined icon-upload ml-auto">
+                                        upload
+                                    </i>
+                            </label>
+                        </button>
+                        <input id="file-upload-informe" type="file" hidden/>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <button mat-raised-button class="btn btn-white w-100">
+                            <label class="detalle-btn d-flex align-items-center" for="file-upload-constancia">
+                                    Constancia de horas
+                                    <i class="material-icons-outlined icon-upload ml-auto">
+                                        upload
+                                    </i>
+                            </label>
+                        </button>
+                        <input id="file-upload-constancia" type="file" hidden/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal1></button>
+    </div>
+</div>

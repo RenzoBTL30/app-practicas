@@ -24,11 +24,18 @@
                         </div>
 
                         <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-center">
-                            <mat-form-field class="example-full-width" id="nroDoc" style="position: relative;">
+                            <mat-form-field class="example-full-width nroDoc" style="position: relative;">
                                 <input matInput type="text" placeholder="DNI">
                             </mat-form-field>
                         </div>
-                        
+                        <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-start ml-4" style="position: relative;">
+                            <button style="display: block;" type="button" mat-raised-button id="btn-buscar" class="btn btn-info" >Buscar</button>
+                        </div>
+                        <div *ngIf="selectValor == 2" class="col-3 d-flex justify-content-center">
+                            <mat-form-field class="example-full-width nroDoc" style="position: relative;">
+                                <input matInput type="text" placeholder="Carnet de extranjería">
+                            </mat-form-field>
+                        </div>
 
                         <!--
                             <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-center" style="position: relative;">
@@ -51,12 +58,16 @@
                         <input type="text" class="form-control input-nom" style="width: 60%;" id="">
                     </div>
 
-                    <div class="mb-4">
-                        <input type="text" class="form-control" style="width: 60%;" id="" placeholder="Código de Estudiante">
+                    <div class="mb-3">
+                        <mat-form-field class="example-full-width" style="width: 60%;">
+                            <input matInput type="text" placeholder="Código de Estudiante">
+                        </mat-form-field>
                     </div>
 
-                    <div class="mb-4">
-                        <input type="email" class="form-control" style="width: 60%;" id="" placeholder="Correo Electrónico">
+                    <div class="mb-3">
+                        <mat-form-field class="example-full-width" style="width: 60%;">
+                            <input matInput type="email" placeholder="Correo Electrónico">
+                        </mat-form-field>
                     </div>   
 
                     <div class="mt-5 mb-4">

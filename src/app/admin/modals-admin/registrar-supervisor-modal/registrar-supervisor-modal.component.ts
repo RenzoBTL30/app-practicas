@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-registrar-supervisor-modal',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarSupervisorModalComponent implements OnInit {
 
+  selectValor:any;
+  @ViewChild('tipoDoc') tipoDoc?:ElementRef;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showDNIorCarnet(){
+    this.selectValor = this.tipoDoc?.nativeElement.value;
   }
 
 }

@@ -1,1 +1,134 @@
-<p>detalle-solicitud-modal works!</p>
+<div class="modal fade" id="detalleSolicitud" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header p-1 justify-content-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="material-icons-outlined icon-cancel">
+                        cancel
+                    </i>
+                </button>
+            </div>
+            <div class="modal-body text">
+                <div class="section-title">
+                    <p>DATOS DEL SOLICITANTE:</p>
+                </div>
+                <div class="row section">
+                    <div class="col-3">
+                        <p class="label">CÓDIGO</p>
+                        <p class="text">201911287</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="label">NOMBRES Y APELLIDOS</p>
+                        <p class="text">Alex Garviel Serrano Montoya</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="label">DNI</p>
+                        <p class="text">45989595</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="label">TIPO DE PRÁCTICA</p>
+                        <p class="text">PRÁCTICAS COMUNITARIAS</p>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <p>DATOS DEL NUTRICIONISTA:</p>
+                </div>
+                <div class="row section">
+                    <div class="col-4">
+                        <p class="label">NOMBRES Y APELLIDOS</p>
+                        <p class="text">Juan Antonio Juarez Mandala</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="label">DNI</p>
+                        <p class="text">45989595</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="label">CORREO ELECTRÓNICO</p>
+                        <p class="text">juanantjmandala@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <p>DATOS DEL DIRECTOR O ESPECIALISTA ENCARGADO:</p>
+                </div>
+                <div class="row section">
+                    <div class="col-4">
+                        <p class="label">NOMBRES Y APELLIDOS</p>
+                        <p class="text">Juan Antonio Flores Muñoz</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="label">DNI</p>
+                        <p class="text">45989595</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="label">CORREO ELECTRÓNICO</p>
+                        <p class="text">juanantjmandala@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <p>PLAN DE ACTIVIDADES:</p>
+                </div>
+                <div class="row section">
+                    <div class="col-3">
+                        <p class="label">FECHA INICIO</p>
+                        <p class="text">29-12-2022</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="label">FECHA FIN</p>
+                        <p class="text">23-04-2023</p>
+                    </div>
+                    <div class="col-4">
+                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
+                            <i class="material-icons-outlined mr-2">
+                            visibility</i>Ver descripción
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <p>DATOS DEL CENTRO DE PRÁCTICAS:</p>
+                </div>
+                <div class="row section">
+                    <div class="col-4">
+                        <p class="label">NOMBRE DE LA INSTITUCIÓN</p>
+                        <p class="text">Posta médica San Antonio</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="label">DIRECCIÓN</p>
+                        <p class="text">Av. Los Geranios 769</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="label">DISTRITO</p>
+                        <p class="text">Chosica</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="label">PROVINCIA</p>
+                        <p class="text">Lima</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="label">DEPARTAMENTO</p>
+                        <p class="text">Lima</p>
+                    </div>
+                    <div class="col-4">
+                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
+                            <i class="material-icons-outlined mr-2">
+                            visibility</i>Ver carta presentación
+                        </button>
+                    </div>
+                </div>
+                <div class="section-title">
+                    <p>OBSERVACIONES</p>
+                </div>
+                <div class="row section">
+                    <div class="col-12">
+                        <textarea name="texto" class="observaciones" cols="20" rows="5" disabled></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal1></button>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { EstadoSolicitudComponent } from './estado-solicitud.component';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { ModalsEstudianteModule } from '../modals-estudiante/modals-estudiante.module';
 
 
 
@@ -13,7 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     CommonModule,
     RouterModule,
-    MatButtonModule
+    MatButtonModule,
+    ModalsEstudianteModule
   ],
   exports: [
     EstadoSolicitudComponent

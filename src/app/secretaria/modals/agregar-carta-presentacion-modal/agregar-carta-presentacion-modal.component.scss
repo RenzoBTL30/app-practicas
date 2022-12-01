@@ -36,3 +36,23 @@
     width: 100%;
     gap: 10px;
 }
+
+.detalle-btn{
+    cursor: pointer;
+    padding: 8px 16px;
+    margin: 0;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+.botones .btn-success:disabled{
+    background-color: rgb(176, 175, 175);
+    cursor: default;
+}
+
+.botones .btn-success:disabled:hover{
+    background-color: rgb(176, 175, 175);
+}

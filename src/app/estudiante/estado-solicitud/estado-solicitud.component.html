@@ -30,11 +30,13 @@
                   <th>FECHA DE REGISTRO</th>
                   <th>ESTADO</th>
                   <th>TIPO DE PRÁCTICA</th>
+                  <th></th>
                 </thead>
                 <tbody>
                   <tr style="text-align: center;">
                     <td>
-                      <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
+                      <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"
+                      data-target="#detalleSolicitud">
                         <i class="material-icons-outlined mr-2">
                           visibility</i>
                           SOLICITUD: Prácticas y archivo subido
@@ -43,18 +45,7 @@
                     <td>12/06/2021</td>
                     <td>REGISTRADO</td>
                     <td>P. Comunitaria</td>
-                  </tr>
-                  <tr style="text-align: center;">
-                    <td>
-                      <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
-                        <i class="material-icons-outlined mr-2">
-                          visibility</i>
-                          SOLICITUD: Prácticas y archivo subido
-                        </button>
-                    </td>
-                    <td>12/06/2021</td>
-                    <td>REGISTRADO</td>
-                    <td>P. Comunitaria</td>
+                    <td></td>
                   </tr>
                   <tr style="text-align: center;">
                     <td>
@@ -67,6 +58,7 @@
                     <td>12/06/2021</td>
                     <td>REGISTRADO</td>
                     <td>P. Comunitaria</td>
+                    <td></td>
                   </tr>
                   <tr style="text-align: center;">
                     <td>
@@ -74,14 +66,36 @@
                         <i class="material-icons-outlined mr-2">
                           visibility</i>
                           SOLICITUD: Prácticas y archivo subido
-                        </button>
+                      </button>
                     </td>
                     <td>12/06/2021</td>
                     <td>REGISTRADO</td>
                     <td>P. Comunitaria</td>
+                    <td></td>
+                  </tr>
+                  <tr style="text-align: center;">
+                    <td>
+                      <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
+                        <i class="material-icons-outlined mr-2">
+                          visibility</i>
+                          SOLICITUD: Prácticas y archivo subido
+                      </button>
+                    </td>
+                    <td>12/06/2021</td>
+                    <td>REGISTRADO</td>
+                    <td>P. Comunitaria</td>
+                    <td>
+                      <i class="material-icons-outlined icon-upload" data-toggle="modal"
+                      data-target="#subirDocPracticas">
+                        file_upload
+                      </i>
+                    </td>
                   </tr>
                 </tbody>
               </table>
         </div>
     </div>
 </div>
+
+<app-detalle-solicitud-modal></app-detalle-solicitud-modal>
+<app-subir-documentos-finalizacion-modal></app-subir-documentos-finalizacion-modal>

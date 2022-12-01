@@ -30,12 +30,6 @@
                         <p class="label">TIPO DE PRÁCTICA</p>
                         <p class="text">PRÁCTICAS COMUNITARIAS</p>
                     </div>
-                    <div class="col-4">
-                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
-                            Ver documento solicitud<i class="material-icons-outlined ml-2">
-                                visibility</i>
-                        </button>
-                    </div>
                 </div>
 
                 <div class="section-title">
@@ -114,9 +108,9 @@
                     </div>
                 </div>
                 <div class="botones d-inline-flex justify-content-end mt-5">
-                    <button mat-raised-button type="button" class="btn btn-warning">AÑADIR GUÍA DE PRÁCTICAS</button>
-                    <button mat-raised-button type="button" class="btn btn-warning">AÑADIR CARTA PRESENTACIÓN</button>
-                    <button mat-raised-button type="button" class="btn btn-success">ENVIAR</button>
+                    <button mat-raised-button type="button" class="btn btn-danger" data-toggle="modal"
+                    data-target="#observacionesPlaza" (click)="ocultarModal1()">RECHAZAR COMO ELLA</button>
+                    <button mat-raised-button type="button" class="btn btn-success">VALIDAR PLAZA</button>
                 </div>
             </div>
         </div>
@@ -124,3 +118,22 @@
     </div>
 </div>
 
+<!---Modal para Observaciones-->
+<div class="modal fade" id="observacionesPlaza" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header p-1">
+                <h4 class="title-observacion">Observaciones:</h4>
+            </div>
+            <div class="modal-body text">
+                <textarea name="texto" class="input-observacion" cols="30" rows="10" placeholder="Escribe aquí las observaciones de la solicitud"></textarea>
+                <div class="d-inline-flex justify-content-end mt-3 w-100">
+                    <button mat-raised-button class="btn btn-success mr-3">ENVIAR OBSERVACIÓN Y RECHAZAR</button>
+                    <button mat-raised-button class="btn btn-danger" (click)="backToModal1()">CANCELAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal2></button>
+</div>

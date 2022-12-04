@@ -81,7 +81,8 @@
                         <p class="text">23-04-2023</p>
                     </div>
                     <div class="col-4">
-                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
+                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"
+                        data-target="#descripcionPlan" (click)="ocultarModal1()">
                             <i class="material-icons-outlined mr-2">
                             visibility</i>Ver descripción
                         </button>
@@ -113,12 +114,29 @@
                         <p class="text">Lima</p>
                     </div>
                 </div>
-                <div *ngIf="ParaValidar == true" class="botones d-inline-flex flex-row-reverse mt-5">
+
+                <div *ngIf="TipoVisual == 2">
+                    <div class="section-title">
+                        <p>OBSERVACIONES</p>
+                    </div>
+                    <div class="row section">
+                        <div class="col-12">
+                            <textarea name="texto" class="observaciones" cols="20" rows="5" disabled></textarea>
+                        </div>
+                    </div>    
+                </div>
+                
+                <div *ngIf="TipoVisual == 1" class="botones d-inline-flex flex-row-reverse mt-5">
                     <button mat-raised-button type="button" class="btn btn-success">VALIDAR SOLICITUD</button>
                     <button mat-raised-button type="button" class="btn btn-warning" data-toggle="modal"
                     data-target="#observaciones" (click)="ocultarModal1()" >AÑADIR OBSERVACIÓN</button>
                     <button mat-raised-button type="button" class="btn btn-danger">RECHAZAR SOLICITUD</button>
                 </div>
+
+                <div *ngIf="TipoVisual == 2" class="botones d-inline-flex flex-row-reverse mt-4">
+                    <button mat-raised-button type="button" class="btn btn-success">VALIDAR SOLICITUD</button>
+                </div>
+
             </div>
         </div>
         <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal1></button>
@@ -132,7 +150,7 @@
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header p-1">
-                <h4 class="title-observacion">Observaciones:</h4>
+                <h4 class="title-submodal">Observaciones:</h4>
             </div>
             <div class="modal-body text">
                 <textarea name="texto" class="input-observacion" cols="30" rows="10" placeholder="Escribe aquí las observaciones de la solicitud"></textarea>
@@ -144,4 +162,24 @@
         </div>
     </div>
     <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal2></button>
+</div>
+
+
+<!---Modal para mostrar descripcion-->
+<div class="modal fade" id="descripcionPlan" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header p-1">
+                <h4 class="title-submodal">Descripción del plan de actividades:</h4>
+            </div>
+            <div class="modal-body text">
+                <textarea name="texto" class="descripcion-actividades" cols="20" rows="10" disabled></textarea>
+                <div class="d-inline-flex justify-content-end mt-3 w-100">
+                    <button mat-raised-button class="btn btn-success" (click)="descBackToModal1()">VOLVER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal3></button>
 </div>

@@ -51,7 +51,7 @@
                   <td>90231231</td>
                   <td>Pomajulca</td>
                   <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
-                    data-target="#agregarCartaPresentacion">Agregar Carta Presentación</button></td>
+                    data-target="#agregarCartaPresentacion" (click)="TipoVisualizacion(1)">Agregar Carta Presentación</button></td>
   
                 </tr>
                 <tr>
@@ -97,7 +97,8 @@
                 <tr>
                   <td>90231231</td>
                   <td>Alvaron</td>
-                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Ver Solicitud</button></td>
+                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
+                    data-target="#agregarCartaPresentacion" (click)="TipoVisualizacion(2)">Ver Solicitud</button></td>
       
                 </tr>
                 <tr>
@@ -114,4 +115,4 @@
     </div>
   </div>
 
-<app-agregar-carta-presentacion-modal></app-agregar-carta-presentacion-modal>
+<app-agregar-carta-presentacion-modal [TipoVisual]="validator"></app-agregar-carta-presentacion-modal>

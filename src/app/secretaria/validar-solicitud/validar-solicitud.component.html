@@ -58,7 +58,7 @@
                 <td>Josias Alva</td>
                 <td style="text-align: center;">
                   <button mat-raised-button class="btn btn-info" data-toggle="modal"
-                    data-target="#validarSolicitudPendiente" (click)="EsParaValidar(true)">Validar
+                    data-target="#validarSolicitudPendiente" (click)="TipoVisualizacion(1)">Validar
                   </button>
                 </td>
 
@@ -111,7 +111,8 @@
               <tr>
                 <td>90231231</td>
                 <td>Alvaron</td>
-                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Validar</button></td>
+                <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
+                  data-target="#validarSolicitudPendiente" (click)="TipoVisualizacion(2)">Validar</button></td>
     
               </tr>
             </tbody>
@@ -146,7 +147,7 @@
                 <td>90231231</td>
                 <td>Quinteros</td>
                 <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
-                  data-target="#validarSolicitudPendiente" (click)="EsParaValidar(false)">Ver</button></td>
+                  data-target="#validarSolicitudPendiente" (click)="TipoVisualizacion(3)">Ver</button></td>
     
               </tr>
               <tr>
@@ -163,4 +164,4 @@
   </div>
 </div>
 
-<app-validar-solicitud-pendiente [ParaValidar]="validator"></app-validar-solicitud-pendiente>
+<app-validar-solicitud-pendiente [TipoVisual]="validator" ></app-validar-solicitud-pendiente>

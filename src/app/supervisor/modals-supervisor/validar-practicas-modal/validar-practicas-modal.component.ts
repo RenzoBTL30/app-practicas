@@ -10,6 +10,7 @@ export class ValidarPracticasModalComponent implements OnInit {
 
   @ViewChild("close_modal1") close_modal1?:ElementRef
   @ViewChild("close_modal2") close_modal2?:ElementRef
+  @ViewChild("close_modal3") close_modal3?:ElementRef
 
   constructor() { }
 
@@ -20,8 +21,13 @@ export class ValidarPracticasModalComponent implements OnInit {
     $('#validarPracticas').modal('hide');
   }
 
-  backToModal1(){
-    this.close_modal2?.nativeElement.click();
+  descBackToModal1(){
+    this.close_modal1?.nativeElement.click();
+    $('#validarPracticas').modal('show');
+  }
+
+  horasbackToModal1(){
+    this.close_modal3?.nativeElement.click();
     $('#validarPracticas').modal('show');
   }
 

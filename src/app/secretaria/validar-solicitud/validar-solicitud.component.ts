@@ -7,14 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ValidarSolicitudComponent implements OnInit {
 
-  validator?:boolean;
+  validator?:number;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  EsParaValidar(validator:boolean){
+  // ---- Tipos de visualizacion: ----
+  // Si es 1 es para hacer las observaciones y validar
+  // Si es 2 es para ver las observaciones y validar
+  // Si es 3 es solo para ver
+
+  TipoVisualizacion(validator:number){
     this.validator = validator;
   }
 

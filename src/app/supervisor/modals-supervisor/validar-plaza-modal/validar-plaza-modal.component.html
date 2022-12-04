@@ -107,7 +107,7 @@
                         <p class="text">Lima</p>
                     </div>
                 </div>
-                <div class="botones d-inline-flex justify-content-end mt-5">
+                <div *ngIf="TipoVisual == 1" class="botones d-inline-flex justify-content-end mt-5">
                     <button mat-raised-button type="button" class="btn btn-danger" data-toggle="modal"
                     data-target="#observacionesPlaza" (click)="ocultarModal1()">RECHAZAR COMO ELLA</button>
                     <button mat-raised-button type="button" class="btn btn-success">VALIDAR PLAZA</button>
@@ -124,7 +124,7 @@
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header p-1">
-                <h4 class="title-observacion">Observaciones:</h4>
+                <h4 class="title-submodal">Observaciones:</h4>
             </div>
             <div class="modal-body text">
                 <textarea name="texto" class="input-observacion" cols="30" rows="10" placeholder="Escribe aquí las observaciones de la solicitud"></textarea>

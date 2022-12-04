@@ -51,7 +51,7 @@
                   <td>90231231</td>
                   <td>Josias Alva</td>
                   <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
-                    data-target="#validarPlaza">Validar Plaza</button></td>
+                    data-target="#validarPlaza" (click)="TipoVisualizacion(1)">Validar Plaza</button></td>
   
                 </tr>
                 <tr>
@@ -102,7 +102,8 @@
                 <tr>
                   <td>90231231</td>
                   <td>#PazoChallenge</td>
-                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Ver</button></td>
+                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
+                    data-target="#validarPlaza" (click)="TipoVisualizacion(2)">Ver</button></td>
       
                 </tr>
                 <tr>
@@ -119,4 +120,4 @@
     </div>
   </div>
   
-<app-validar-plaza-modal></app-validar-plaza-modal>
+<app-validar-plaza-modal [TipoVisual]="validator"></app-validar-plaza-modal>

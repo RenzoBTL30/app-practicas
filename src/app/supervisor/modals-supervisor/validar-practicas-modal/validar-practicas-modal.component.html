@@ -81,7 +81,8 @@
                         <p class="text">23-04-2023</p>
                     </div>
                     <div class="col-4">
-                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
+                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"
+                        data-target="#descripcionPlan" (click)="ocultarModal1()">
                             <i class="material-icons-outlined mr-2">
                             visibility</i>Ver descripción
                         </button>
@@ -113,7 +114,8 @@
                         <p class="text">Lima</p>
                     </div>
                     <div class="col-4">
-                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
+                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"
+                        data-target="#cartaPresentacion" (click)="ocultarModal1()">
                             <i class="material-icons-outlined mr-2">
                             visibility</i>Ver carta presentación
                         </button>
@@ -125,8 +127,48 @@
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal1></button>
     </div>
+</div>
+
+<!---Modal para mostrar descripcion-->
+<div class="modal fade" id="descripcionPlan" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header p-1">
+                <h4 class="title-submodal">Descripción del plan de actividades:</h4>
+            </div>
+            <div class="modal-body text">
+                <textarea name="texto" class="descripcion-actividades" cols="20" rows="10" disabled></textarea>
+                <div class="d-inline-flex justify-content-end mt-3 w-100">
+                    <button mat-raised-button class="btn btn-success" (click)="descBackToModal1()">VOLVER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal1></button>
+</div>
+
+
+<!---Modal para mostrar carta presentacion-->
+<div class="modal fade" id="cartaPresentacion" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content" style="height: 600px;">
+            <div class="modal-header p-1">
+                <h4 class="title-submodal">Carta presentación:</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="material-icons-outlined icon-cancel">
+                        cancel
+                    </i>
+                </button>
+            </div>
+            <div class="modal-body pb-0">
+                <embed #mostrador src="https://ddd.uab.cat/pub/ree/02101025v15n3/02101025v15n3p433.pdf" type="application/pdf" width="100%" height="440">
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal2></button>
 </div>
 
 
@@ -143,10 +185,12 @@
                 <input type="text" class="form-control input-nros" id="" placeholder="Escriba aquí el número de horas a validar">
                 <div class="d-inline-flex justify-content-end mt-4 w-100">
                     <button mat-raised-button class="btn btn-success mr-3">VALIDAR NRO DE HORAS</button>
-                    <button mat-raised-button class="btn btn-danger" (click)="backToModal1()">CANCELAR</button>
+                    <button mat-raised-button class="btn btn-danger" (click)="horasbackToModal1()">CANCELAR</button>
                 </div>
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal2></button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal3></button>
 </div>
+
+

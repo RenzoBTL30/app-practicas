@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ValidarPlazaComponent implements OnInit {
 
+  validator?:number;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  // ---- Tipos de visualizacion: ----
+  // Si es 1 es para validar plaza
+  // Si es 2 es solo para ver
+
+  TipoVisualizacion(validator:number){
+    this.validator = validator;
   }
 
 }

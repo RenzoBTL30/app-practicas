@@ -80,6 +80,13 @@
                         <p class="label">FECHA FIN</p>
                         <p class="text">23-04-2023</p>
                     </div>
+                    <div class="col-4">
+                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"
+                        data-target="#descripcionPlan" (click)="ocultarModal1()">
+                            <i class="material-icons-outlined mr-2">
+                            visibility</i>Ver descripción
+                        </button>
+                    </div>
                 </div>
 
                 <div class="section-title">
@@ -107,27 +114,55 @@
                         <p class="text">Lima</p>
                     </div>
                 </div>
-                <div class="botones d-inline-flex justify-content-end mt-5">
-                    <button mat-raised-button type="button" class="btn btn-warning p-0">
-                        <label class="detalle-btn d-inline-flex align-items-center h-100" for="file-upload-guia">
-                            AÑADIR GUÍA DE PRÁCTICAS
-                        </label>
-                    </button>
-
-                    <button mat-raised-button type="button" class="btn btn-warning p-0">
-                        <label class="detalle-btn d-inline-flex align-items-center h-100" for="file-upload-carta">
-                            AÑADIR CARTA PRESENTACIÓN
-                        </label>
-                    </button>
-
-                    <button mat-raised-button type="button" id="btnEnviar" class="btn btn-success" disabled>ENVIAR</button>
+                <div *ngIf="TipoVisual == 1" class="botones d-inline-flex justify-content-end mt-5">
+                    <div class="btn-subir">
+                        <button mat-raised-button type="button" class="btn btn-warning p-0">
+                            <label class="detalle-btn d-inline-flex align-items-center h-100" for="file-upload-guia">
+                                AÑADIR GUÍA DE PRÁCTICAS
+                            </label>
+                        </button>
+                        <p id="nombre-archivo-guia"></p>
+                    </div>
+                    
+                    <div class="btn-subir">
+                        <button mat-raised-button type="button" class="btn btn-warning p-0">
+                            <label class="detalle-btn d-inline-flex align-items-center h-100" for="file-upload-carta">
+                                AÑADIR CARTA PRESENTACIÓN
+                            </label>
+                        </button>
+                        <p id="nombre-archivo-carta"></p>
+                    </div>
+                    
+                    <div>
+                        <button mat-raised-button type="button" id="btnEnviar" class="btn btn-success" disabled>ENVIAR</button>
+                    </div>
                 </div>
 
                 <!--Cada vez que haya un cambio en el input, se ejecutara la funcion puesta en el (change)-->
-                <input (change)="archivosListosParaSubir()" id="file-upload-guia" type="file" hidden/>
-                <input (change)="archivosListosParaSubir()" id="file-upload-carta" type="file" hidden/>
+                <input (change)="archivosListosParaSubir(); mostrarNombreArchivo(1)" id="file-upload-guia" type="file" hidden/>
+                <input (change)="archivosListosParaSubir(); mostrarNombreArchivo(2)" id="file-upload-carta" type="file" hidden/>
             </div>
         </div>
         <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal1></button>
     </div>
+</div>
+
+
+<!---Modal para mostrar descripcion-->
+<div class="modal fade" id="descripcionPlan" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header p-1">
+                <h4 class="title-submodal">Descripción del plan de actividades:</h4>
+            </div>
+            <div class="modal-body text">
+                <textarea name="texto" class="descripcion-actividades" cols="20" rows="10" disabled></textarea>
+                <div class="d-inline-flex justify-content-end mt-3 w-100">
+                    <button mat-raised-button class="btn btn-success" (click)="descBackToModal1()">VOLVER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal2></button>
 </div>

@@ -34,7 +34,7 @@
 
 .botones{
     width: 100%;
-    gap: 10px;
+    gap: 40px;
 }
 
 .detalle-btn{
@@ -55,4 +55,28 @@
 
 .botones .btn-success:disabled:hover{
     background-color: rgb(176, 175, 175);
+}
+
+.title-submodal{
+    font-weight: 500;
+    color: black;
+}
+.descripcion-actividades{
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+    resize: none;
+}
+
+.btn-subir{
+    max-width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#nombre-archivo-guia, #nombre-archivo-carta{
+    margin: 0;
 }

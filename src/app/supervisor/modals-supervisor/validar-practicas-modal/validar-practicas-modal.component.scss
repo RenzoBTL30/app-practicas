@@ -14,6 +14,15 @@
     }
 }
 
+.descripcion-actividades{
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+    resize: none;
+}
+
 .modal-body .section-title:first-child{
     margin-top: 10px;
 }
@@ -47,4 +56,9 @@
     padding-left: 5px;
     padding-right: 5px;
     margin-bottom: 10px;
+}
+
+.title-submodal{
+    font-weight: 500;
+    color: black;
 }

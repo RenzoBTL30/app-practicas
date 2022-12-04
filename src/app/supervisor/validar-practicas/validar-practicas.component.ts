@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+declare var $:any;
 
 @Component({
   selector: 'app-validar-practicas',

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 declare var $:any;
 
 @Component({
@@ -10,6 +10,8 @@ export class ValidarPlazaModalComponent implements OnInit {
 
   @ViewChild("close_modal1") close_modal1?:ElementRef
   @ViewChild("close_modal2") close_modal2?:ElementRef
+
+  @Input() TipoVisual?: number;
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 declare var $:any;
 
 
@@ -8,6 +8,10 @@ declare var $:any;
   styleUrls: ['./agregar-carta-presentacion-modal.component.scss']
 })
 export class AgregarCartaPresentacionModalComponent implements OnInit {
+
+  @ViewChild("close_modal2") close_modal2?:ElementRef
+
+  @Input() TipoVisual?: number;
 
   constructor() { }
 
@@ -20,6 +24,32 @@ export class AgregarCartaPresentacionModalComponent implements OnInit {
     if ($('#file-upload-guia').val() && $('#file-upload-carta').val()) {
 
       $('#btnEnviar').removeAttr("disabled");
+
+    }
+  }
+
+  ocultarModal1(){
+    $('#agregarCartaPresentacion').modal('hide');
+  }
+
+  descBackToModal1(){
+    this.close_modal2?.nativeElement.click();
+    $('#agregarCartaPresentacion').modal('show');
+  }
+
+  mostrarNombreArchivo(tipoArchivo:number){
+    var archivoSeleccionado, nombre;
+    if (tipoArchivo == 1) {
+
+      archivoSeleccionado = $('#file-upload-guia').val();
+      nombre = archivoSeleccionado.replace(/.*[\/\\]/, '');
+      $('#nombre-archivo-guia').text(nombre);
+
+    } else if (tipoArchivo == 2){
+      
+      archivoSeleccionado = $('#file-upload-carta').val();
+      nombre = archivoSeleccionado.replace(/.*[\/\\]/, '');
+      $('#nombre-archivo-carta').text(nombre);
 
     }
   }

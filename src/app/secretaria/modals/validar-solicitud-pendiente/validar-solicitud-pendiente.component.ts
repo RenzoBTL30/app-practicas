@@ -10,8 +10,9 @@ export class ValidarSolicitudPendienteComponent implements OnInit {
 
   @ViewChild("close_modal1") close_modal1?:ElementRef
   @ViewChild("close_modal2") close_modal2?:ElementRef
+  @ViewChild("close_modal3") close_modal3?:ElementRef
 
-  @Input() ParaValidar?: boolean;
+  @Input() TipoVisual?: number;
 
   constructor(private renderer: Renderer2) { }
 
@@ -26,6 +27,11 @@ export class ValidarSolicitudPendienteComponent implements OnInit {
 
   backToModal1(){
     this.close_modal2?.nativeElement.click();
+    $('#validarSolicitudPendiente').modal('show');
+  }
+
+  descBackToModal1(){
+    this.close_modal3?.nativeElement.click();
     $('#validarSolicitudPendiente').modal('show');
   }
 

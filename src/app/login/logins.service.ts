@@ -36,7 +36,7 @@ export class LoginsService {
 
   guardarUsuario(accessToken: string): void {
     let payload = this.obtenerDatosToken(accessToken);
-    console.log(payload);
+   
     sessionStorage.setItem('id', payload.user.id);
     sessionStorage.setItem('rol', payload.user.idrol);
     sessionStorage.setItem('nombre', payload.user.nombrecompleto);

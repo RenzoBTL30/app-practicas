@@ -1,25 +1,47 @@
 <div class="container-fluid main">
-    <div class="row no-gutters">
-        <div class="col-md-7">
-            <div class="fondo-universidad">
-                <img class="fondo" src="/assets/img/fondoupeu.png" width="90%">
-            </div>
-        </div>
-        <div class="col-md-5 section-login no-gutters">
-            <div class="login d-flex flex-column mx-auto">
-                <img src="/assets/img/frutas.jpg" class="icono-login" alt="...">
-                <form class="formulario">
-                      <div class="mb-4 mb-xxl-0">
-                        <input type="text" [(ngModel)]="usuario" name="usuario" class="form-control input" id="usuario" placeholder="USUARIO">
-                      </div>
-                      <div class="mb-4 mb-xxl-0">
-                        <input type="password" [(ngModel)]="contra" name="contra" class="form-control input" id="password" placeholder="CONTRASEÑA">
-                      </div>
-                      <div class="botones">
-                        <button mat-raised-button (click)="login()" class="btn boton-login mt-1" id="login" type="button">INGRESAR</button>
-                      </div>
-                </form>
-            </div>
-        </div>
+  <div class="row no-gutters">
+    <div class="col-md-7">
+      <div class="fondo-universidad">
+        <img class="fondo" src="/assets/img/fondoupeu.png" width="90%" />
+      </div>
     </div>
+    <div class="col-md-5 section-login no-gutters">
+      <div class="login d-flex flex-column mx-auto">
+        <img src="/assets/img/frutas.jpg" class="icono-login" alt="..." />
+        <form class="formulario">
+          <div class="mb-4 mb-xxl-0">
+            <input
+              type="text"
+              [(ngModel)]="usuario"
+              name="usuario"
+              class="form-control input"
+              id="usuario"
+              placeholder="USUARIO"
+            />
+          </div>
+          <div class="mb-4 mb-xxl-0">
+            <input
+              type="password"
+              [(ngModel)]="contra"
+              name="contra"
+              class="form-control input"
+              id="password"
+              placeholder="CONTRASEÑA"
+            />
+          </div>
+          <div class="botones">
+            <button
+              mat-raised-button
+              (click)="ingresar()"
+              class="btn boton-login mt-1"
+              id="login"
+              type="button"
+            >
+              INGRESAR
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

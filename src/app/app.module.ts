@@ -7,11 +7,10 @@ import { ModalsModule } from './secretaria/modals/modals.module';
 import { CountUpModule } from 'ngx-countup';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -19,9 +18,10 @@ import { MatTableModule } from '@angular/material/table';
     CountUpModule,
     MatFormFieldModule,
     MatTableModule,
-    ModalsModule
+    ModalsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

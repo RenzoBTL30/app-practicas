@@ -6,12 +6,10 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    LoginComponent
-  ],
+  declarations: [LoginComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -20,9 +18,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatTooltipModule,
     RouterModule,
+    HttpClientModule,
   ],
-  exports:[
-    LoginComponent
-  ]
+  exports: [LoginComponent],
 })
-export class LoginModule { }
+export class LoginModule {}

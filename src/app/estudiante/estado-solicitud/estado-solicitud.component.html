@@ -1,101 +1,113 @@
 <a href="" [routerLink]="['/estudiante/pages/mis-solicitudes']">
-    <div class="d-inline-flex align-items-center mt-3 gap-3">
-        <span class="material-icons-outlined icon-return mr-2">
-            arrow_back
-        </span>
-        <span class="title">Volver</span>
-    </div>
+  <div class="d-inline-flex align-items-center mt-3 gap-3">
+    <span class="material-icons-outlined icon-return mr-2"> arrow_back </span>
+    <span class="title">Volver</span>
+  </div>
 </a>
 
 <div class="col-lg-12 col-md-12">
-    <div class="card">
-        <div class="card-header d-inline-flex align-items-center card-header-primary">
-            <h4 class="card-title">ESTADO DE SOLICITUD</h4>
-        </div>
-        <div class="card-body table-responsive pt-4">
-            <div class="d-flex align-items-center">
-                <div class="d-flex align-items-center" style="color: black;">
-                  Filtrar por:
-                  <select class="form-control select-filtro ml-2">
-                    <option>Tipo de Solicitud</option>
-                  </select>
-                  <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
-                    filter_list
-                  </i>
-                </div>
-            </div>
-            <table class="table mt-4">
-                <thead style="text-align: center;">
-                  <th>SOLICITUD</th>
-                  <th>FECHA DE REGISTRO</th>
-                  <th>ESTADO</th>
-                  <th>TIPO DE PRÁCTICA</th>
-                  <th></th>
-                </thead>
-                <tbody>
-                  <tr style="text-align: center;">
-                    <td>
-                      <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"
-                      data-target="#detalleSolicitud">
-                        <i class="material-icons-outlined mr-2">
-                          visibility</i>
-                          SOLICITUD: Prácticas y archivo subido
-                      </button>
-                    </td>
-                    <td>12/06/2021</td>
-                    <td>REGISTRADO</td>
-                    <td>P. Comunitaria</td>
-                    <td></td>
-                  </tr>
-                  <tr style="text-align: center;">
-                    <td>
-                      <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
-                        <i class="material-icons-outlined mr-2">
-                          visibility</i>
-                          SOLICITUD: Prácticas y archivo subido
-                      </button>
-                    </td>
-                    <td>12/06/2021</td>
-                    <td>REGISTRADO</td>
-                    <td>P. Comunitaria</td>
-                    <td></td>
-                  </tr>
-                  <tr style="text-align: center;">
-                    <td>
-                      <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
-                        <i class="material-icons-outlined mr-2">
-                          visibility</i>
-                          SOLICITUD: Prácticas y archivo subido
-                      </button>
-                    </td>
-                    <td>12/06/2021</td>
-                    <td>REGISTRADO</td>
-                    <td>P. Comunitaria</td>
-                    <td></td>
-                  </tr>
-                  <tr style="text-align: center;">
-                    <td>
-                      <button mat-raised-button class="btn btn-info d-inline-flex align-items-center">
-                        <i class="material-icons-outlined mr-2">
-                          visibility</i>
-                          SOLICITUD: Prácticas y archivo subido
-                      </button>
-                    </td>
-                    <td>12/06/2021</td>
-                    <td>REGISTRADO</td>
-                    <td>P. Comunitaria</td>
-                    <td>
-                      <i class="material-icons-outlined icon-upload" data-toggle="modal"
-                      data-target="#subirDocPracticas">
-                        file_upload
-                      </i>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
+  <div class="card">
+    <div
+      class="card-header d-inline-flex align-items-center card-header-primary"
+    >
+      <h4 class="card-title">ESTADO DE SOLICITUD</h4>
     </div>
+    <div class="card-body table-responsive pt-4">
+      <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center" style="color: black">
+          Filtrar por:
+          <select class="form-control select-filtro ml-2">
+            <option>Tipo de Solicitud</option>
+          </select>
+          <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
+            filter_list
+          </i>
+        </div>
+      </div>
+      <table class="table mt-4">
+        <thead style="text-align: center">
+          <th>SOLICITUD</th>
+          <th>FECHA DE REGISTRO</th>
+          <th>ESTADO</th>
+          <th>TIPO DE PRÁCTICA</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr style="text-align: center">
+            <td>
+              <button
+                mat-raised-button
+                class="btn btn-info d-inline-flex align-items-center"
+                data-toggle="modal"
+                data-target="#detalleSolicitud"
+              >
+                <i class="material-icons-outlined mr-2"> visibility</i>
+                SOLICITUD: Prácticas y archivo subido
+              </button>
+            </td>
+            <td>12/06/2021</td>
+            <td>REGISTRADO</td>
+            <td>P. Comunitaria</td>
+            <td></td>
+          </tr>
+          <tr style="text-align: center">
+            <td>
+              <button
+                mat-raised-button
+                class="btn btn-info d-inline-flex align-items-center"
+              >
+                <i class="material-icons-outlined mr-2"> visibility</i>
+                SOLICITUD: Prácticas y archivo subido
+              </button>
+            </td>
+            <td>12/06/2021</td>
+            <td>REGISTRADO</td>
+            <td>P. Comunitaria</td>
+            <td></td>
+          </tr>
+          <tr style="text-align: center">
+            <td>
+              <button
+                mat-raised-button
+                class="btn btn-info d-inline-flex align-items-center"
+              >
+                <i class="material-icons-outlined mr-2"> visibility</i>
+                SOLICITUD: Prácticas y archivo subido
+              </button>
+            </td>
+            <td>12/06/2021</td>
+            <td>REGISTRADO</td>
+            <td>P. Comunitaria</td>
+            <td></td>
+          </tr>
+          <tr style="text-align: center">
+            <td>
+              <button
+                mat-raised-button
+                class="btn btn-info d-inline-flex align-items-center"
+              >
+                <i class="material-icons-outlined mr-2"> visibility</i>
+                SOLICITUD: Prácticas y archivo subido
+              </button>
+            </td>
+            <td>12/06/2021</td>
+            <td>REGISTRADO</td>
+            <td>P. Comunitaria</td>
+            <td>
+              <i
+                class="material-icons-outlined icon-upload"
+                data-toggle="modal"
+                data-target="#subirDocPracticas"
+              >
+                file_upload
+              </i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
-<app-detalle-solicitud-modal></app-detalle-solicitud-modal>
+<app-detalle-solicitud-modal [item]="currentItem"></app-detalle-solicitud-modal>
 <app-subir-documentos-finalizacion-modal></app-subir-documentos-finalizacion-modal>

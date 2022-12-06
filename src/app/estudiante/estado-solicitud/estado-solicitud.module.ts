@@ -5,20 +5,16 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { ModalsEstudianteModule } from '../modals-estudiante/modals-estudiante.module';
 
-
-
 @NgModule({
-  declarations: [
-    EstadoSolicitudComponent
-  ],
+  declarations: [EstadoSolicitudComponent],
   imports: [
     CommonModule,
     RouterModule,
     MatButtonModule,
-    ModalsEstudianteModule
+    ModalsEstudianteModule,
   ],
-  exports: [
-    EstadoSolicitudComponent
-  ]
+  exports: [EstadoSolicitudComponent],
 })
-export class EstadoSolicitudModule { }
+export class EstadoSolicitudModule {
+  currentItem = 'Television';
+}

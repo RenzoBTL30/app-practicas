@@ -9,12 +9,6 @@
             <span class="title">Volver</span>
         </div>
     </a>
-    <button type="button" mat-raised-button class="btn btn-white btn-subir ml-auto mr-3" style="text-transform: none; color: black;">
-        <i class="material-icons-outlined icon-upload mr-2">
-            file_download
-        </i>
-        Descargar solicitud
-    </button>
 </div>
 
 
@@ -120,7 +114,7 @@
 
                                 <button type="button" mat-raised-button class="btn btn-white btn-subir ml-auto mr-3"
                                     style="text-transform: none;">
-                                    <label class="detalle-btn d-inline-flex align-items-center" for="file-upload" style="cursor: pointer;">
+                                    <label class="detalle-btn d-inline-flex align-items-center" for="file-upload-descripcion" style="cursor: pointer;">
                                         <i class="material-icons-outlined icon-upload mr-2">
                                             file_upload
                                         </i>
@@ -128,7 +122,7 @@
                                     </label>
                                     
                                 </button>
-                                <input id="file-upload" type="file" hidden/>
+                                <input (change)="mostrarNombreArchivo()" id="file-upload-descripcion" type="file" hidden/>
                             </div>
                             
                             <div class="col-12 d-flex flex-row-reverse">

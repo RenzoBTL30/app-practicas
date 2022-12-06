@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+declare var $:any;
 
 @Component({
   selector: 'app-registrar-solicitud',
@@ -16,6 +17,32 @@ export class RegistrarSolicitudComponent implements OnInit {
 
   eventoClicSubir(){
     this.clicSubir.nativeElement.click();
+  }
+
+  mostrarNombreArchivo(){
+    var archivoSeleccionado, nombre;
+    archivoSeleccionado = $('#file-upload-descripcion').val();
+    nombre = archivoSeleccionado.replace(/.*[\/\\]/, '');
+    this.showNotification('top','right',nombre);
+  }
+
+  showNotification(from:any, align:any, nombreArchivo:any){
+
+    $.notify({
+      icon: "face",
+      title: "Archivo:",
+      message: `<strong>${nombreArchivo}</strong> seleccionado`
+    },
+    
+    {
+      type: 'success',
+      timer: 2500,
+      delay: 2500,
+      placement: {
+        from: from,
+        align: align
+      },
+    });
   }
 
 }

@@ -43,15 +43,36 @@ export class AgregarCartaPresentacionModalComponent implements OnInit {
 
       archivoSeleccionado = $('#file-upload-guia').val();
       nombre = archivoSeleccionado.replace(/.*[\/\\]/, '');
-      $('#nombre-archivo-guia').text(nombre);
+      this.showNotification('top','right',nombre);
 
     } else if (tipoArchivo == 2){
       
       archivoSeleccionado = $('#file-upload-carta').val();
       nombre = archivoSeleccionado.replace(/.*[\/\\]/, '');
-      $('#nombre-archivo-carta').text(nombre);
+      this.showNotification('top','right',nombre);
 
     }
+  }
+
+  showNotification(from:any, align:any, nombreArchivo:any){
+
+    $.notify({
+      icon: "face",
+      title: "Archivo:",
+      message: `<strong>${nombreArchivo}</strong> seleccionado`
+    
+    },
+    
+    {
+      type: 'success',
+      timer: 2500,
+      delay: 2500,
+      placement: {
+        from: from,
+        align: align
+      },
+      z_index: 1080
+    });
   }
 
 }

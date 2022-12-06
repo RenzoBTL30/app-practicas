@@ -16,5 +16,5 @@ import { ModalsEstudianteModule } from '../modals-estudiante/modals-estudiante.m
   exports: [EstadoSolicitudComponent],
 })
 export class EstadoSolicitudModule {
-  currentItem = 'Television';
+ 
 }

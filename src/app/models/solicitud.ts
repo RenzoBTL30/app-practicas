@@ -1,0 +1,27 @@
+export class solicitud {
+    id_solicitud?:number;
+    centro_practicas?:string;
+    direccion?:string;
+    departamento?:string;
+    provincia?:string;
+    distrito?:string;
+    sup_nombre?:string;
+    sup_correo?:string;
+    sup_telefono?:string;
+    rem_nombre?:string;
+    rem_cargo?:string;
+    rem_correo?:string;
+    fecha_inicio?:string;
+    fecha_fin?:string;
+    det_actividades?:string;
+    link_guiapracticas?:string;
+    link_carta?:string;
+    horas_validadas?:number;
+    fecha_reg?:string;
+    fecha_mov?:string;
+    observacion?:string;
+    id_postulante?:number;
+    id_tipoprac?:number;
+    id_solestado?:number;
+    id_usuario?:number;
+}

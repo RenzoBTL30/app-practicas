@@ -108,21 +108,9 @@
 
                     <div class="col-12 mt-5">
                         <div class="row">
-                            <div class="col-5">
-                                <label class="title-section" for="fecha-inicio">Descripción de actividades:</label>
-                                <p>Describir actividades</p>
-
-                                <button type="button" mat-raised-button class="btn btn-white btn-subir ml-auto mr-3"
-                                    style="text-transform: none;">
-                                    <label class="detalle-btn d-inline-flex align-items-center" for="file-upload-descripcion" style="cursor: pointer;">
-                                        <i class="material-icons-outlined icon-upload mr-2">
-                                            file_upload
-                                        </i>
-                                        Subir archivo
-                                    </label>
-                                    
-                                </button>
-                                <input (change)="mostrarNombreArchivo()" id="file-upload-descripcion" type="file" hidden/>
+                            <div class="col-7">
+                                <label class="title-section" for="desc-actividades">Descripción de actividades:</label>
+                                <textarea name="texto" id="desc-actividades" class="input-descripcion-actividades" cols="50" rows="10" placeholder="Describir las actividades"></textarea>
                             </div>
                             
                             <div class="col-12 d-flex flex-row-reverse">

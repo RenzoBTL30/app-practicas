@@ -8,11 +8,32 @@ declare var $: any;
 })
 export class RegistrarSolicitudComponent implements OnInit {
   centro?: string;
+  departamento?: string;
+  provincia?: string;
+  distrito?: string;
+  direccion?: string;
+  nombresupervisor?: string;
+  correosupervisor?: string;
+  telefonosupervisor?: string;
+  nombredirector?: string;
+  cargodirector?: string;
+  correodirector?: string;
+  descripcion?: string;
+  seleccionado?: number;
+  fechainicio?: Date = new Date();
+  fechafin?: Date = new Date();
+  lista: string[] = [
+    '--- Seleccione el tipo de prácticas ---',
+    'Prácticas Clínicas',
+    'Prácticas Comunitarias',
+  ];
   @ViewChild('clicSubir') clicSubir: any;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.seleccionado = 0;
+  }
 
   eventoClicSubir() {
     this.clicSubir.nativeElement.click();
@@ -25,7 +46,8 @@ export class RegistrarSolicitudComponent implements OnInit {
     this.showNotification('top', 'right', nombre);
   }
   registrarsolicitud() {
-    console.log(this.centro);
+    console.log(this.fechainicio);
+    console.log(this.seleccionado);
   }
   showNotification(from: any, align: any, nombreArchivo: any) {
     $.notify(

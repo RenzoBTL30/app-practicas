@@ -20,15 +20,33 @@
           <div class="col-4">
             <p class="title-section">NUTRICIONISTA SUPERVISOR</p>
             <mat-form-field class="example-full-width">
-              <input matInput type="text" placeholder="Nombres Completos" />
+              <input
+                matInput
+                type="text"
+                placeholder="Nombres Completos"
+                [(ngModel)]="nombresupervisor"
+                name="nombresupervisor"
+              />
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
-              <input matInput type="email" placeholder="Correo Electrónico" />
+              <input
+                matInput
+                type="email"
+                placeholder="Correo Electrónico"
+                [(ngModel)]="correosupervisor"
+                name="asasas"
+              />
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
-              <input matInput type="text" placeholder="Teléfono" />
+              <input
+                matInput
+                type="text"
+                placeholder="Teléfono"
+                [(ngModel)]="telefonosupervisor"
+                name="telefonosupervisor"
+              />
             </mat-form-field>
 
             <!--
@@ -40,13 +58,31 @@
           <div class="col-4">
             <p class="title-section">REMITENTE</p>
             <mat-form-field class="example-full-width">
-              <input matInput type="text" placeholder="Nombres Completos" />
+              <input
+                matInput
+                type="text"
+                placeholder="Nombres Completos"
+                [(ngModel)]="nombredirector"
+                name="nombredirector"
+              />
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <input matInput type="text" placeholder="Cargo" />
+              <input
+                matInput
+                type="text"
+                placeholder="Cargo"
+                [(ngModel)]="cargodirector"
+                name="cargodirector"
+              />
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <input matInput type="email" placeholder="Correo Electrónico" />
+              <input
+                matInput
+                type="email"
+                placeholder="Correo Electrónico"
+                [(ngModel)]="correodirector"
+                name="correodirector"
+              />
             </mat-form-field>
 
             <!--
@@ -74,15 +110,47 @@
                 style="width: 45%"
                 class="example-full-width mr-4"
               >
-                <input matInput type="text" placeholder="Distrito" />
+                <input
+                  matInput
+                  type="text"
+                  placeholder="Distrito"
+                  [(ngModel)]="distrito"
+                  name="direccion"
+                />
               </mat-form-field>
               <mat-form-field style="width: 45%" class="example-full-width">
-                <input matInput type="text" placeholder="Provincia" />
+                <input
+                  matInput
+                  type="text"
+                  placeholder="Provincia"
+                  [(ngModel)]="provincia"
+                  name="provincia"
+                />
               </mat-form-field>
             </div>
-            <mat-form-field class="example-full-width">
-              <input matInput type="text" placeholder="Departamento" />
-            </mat-form-field>
+            <div class="d-flex">
+              <mat-form-field
+                style="width: 45%"
+                class="example-full-width mr-4"
+              >
+                <input
+                  matInput
+                  type="text"
+                  placeholder="Departamento"
+                  [(ngModel)]="departamento"
+                  name="departamento"
+                />
+              </mat-form-field>
+              <mat-form-field style="width: 45%" class="example-full-width">
+                <input
+                  matInput
+                  type="text"
+                  placeholder="Direccion"
+                  [(ngModel)]="direccion"
+                  name="direccion"
+                />
+              </mat-form-field>
+            </div>
           </div>
 
           <div class="col-12 mt-5">
@@ -96,6 +164,8 @@
                   class="form-control"
                   id="fecha-inicio"
                   placeholder="Fecha inicio"
+                  [(ngModel)]="fechainicio"
+                  name="fecha-inicio"
                 />
               </div>
 
@@ -106,14 +176,20 @@
                   class="form-control"
                   id="fecha-fin"
                   placeholder="Fecha fin"
+                  [(ngModel)]="fechafin"
+                  name="fecha-fin"
                 />
               </div>
 
               <div class="col-3 px-md-4 d-flex align-items-center">
-                <select class="form-control select-practicas">
-                  <option>--- Seleccione el tipo de prácticas ---</option>
-                  <option>Prácticas Clínicas</option>
-                  <option>Prácticas Comunitarias</option>
+                <select
+                  class="form-control select-practicas"
+                  name="miselect"
+                  [(ngModel)]="seleccionado"
+                >
+                  <option *ngFor="let item of lista; let i = index" [value]="i">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
             </div>
@@ -127,7 +203,13 @@
                 >
                 <p>Describir actividades</p>
                 <mat-form-field class="example-full-width">
-                  <input matInput type="text" placeholder="" />
+                  <input
+                    matInput
+                    type="text"
+                    placeholder=""
+                    [(ngModel)]="descripcion"
+                    name="descripcion"
+                  />
                 </mat-form-field>
               </div>
 

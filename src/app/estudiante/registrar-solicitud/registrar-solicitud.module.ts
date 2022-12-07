@@ -6,23 +6,19 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    RegistrarSolicitudComponent
-  ],
+  declarations: [RegistrarSolicitudComponent],
   imports: [
     CommonModule,
     ElementosModule,
     RouterModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
   ],
-  exports: [
-    RegistrarSolicitudComponent
-  ]
+  exports: [RegistrarSolicitudComponent],
 })
-export class RegistrarSolicitudModule { }
+export class RegistrarSolicitudModule {}

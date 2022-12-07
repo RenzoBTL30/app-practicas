@@ -1,48 +1,49 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-declare var $:any;
+declare var $: any;
 
 @Component({
   selector: 'app-registrar-solicitud',
   templateUrl: './registrar-solicitud.component.html',
-  styleUrls: ['./registrar-solicitud.component.scss']
+  styleUrls: ['./registrar-solicitud.component.scss'],
 })
 export class RegistrarSolicitudComponent implements OnInit {
+  centro?: string;
+  @ViewChild('clicSubir') clicSubir: any;
 
-  @ViewChild('clicSubir') clicSubir:any;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  eventoClicSubir(){
+  eventoClicSubir() {
     this.clicSubir.nativeElement.click();
   }
 
-  mostrarNombreArchivo(){
+  mostrarNombreArchivo() {
     var archivoSeleccionado, nombre;
     archivoSeleccionado = $('#file-upload-descripcion').val();
     nombre = archivoSeleccionado.replace(/.*[\/\\]/, '');
-    this.showNotification('top','right',nombre);
+    this.showNotification('top', 'right', nombre);
   }
-
-  showNotification(from:any, align:any, nombreArchivo:any){
-
-    $.notify({
-      icon: "face",
-      title: "Archivo:",
-      message: `<strong>${nombreArchivo}</strong> seleccionado`
-    },
-    
-    {
-      type: 'success',
-      timer: 2500,
-      delay: 2500,
-      placement: {
-        from: from,
-        align: align
+  registrarsolicitud() {
+    console.log(this.centro);
+  }
+  showNotification(from: any, align: any, nombreArchivo: any) {
+    $.notify(
+      {
+        icon: 'face',
+        title: 'Archivo:',
+        message: `<strong>${nombreArchivo}</strong> seleccionado`,
       },
-    });
-  }
 
+      {
+        type: 'success',
+        timer: 2500,
+        delay: 2500,
+        placement: {
+          from: from,
+          align: align,
+        },
+      }
+    );
+  }
 }

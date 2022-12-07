@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SolicitudService } from 'src/app/services/solicitud.service';
 
 @Component({
   selector: 'app-validar-solicitud',
@@ -9,7 +10,7 @@ export class ValidarSolicitudComponent implements OnInit {
 
   validator?:number;
 
-  constructor() { }
+  constructor(private solicitudservice:SolicitudService) { }
 
   ngOnInit(): void {
   }

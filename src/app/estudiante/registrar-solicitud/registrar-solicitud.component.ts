@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from 'express';
+import { LoginsService } from 'src/app/login/logins.service';
+import { EstudianteService } from 'src/app/services/estudiante.service';
 declare var $: any;
 
 @Component({
@@ -29,7 +32,7 @@ export class RegistrarSolicitudComponent implements OnInit {
   ];
   @ViewChild('clicSubir') clicSubir: any;
 
-  constructor() {}
+  constructor(private user: EstudianteService) {}
 
   ngOnInit(): void {
     this.seleccionado = 0;
@@ -45,10 +48,7 @@ export class RegistrarSolicitudComponent implements OnInit {
     nombre = archivoSeleccionado.replace(/.*[\/\\]/, '');
     this.showNotification('top', 'right', nombre);
   }
-  registrarsolicitud() {
-    console.log(this.fechainicio);
-    console.log(this.seleccionado);
-  }
+  registrarsolicitud() {}
   showNotification(from: any, align: any, nombreArchivo: any) {
     $.notify(
       {

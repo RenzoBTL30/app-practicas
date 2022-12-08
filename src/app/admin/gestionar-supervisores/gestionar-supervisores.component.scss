@@ -176,3 +176,19 @@
   .slider.round:before {
     border-radius: 50%;
   }
+  .icon-cancel{
+    font-size: 30px;
+}
+
+.section-title{
+    background-color: #014776;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 35px;
+    p {
+        margin: 0;
+    }
+}

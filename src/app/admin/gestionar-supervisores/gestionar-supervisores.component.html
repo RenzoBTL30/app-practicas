@@ -21,8 +21,8 @@
           </div>
           
           <div class="d-flex align-items-center ml-auto">
-            <input type="text" placeholder="Buscar por DNI" class="form-control input-dni" />
-            <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+            <input type="text" placeholder="Buscar por DNI" class="form-control input-dni" [(ngModel)]="documentobusqueda" />
+            <button mat-raised-button class="btn btn-info ml-3" (click)="searchdni()">Buscar</button>
           </div>
 
         </div>
@@ -34,45 +34,21 @@
             <th style="text-align: center;">Estado</th>
           </thead>
           <tbody>
-            <tr>
-              <td>90231231</td>
-              <td>Alex Garviel Quinteros Alva</td>
+            <tr *ngFor="let user of users">
+              <td>{{user.num_doc}}</td>
+              <td>{{user.nom_usuario}}</td>
               <td style="text-align: center;">
-                <i class="material-icons-outlined icon-edit">edit</i>
+                <i class="material-icons-outlined icon-edit" (click)="edit(user.correo!,user.id_usuario!)">edit</i>
               </td>
               <td style="text-align: center;">
                 <label class="switch">
-                  <input type="checkbox" checked>
+                  <input type="checkbox" [(ngModel)]="user.estado" (change)="cambio(user.estado!,4)">
                   <span class="slider round"></span>
                 </label>
               </td>
             </tr>
-            <tr>
-              <td>90231231</td>
-              <td>Sinforiano "Sinfo" Martinez</td>
-              <td style="text-align: center;">
-                <i class="material-icons-outlined icon-edit">edit</i>
-              </td>  
-              <td style="text-align: center;">
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
-              </td>
-            </tr>
-            <tr>
-              <td>90231231</td>
-              <td>Benja Huamani</td>
-              <td style="text-align: center;">
-                <i class="material-icons-outlined icon-edit">edit</i>
-              </td>
-              <td style="text-align: center;">
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
-              </td>
-            </tr>
+          
+          
           </tbody>
         </table>
       </div>
@@ -80,3 +56,4 @@
 </div>
 
 <app-registrar-supervisor-modal></app-registrar-supervisor-modal>
+<app-editar-supervisor-modal [correo]="correo" [idsupervisor]="idsupervisor"></app-editar-supervisor-modal>

@@ -5,11 +5,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { EditarSupervisorModalComponent } from './editar-supervisor-modal/editar-supervisor-modal.component';
 
 
 @NgModule({
   declarations: [
-    RegistrarSupervisorModalComponent
+    RegistrarSupervisorModalComponent,
+    EditarSupervisorModalComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   exports: [
-    RegistrarSupervisorModalComponent
+    RegistrarSupervisorModalComponent,
+    EditarSupervisorModalComponent
   ]
 })
 export class ModalsAdminModule { }

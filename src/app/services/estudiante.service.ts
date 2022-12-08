@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Action } from 'rxjs/internal/scheduler/Action';
 import Urlbackend from '../models/constante';
 import { postulante } from '../models/postulante';
+import { usuario } from '../models/usuario';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +24,24 @@ export class EstudianteService {
       this.httpOptions
     );
   }
-
+  getSupervisores(): Observable<usuario[]> {
+    return this.http.get<usuario[]>(
+      `${this.urlgeneral}usuario/supervisor`,
+      this.httpOptions
+    );
+  }
+  updateSupervisor(id:number): Observable<any[]> {
+    return this.http.put<any[]>(
+      `${this.urlgeneral}usuario/supervisor/${id}`,
+      this.httpOptions
+    );
+  }
+  getSupervisoresdni(dni:string): Observable<usuario[]> {
+    return this.http.get<usuario[]>(
+      `${this.urlgeneral}usuario/supervisor/${dni}`,
+      this.httpOptions
+    );
+  }
   crearDocumento(
     namcentro: String,
     direccion: String,

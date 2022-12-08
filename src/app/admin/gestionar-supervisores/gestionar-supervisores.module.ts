@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { ModalsAdminModule } from '../modals-admin/modals-admin.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { ModalsAdminModule } from '../modals-admin/modals-admin.module';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    FormsModule
   ],
   exports: [
     GestionarSupervisoresComponent

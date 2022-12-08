@@ -10,4 +10,5 @@ export class usuario {
     fecha_creacion?:string;
     id_tipodoc?:number;
     id_rol?:number;
+    estado?:number;
 }

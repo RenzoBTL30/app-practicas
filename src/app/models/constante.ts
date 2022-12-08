@@ -1,1 +1,2 @@
-export var Urlbackend = 'http://localhost:3000/api/auth/';
+const Urlbackend = 'http://localhost:3000/api/auth/';
+export default Urlbackend;

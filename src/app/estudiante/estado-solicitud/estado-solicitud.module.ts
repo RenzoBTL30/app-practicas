@@ -4,6 +4,7 @@ import { EstadoSolicitudComponent } from './estado-solicitud.component';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { ModalsEstudianteModule } from '../modals-estudiante/modals-estudiante.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [EstadoSolicitudComponent],
@@ -12,9 +13,8 @@ import { ModalsEstudianteModule } from '../modals-estudiante/modals-estudiante.m
     RouterModule,
     MatButtonModule,
     ModalsEstudianteModule,
+    FormsModule,
   ],
   exports: [EstadoSolicitudComponent],
 })
-export class EstadoSolicitudModule {
- 
-}
+export class EstadoSolicitudModule {}

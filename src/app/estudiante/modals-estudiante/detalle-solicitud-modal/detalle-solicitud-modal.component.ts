@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { solicitud } from 'src/app/models/solicitud';
 declare var $: any;
 
 @Component({
@@ -7,13 +8,12 @@ declare var $: any;
   styleUrls: ['./detalle-solicitud-modal.component.scss'],
 })
 export class DetalleSolicitudModalComponent implements OnInit {
-  @Input() item = '';
   @ViewChild('close_modal1') close_modal1?: ElementRef;
-
+  solictudmodal?: solicitud;
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.item);
+    console.log('ASasas');
   }
 
   ocultarModal1() {

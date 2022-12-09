@@ -30,9 +30,19 @@ export class EstudianteService {
       this.httpOptions
     );
   }
-  updateSupervisor(id:number): Observable<any[]> {
+  updateSupervisor(id:number, correo:string): Observable<any[]> {
     return this.http.put<any[]>(
-      `${this.urlgeneral}usuario/supervisor/${id}`,
+      `${this.urlgeneral}usuario/supervisor/${id}`,{
+        correo:correo
+      },
+      this.httpOptions
+    );
+  }
+  updateestadoSupervisor(id:number, estado:string): Observable<any[]> {
+    return this.http.put<any[]>(
+      `${this.urlgeneral}usuario/estado/${id}`,{
+        estado:estado
+      },
       this.httpOptions
     );
   }
@@ -77,6 +87,22 @@ export class EstudianteService {
       actividades: actividades,
       tipoprac: idtipoprac,
       idpostulante: idpostulante,
+    });
+  }
+  crearSupervisor(
+    documento: String,
+    nombre: String,
+    correo: String,
+    tipodocumento: number,
+ 
+  ) {
+    return this.http.post<any>(`${this.urlgeneral}usuario/supervisor`, {
+      
+      documento:documento,
+      nombre:nombre,
+      correo:correo,
+      tipodocumento:tipodocumento
+      
     });
   }
 }

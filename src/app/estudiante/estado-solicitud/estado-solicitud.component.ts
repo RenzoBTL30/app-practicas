@@ -32,4 +32,7 @@ export class EstadoSolicitudComponent implements OnInit {
       
     });
   }
+  selecionsoli(position:number){
+    this.soli=this.reportes[position];
+  }
 }

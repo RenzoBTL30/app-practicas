@@ -44,13 +44,14 @@
           <th></th>
         </thead>
         <tbody>
-          <tr style="text-align: center" *ngFor="let reporte of reportes">
+          <tr style="text-align: center" *ngFor="let reporte of reportes,let i=index">
             <td>
               <button
                 mat-raised-button
                 class="btn btn-info d-inline-flex align-items-center"
                 data-toggle="modal"
                 data-target="#detalleSolicitud"
+                (click)="selecionsoli(i)"
               >
                 <i class="material-icons-outlined mr-2"> visibility</i>
                 SOLICITUD: Prácticas y archivo subido
@@ -75,5 +76,5 @@
   </div>
 </div>
 
-<app-detalle-solicitud-modal></app-detalle-solicitud-modal>
+<app-detalle-solicitud-modal [soli]="soli"></app-detalle-solicitud-modal>
 <app-subir-documentos-finalizacion-modal></app-subir-documentos-finalizacion-modal>

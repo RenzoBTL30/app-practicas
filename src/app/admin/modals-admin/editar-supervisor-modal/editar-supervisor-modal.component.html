@@ -1,4 +1,4 @@
-<div class="modal fade" id="editarsupervisor" tabindex="-1" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="editarsupervisor" tabindex="-1" aria-labelledby="exampleModalLabel" #myNameElem
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
@@ -24,7 +24,7 @@
                     </div>
                   
                     <div class="d-inline-flex justify-content-end mt-3 w-100">
-                        <button mat-raised-button class="btn btn-success mr-3">GUARDAR</button>
+                        <button mat-raised-button class="btn btn-success mr-3" (click)="updateSupervisor()">GUARDAR</button>
                     </div>
                 </div>
             </div>

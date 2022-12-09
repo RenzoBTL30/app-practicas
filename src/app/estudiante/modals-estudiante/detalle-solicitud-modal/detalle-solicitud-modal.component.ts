@@ -8,15 +8,17 @@ declare var $: any;
   styleUrls: ['./detalle-solicitud-modal.component.scss'],
 })
 export class DetalleSolicitudModalComponent implements OnInit {
+  @Input() soli?:any;
   @ViewChild('close_modal1') close_modal1?: ElementRef;
-  solictudmodal?: solicitud;
+  
   constructor() {}
 
   ngOnInit(): void {
-    console.log('ASasas');
+    
   }
 
   ocultarModal1() {
+    console.log(this.soli)
     $('#detalleSolicitud').modal('hide');
   }
 

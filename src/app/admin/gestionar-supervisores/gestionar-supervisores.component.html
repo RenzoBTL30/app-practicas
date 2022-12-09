@@ -40,9 +40,9 @@
               <td style="text-align: center;">
                 <i class="material-icons-outlined icon-edit" (click)="edit(user.correo!,user.id_usuario!)">edit</i>
               </td>
-              <td style="text-align: center;">
+              <td style="text-align: center;" >
                 <label class="switch">
-                  <input type="checkbox" [(ngModel)]="user.estado" (change)="cambio(user.estado!,4)">
+                  <input type="checkbox" [(ngModel)]="user.estado" (change)="cambio(user.estado!,user.id_usuario!)">
                   <span class="slider round"></span>
                 </label>
               </td>

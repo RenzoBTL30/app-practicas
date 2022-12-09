@@ -26,19 +26,19 @@
         <div class="row section">
           <div class="col-3">
             <p class="label">CÓDIGO</p>
-            <p class="text">201911287</p>
+            <p class="text">{{soli?.cod_alumno}}</p>
           </div>
           <div class="col-4">
             <p class="label">NOMBRES Y APELLIDOS</p>
-            <p class="text">Alex Garviel Serrano Montoya</p>
+            <p class="text">{{soli?.nom_usuario}}</p>
           </div>
           <div class="col-3">
             <p class="label">DNI</p>
-            <p class="text">45989595</p>
+            <p class="text">{{soli?.num_doc}}</p>
           </div>
           <div class="col-4">
             <p class="label">TIPO DE PRÁCTICA</p>
-            <p class="text"></p>
+            <p class="text">{{soli?.nom_tipoprac}} </p>
           </div>
         </div>
 
@@ -110,7 +110,8 @@
         <div class="row section">
           <div class="col-4">
             <p class="label">NOMBRE DE LA INSTITUCIÓN</p>
-            <p class="text">Posta médica San Antonio</p>
+         
+            <p class="text">{{soli?.centro_practicas}}</p>
           </div>
           <div class="col-3">
             <p class="label">DIRECCIÓN</p>

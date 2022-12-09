@@ -1,4 +1,6 @@
-import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges, ViewChild } from '@angular/core';
+import { solicitud } from 'src/app/models/solicitud';
+import { SolicitudService } from 'src/app/services/solicitud.service';
 declare var $:any;
 
 @Component({
@@ -13,12 +15,30 @@ export class ValidarSolicitudPendienteComponent implements OnInit {
   @ViewChild("close_modal3") close_modal3?:ElementRef
 
   @Input() TipoVisual?: number;
+  @Input() Id_Solicitud?: number;
 
-  constructor(private renderer: Renderer2) { }
+  //solicitud:solicitud = new solicitud();
+  //solicitud:solicitud[]=[];
+
+  solicitudObject?:any;
+
+  solicitud?:any[];
+
+  constructor(private solicitudService: SolicitudService) { }
 
   ngOnInit(): void {
-    
+    //Muestra los datos la solicitud en el modal cuando este ultimo esta abierto
+    $('#validarSolicitudPendiente').on('show.bs.modal',  (event:any) => {
+      //this.listarSolicitudesPorEstadoyId(this.Id_Solicitud!,1);
+      this.solicitudService.listSolicitudesPorEstadoyId(this.Id_Solicitud!,1).subscribe(data => {
+        this.solicitud = data;
+        this.solicitudObject = this.solicitud[0];
+  
+      })
+    })
   }
+
+
   
 
   ocultarModal1(){
@@ -35,6 +55,11 @@ export class ValidarSolicitudPendienteComponent implements OnInit {
     $('#validarSolicitudPendiente').modal('show');
   }
 
-  
+  listarSolicitudesPorEstadoyId(idsolicitud:number, idsolestado:number){
+    this.solicitudService.listSolicitudesPorEstadoyId(idsolicitud,idsolestado).subscribe(data => {
+      this.solicitud = data;
+      this.solicitudObject = this.solicitud[0];
 
+    })
+  }
 }

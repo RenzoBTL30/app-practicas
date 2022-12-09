@@ -18,7 +18,34 @@ export class SolicitudService {
   urlgeneral: string = Urlbackend;
   
   constructor(private http: HttpClient) {}
-  
+  updatesolicitud(
+    namcentro: String,
+    direccion: String,
+    departamento: String,
+    provincia: String,
+    distrito: String,
+    supnombre: String,
+    correosuper: String,
+    telefonosupervisor: String,
+    nombredirector: String,
+    cargodirector: String,
+    correodirector: String,
+    idsolicitud: number
+  ) {
+    return this.http.put<any>(`${this.urlgeneral}solicitud/${idsolicitud}`, {
+      centro: namcentro,
+      direccion: direccion,
+      departamento: departamento,
+      provincia: provincia,
+      distrito: distrito,
+      supnombre: supnombre,
+      supcorreo: correosuper,
+      suptelefono: telefonosupervisor,
+      remnombre: nombredirector,
+      remcargo: cargodirector,
+      remcorreo: correodirector
+    });
+  }
   getSolicitudes(id: number): Observable<any[]> {
     return this.http.get<any[]>(
       `${this.urlgeneral}solicitud/${id}`,

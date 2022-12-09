@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body text">
                 <div class="section-title">
-                    <p>SUBIR DOCUMENTOS DE FINALIZACIÓN DE PRÁCTICAS</p>
+                    <p>{{titulo}}</p>
                 </div>
                 <div class="row section">
                     <div class="col-12">
@@ -23,7 +23,7 @@
                                     </i>
                             </label>
                         </button>
-                        <input (change)="mostrarNombreArchivo(1)" id="file-upload-informe" type="file" hidden/>
+                        <input (change)="mostrarNombreArchivo(1) ;choseFiel($event) " id="file-upload-informe" type="file" hidden/>
                     </div>
                     <div class="col-12 mt-2">
                         <button mat-raised-button class="btn btn-white w-100">
@@ -34,10 +34,10 @@
                                     </i>
                             </label>
                         </button>
-                        <input (change)="mostrarNombreArchivo(2)" id="file-upload-constancia" type="file" hidden/>
+                        <input (change)="mostrarNombreArchivo(2);choseFiel1($event)" id="file-upload-constancia" type="file" hidden/>
                     </div>
                     <div class="d-inline-flex justify-content-end mt-3 w-100">
-                        <button mat-raised-button class="btn btn-success mr-3">GUARDAR</button>
+                        <button mat-raised-button class="btn btn-success mr-3" (click)="addData2()">GUARDAR</button>
                     </div>
                 </div>
             </div>

@@ -17,19 +17,19 @@
         <div class="d-flex align-items-center" style="color: black">
           Filtrar por:
           <select
-                  class="form-control select-filtro ml-2"
-                  name="miselect"
-                  [(ngModel)]="seleccionado"
-                  (change)="onchagedvalue()"
-                >
-                  <option
-                    *ngFor="let item of lista; let i = index"
-                    [value]="item.value"
-                  >
-                    {{ item.label }}
-                  </option>
-                </select>
-         
+            class="form-control select-filtro ml-2"
+            name="miselect"
+            [(ngModel)]="seleccionado"
+            (change)="onchagedvalue()"
+          >
+            <option
+              *ngFor="let item of lista; let i = index"
+              [value]="item.value"
+            >
+              {{ item.label }}
+            </option>
+          </select>
+
           <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
             filter_list
           </i>
@@ -41,23 +41,27 @@
           <th>FECHA DE REGISTRO</th>
           <th>ESTADO</th>
           <th>TIPO DE PRÁCTICA</th>
-          <th></th>
+          <th>CARGA DE DOCUMENTOS</th>
+          <th>EDITAR SOLICITUD</th>
         </thead>
         <tbody>
-          <tr style="text-align: center" *ngFor="let reporte of reportes,let i=index">
+          <tr
+            style="text-align: center"
+            *ngFor="let reporte of reportes; let i = index"
+          >
             <td>
               <button
                 mat-raised-button
                 class="btn btn-info d-inline-flex align-items-center"
                 data-toggle="modal"
                 data-target="#detalleSolicitud"
-                (click)="selecionsoli(i)"
+                (click)="selecionsoli(i, 0, '')"
               >
                 <i class="material-icons-outlined mr-2"> visibility</i>
                 SOLICITUD: Prácticas y archivo subido
               </button>
             </td>
-            <td>{{ reporte.fecha_reg | date : "shortDate" }}</td>
+            <td>{{ reporte.fecha_reg | date : "dd/MM/yyyy" }}</td>
             <td>{{ reporte.nombre_solestado }}</td>
             <td>{{ reporte.nom_tipoprac }}</td>
             <td>
@@ -65,8 +69,39 @@
                 class="material-icons-outlined icon-upload"
                 data-toggle="modal"
                 data-target="#subirDocPracticas"
+                (click)="
+                  selecionsoli(
+                    i,
+                    1,
+                    'SUBIR DOCUMENTOS DE FINALIZACIÓN DE PRÁCTICAS'
+                  )
+                "
+                *ngIf="reporte.id_solestado == 4"
               >
                 file_upload
+              </i>
+              <i
+                class="material-icons-outlined icon-upload"
+                data-toggle="modal"
+                data-target="#subirDocPracticas"
+                *ngIf="reporte.id_solestado == 5"
+                (click)="
+                  selecionsoli(
+                    i,
+                    2,
+                    'EDITAR DOCUMENTOS DE FINALIZACIÓN DE PRÁCTICAS'
+                  )
+                "
+              >
+                mode_edit
+              </i>
+            </td>
+            <td>
+              <i
+                class="material-icons-outlined icon-upload"
+                (click)="edicionsoli(i, 0, '')"
+              >
+                edit_note
               </i>
             </td>
           </tr>
@@ -75,6 +110,23 @@
     </div>
   </div>
 </div>
-
+<app-editar-solicitud-component
+  [nombrecentro]="nombrecentro"
+  [departamento]="departamento"
+  [provincia]="provincia"
+  [distrito]="distrito"
+  [direccion]="direccion"
+  [nomsupervisor]="nomsupervisor"
+  [correosupervisor]="correosupervisor"
+  [telefonosupervisor]="telefonosupervisor"
+  [nomdirector]="nomdirector"
+  [cargodirector]="cargodirector"
+  [correodirector]="correodirector"
+  [idsolicitud]="soli?.id_solicitud"
+></app-editar-solicitud-component>
 <app-detalle-solicitud-modal [soli]="soli"></app-detalle-solicitud-modal>
-<app-subir-documentos-finalizacion-modal></app-subir-documentos-finalizacion-modal>
+<app-subir-documentos-finalizacion-modal
+  [soli]="soli"
+  [accion]="accion"
+  [titulo]="accionnombre"
+></app-subir-documentos-finalizacion-modal>

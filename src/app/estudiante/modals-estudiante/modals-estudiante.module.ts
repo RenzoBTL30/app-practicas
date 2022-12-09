@@ -5,23 +5,28 @@ import { SubirDocumentosFinalizacionModalComponent } from './subir-documentos-fi
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { EditarSolicitudComponentComponent } from './editar-solicitud-component/editar-solicitud-component.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     DetalleSolicitudModalComponent,
-    SubirDocumentosFinalizacionModalComponent
+    SubirDocumentosFinalizacionModalComponent,
+    EditarSolicitudComponentComponent
   ],
   imports: [
     CommonModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   exports: [
     DetalleSolicitudModalComponent,
-    SubirDocumentosFinalizacionModalComponent
+    SubirDocumentosFinalizacionModalComponent,
+    EditarSolicitudComponentComponent
   ]
 })
 export class ModalsEstudianteModule { }

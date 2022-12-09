@@ -48,15 +48,15 @@
         <div class="row section">
           <div class="col-4">
             <p class="label">NOMBRES Y APELLIDOS</p>
-            <p class="text">Juan Antonio Juarez Mandala</p>
+            <p class="text">{{soli?.sup_nombre}}</p>
           </div>
           <div class="col-3">
-            <p class="label">DNI</p>
-            <p class="text">45989595</p>
+            <p class="label">TELEFONO</p>
+            <p class="text">{{soli?.sup_telefono}}</p>
           </div>
           <div class="col-4">
             <p class="label">CORREO ELECTRÓNICO</p>
-            <p class="text">juanantjmandala@gmail.com</p>
+            <p class="text">{{soli?.sup_correo}}</p>
           </div>
         </div>
 
@@ -66,15 +66,15 @@
         <div class="row section">
           <div class="col-4">
             <p class="label">NOMBRES Y APELLIDOS</p>
-            <p class="text">Juan Antonio Flores Muñoz</p>
+            <p class="text">{{soli?.rem_nombre}}</p>
           </div>
           <div class="col-3">
-            <p class="label">DNI</p>
-            <p class="text">45989595</p>
+            <p class="label">CARGO</p>
+            <p class="text">{{soli?.rem_cargo}}</p>
           </div>
           <div class="col-4">
             <p class="label">CORREO ELECTRÓNICO</p>
-            <p class="text">juanantjmandala@gmail.com</p>
+            <p class="text">{{soli?.rem_correo}}</p>
           </div>
         </div>
 
@@ -84,11 +84,11 @@
         <div class="row section">
           <div class="col-3">
             <p class="label">FECHA INICIO</p>
-            <p class="text">29-12-2022</p>
+            <p class="text">{{soli?.fecha_inicio | date : 'dd/MM/yyyy' }}</p>
           </div>
           <div class="col-3">
             <p class="label">FECHA FIN</p>
-            <p class="text">23-04-2023</p>
+            <p class="text">{{soli?.fecha_fin | date : 'dd/MM/yyyy'}}</p>
           </div>
           <div class="col-4">
             <button
@@ -96,7 +96,7 @@
               class="btn btn-info d-inline-flex align-items-center"
               data-toggle="modal"
               data-target="#descripcionPlan"
-              (click)="ocultarModal1()"
+              (click)="ocultarModal1(soli?.departamento!,'Carta Presentacion')"
             >
               <i class="material-icons-outlined mr-2"> visibility</i>Ver
               descripción
@@ -115,19 +115,19 @@
           </div>
           <div class="col-3">
             <p class="label">DIRECCIÓN</p>
-            <p class="text">Av. Los Geranios 769</p>
+            <p class="text">{{soli?.direccion}}</p>
           </div>
           <div class="col-3">
             <p class="label">DISTRITO</p>
-            <p class="text">Chosica</p>
+            <p class="text">{{soli?.distrito}}</p>
           </div>
           <div class="col-4">
             <p class="label">PROVINCIA</p>
-            <p class="text">Lima</p>
+            <p class="text">{{soli?.provincia}}</p>
           </div>
           <div class="col-3">
             <p class="label">DEPARTAMENTO</p>
-            <p class="text">Lima</p>
+            <p class="text">{{soli?.departamento}}</p>
           </div>
           <div class="col-4">
             <button
@@ -135,12 +135,56 @@
               class="btn btn-info d-inline-flex align-items-center"
               data-toggle="modal"
               data-target="#cartaPresentacion"
-              (click)="ocultarModal1()"
+              (click)="ocultarModal1(soli?.link_carta!,'Carta Presentacion')"
             >
               <i class="material-icons-outlined mr-2"> visibility</i>Ver carta
               presentación
             </button>
           </div>
+          <div class="col-3 margen">
+            <button
+              mat-raised-button
+              class="btn btn-info d-inline-flex align-items-center"
+              data-toggle="modal"
+              data-target="#cartaPresentacion"
+              (click)="ocultarModal1(soli?.link_guiapracticas!,'Carta Guia Practicas')"
+            >
+              <i class="material-icons-outlined mr-2"> visibility</i>Ver Guía de Practicas Inicial
+            </button>
+          </div>
+          <div class="col-3 margen">
+            <button
+              mat-raised-button
+              class="btn btn-info d-inline-flex align-items-center"
+              data-toggle="modal"
+              data-target="#cartaPresentacion"
+              (click)="ocultarModal1(soli?.INFO!,'Informe de Practicas')"
+            >
+              <i class="material-icons-outlined mr-2"> visibility</i>Ver Informe de Practicas
+            </button>
+          </div>
+          <div class="col-3 margen">
+            <button
+              mat-raised-button
+              class="btn btn-info d-inline-flex align-items-center"
+              data-toggle="modal"
+              data-target="#cartaPresentacion"
+              (click)="ocultarModal1(soli?.CONSTANCIAHORAS!,'Constancia de Horas')"
+            >
+              <i class="material-icons-outlined mr-2"> visibility</i>Ver Constancia de Horas
+            </button>
+          </div>
+          <div class="col-3 margen">
+            <button
+            mat-raised-button
+            class="btn btn-info d-inline-flex align-items-center"
+            data-toggle="modal"
+            data-target="#cartaPresentacion"
+            (click)="ocultarModal1(soli?.GUIAPRACTICAS!,'Guia de Practicas')"
+          >
+            <i class="material-icons-outlined mr-2"> visibility</i>Ver Guia de Practicas Realizadas
+          </button>
+        </div>
         </div>
         <div class="section-title">
           <p>OBSERVACIONES</p>
@@ -153,7 +197,7 @@
               cols="20"
               rows="5"
               disabled
-            ></textarea>
+            >{{soli?.observacion}}</textarea>
           </div>
         </div>
       </div>
@@ -181,7 +225,7 @@
           cols="20"
           rows="10"
           disabled
-        ></textarea>
+        >{{soli?.det_actividades}}</textarea>
         <div class="d-inline-flex justify-content-end mt-3 w-100">
           <button
             mat-raised-button
@@ -216,7 +260,7 @@
   >
     <div class="modal-content" style="height: 600px">
       <div class="modal-header p-1">
-        <h4 class="title-submodal">Carta presentación:</h4>
+        <h4 class="title-submodal">{{nombre}}:</h4>
         <button
           type="button"
           class="close"
@@ -230,7 +274,8 @@
       <div class="modal-body pb-0">
         <embed
           #mostrador
-          src="https://ddd.uab.cat/pub/ree/02101025v15n3/02101025v15n3p433.pdf"
+          id="ver"
+          src=""
           type="application/pdf"
           width="100%"
           height="440"

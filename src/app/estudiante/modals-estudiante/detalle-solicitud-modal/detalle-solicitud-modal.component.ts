@@ -10,15 +10,20 @@ declare var $: any;
 export class DetalleSolicitudModalComponent implements OnInit {
   @Input() soli?:any;
   @ViewChild('close_modal1') close_modal1?: ElementRef;
-  
+  nombre?:string;
+  url?:string;
   constructor() {}
 
   ngOnInit(): void {
     
   }
 
-  ocultarModal1() {
-    console.log(this.soli)
+  ocultarModal1(url:string,nombre:string) {
+   
+   this.nombre=nombre;
+   
+    
+    $('#ver').prop("src",url);
     $('#detalleSolicitud').modal('hide');
   }
 

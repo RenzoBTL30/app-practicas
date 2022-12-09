@@ -125,13 +125,26 @@
             mat-raised-button
             type="button"
             class="btn btn-danger"
+            (click)="rechazar(soli?.id_solicitud, soli?.id_postulante)"
+          >
+            RECHAZAR
+          </button>
+          <button
+            mat-raised-button
+            type="button"
+            class="btn btn-warning"
             data-toggle="modal"
             data-target="#observacionesPlaza"
             (click)="ocultarModal1()"
           >
-            RECHAZAR COMO ELLA
+            OBSERBACION
           </button>
-          <button mat-raised-button type="button" class="btn btn-success">
+          <button
+            mat-raised-button
+            type="button"
+            class="btn btn-success"
+            (click)="validar(soli?.id_solicitud)"
+          >
             VALIDAR PLAZA
           </button>
         </div>
@@ -169,8 +182,12 @@
           placeholder="Escribe aquí las observaciones de la solicitud"
         ></textarea>
         <div class="d-inline-flex justify-content-end mt-3 w-100">
-          <button mat-raised-button class="btn btn-success mr-3">
-            ENVIAR OBSERVACIÓN Y RECHAZAR
+          <button
+            mat-raised-button
+            class="btn btn-success mr-3"
+            (click)="obserbacion(soli?.id_solicitud)"
+          >
+            ENVIAR OBSERVACIÓN
           </button>
           <button
             mat-raised-button

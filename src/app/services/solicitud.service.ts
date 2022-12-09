@@ -34,16 +34,16 @@ export class SolicitudService {
 
   //Listar solicitudes por solestado
   listSolicitudesPorEstado(id: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.urlgeneral}/solicitud/estado/nuevo/${id}`);
+    return this.http.get<any[]>(`${this.urlgeneral}solicitud/estado/nuevo/${id}`);
   }
 
   //Listar solicitudes por id y solestado
   listSolicitudesPorEstadoyId(idsolicitud: number, idsolestado: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.urlgeneral}/solicitud/estado/search/${idsolicitud}/${idsolestado}`);
+    return this.http.get<any[]>(`${this.urlgeneral}solicitud/estado/search/${idsolicitud}/${idsolestado}`);
   }
 
   getSolicitudesPorId(id: number): Observable<solicitud[]> {
-    return this.http.get<solicitud[]>(`${this.urlgeneral}/solicitud/search/${id}`);
+    return this.http.get<solicitud[]>(`${this.urlgeneral}solicitud/search/${id}`);
   }
 
 }

@@ -16,19 +16,19 @@
                 <div class="row section">
                     <div class="col-3">
                         <p class="label">CÓDIGO</p>
-                        <p class="text">{{Id_Solicitud}}</p>
+                        <p class="text">{{solicitudObject.cod_alumno}}</p>
                     </div>
                     <div class="col-4">
                         <p class="label">NOMBRES Y APELLIDOS</p>
-                        <p class="text">{{solicitudObject?.nom_usuario}}</p>
+                        <p class="text">{{solicitudObject.nom_usuario}}</p>
                     </div>
                     <div class="col-3">
                         <p class="label">DNI</p>
-                        <p class="text">45989595</p>
+                        <p class="text">{{solicitudObject.num_doc}}</p>
                     </div>
                     <div class="col-4">
                         <p class="label">TIPO DE PRÁCTICA</p>
-                        <p class="text">PRÁCTICAS COMUNITARIAS</p>
+                        <p class="text">{{solicitudObject.nom_tipoprac}}</p>
                     </div>
                 </div>
 

@@ -16,19 +16,19 @@
                 <div class="row section">
                     <div class="col-3">
                         <p class="label">CÓDIGO</p>
-                        <p class="text">{{solicitudObject.cod_alumno}}</p>
+                        <p class="text">{{Solicitud?.cod_alumno}}</p>
                     </div>
                     <div class="col-4">
                         <p class="label">NOMBRES Y APELLIDOS</p>
-                        <p class="text">{{solicitudObject.nom_usuario}}</p>
+                        <p class="text">{{Solicitud?.nom_usuario}}</p>
                     </div>
                     <div class="col-3">
                         <p class="label">DNI</p>
-                        <p class="text">{{solicitudObject.num_doc}}</p>
+                        <p class="text">{{Solicitud?.num_doc}}</p>
                     </div>
                     <div class="col-4">
                         <p class="label">TIPO DE PRÁCTICA</p>
-                        <p class="text">{{solicitudObject.nom_tipoprac}}</p>
+                        <p class="text">{{Solicitud?.nom_tipoprac}}</p>
                     </div>
                 </div>
 
@@ -38,15 +38,15 @@
                 <div class="row section">
                     <div class="col-4">
                         <p class="label">NOMBRES Y APELLIDOS</p>
-                        <p class="text">Juan Antonio Juarez Mandala</p>
+                        <p class="text"></p>
                     </div>
                     <div class="col-3">
                         <p class="label">TELÉFONO</p>
-                        <p class="text">976986896</p>
+                        <p class="text"></p>
                     </div>
                     <div class="col-4">
                         <p class="label">CORREO ELECTRÓNICO</p>
-                        <p class="text">juanantjmandala@gmail.com</p>
+                        <p class="text"></p>
                     </div>
                 </div>
 
@@ -56,15 +56,15 @@
                 <div class="row section">
                     <div class="col-4">
                         <p class="label">NOMBRES Y APELLIDOS</p>
-                        <p class="text">Juan Antonio Flores Muñoz</p>
+                        <p class="text">{{Solicitud?.rem_nombre}}</p>
                     </div>
                     <div class="col-3">
                         <p class="label">CARGO</p>
-                        <p class="text">Director del centro</p>
+                        <p class="text">{{Solicitud?.rem_cargo}}</p>
                     </div>
                     <div class="col-4">
                         <p class="label">CORREO ELECTRÓNICO</p>
-                        <p class="text">juanantjmandala@gmail.com</p>
+                        <p class="text">{{Solicitud?.rem_correo}}</p>
                     </div>
                 </div>
 
@@ -74,11 +74,11 @@
                 <div class="row section">
                     <div class="col-3">
                         <p class="label">FECHA INICIO</p>
-                        <p class="text">29-12-2022</p>
+                        <p class="text">{{Solicitud?.fecha_inicio | date:'dd-MM-yyyy'}}</p>
                     </div>
                     <div class="col-3">
                         <p class="label">FECHA FIN</p>
-                        <p class="text">23-04-2023</p>
+                        <p class="text">{{Solicitud?.fecha_fin | date:'dd-MM-yyyy'}}</p>
                     </div>
                     <div class="col-4">
                         <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"

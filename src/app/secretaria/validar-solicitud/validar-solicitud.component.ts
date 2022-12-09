@@ -9,10 +9,14 @@ import { SolicitudService } from 'src/app/services/solicitud.service';
 export class ValidarSolicitudComponent implements OnInit {
 
   validator?:number;
-  solicitud?:any[];
+  solicitud:any[]=[];
+  soliEnviar?:any;
   idSolicitud?:number;
 
-  constructor(private solicitudservice: SolicitudService) { }
+  solicitudObject:any;
+
+
+  constructor(private solicitudService: SolicitudService) { }
 
   ngOnInit(): void {
     this.listarSolicitudesRegistradas();
@@ -29,13 +33,19 @@ export class ValidarSolicitudComponent implements OnInit {
 
   // Funcion para listar solicitudes con estado = 1 (registrado)
   listarSolicitudesRegistradas(){
-    this.solicitudservice.listSolicitudesPorEstado(1).subscribe(data => {
+    this.solicitudService.listSolicitudesPorEstado(1).subscribe(data => {
       this.solicitud = data;
     })
   }
 
-  enviarId(id:number){
-    this.idSolicitud = id;
+  listarSolicitudesPorEstadoyId(idsolicitud:number, idsolestado:number){
+    this.solicitudService.listSolicitudesPorEstadoyId(idsolicitud,idsolestado).subscribe(data => {
+      this.solicitud = data;
+    })
   }
-
+  
+  seleccionarSoli(posicion:number){
+    this.solicitudObject = this.solicitud[posicion];
+  }
+  
 }

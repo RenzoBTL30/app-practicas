@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AgregarCartaPresentacionModalComponent } from './agregar-carta-presentacion-modal/agregar-carta-presentacion-modal.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MatInputModule } from '@angular/material/input';
     CommonModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
     
   ],
   exports: [

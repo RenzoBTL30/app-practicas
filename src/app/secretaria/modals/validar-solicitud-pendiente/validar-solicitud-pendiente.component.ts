@@ -33,7 +33,7 @@ export class ValidarSolicitudPendienteComponent implements OnInit {
       this.solicitudService.listSolicitudesPorEstadoyId(this.Id_Solicitud!,1).subscribe(data => {
         this.solicitud = data;
         this.solicitudObject = this.solicitud[0];
-  
+        
       })
     })
   }

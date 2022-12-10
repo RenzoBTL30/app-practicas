@@ -13,6 +13,7 @@ export class ValidarPlazaModalComponent implements OnInit {
 
   @Input() TipoVisual?: number;
   @Input() soli?: any;
+  obser?: string;
 
   constructor(private solici: SolicitudService) {}
 
@@ -24,7 +25,7 @@ export class ValidarPlazaModalComponent implements OnInit {
   rechazar(id: number, idpostualnte: number) {
     swal
       .fire({
-        title: 'Se guardara este documento:',
+        title: 'Se rechazara la solicitud:',
         text: '¿Esta seguro de continuar?',
         icon: 'warning',
         showCancelButton: true,
@@ -45,7 +46,7 @@ export class ValidarPlazaModalComponent implements OnInit {
   validar(id: number) {
     swal
       .fire({
-        title: 'Se guardara este documento:',
+        title: 'Se validara esta solicitud:',
         text: '¿Esta seguro de continuar?',
         icon: 'warning',
         showCancelButton: true,
@@ -57,12 +58,17 @@ export class ValidarPlazaModalComponent implements OnInit {
       })
       .then((resultado) => {
         if (resultado.value) {
-          console.log(id);
+          this.solici.validarSolicitud(id, 3).subscribe((data) => {
+            $('#validarPlaza').modal('hide');
+          });
         }
       });
   }
   obserbacion(id: number) {
-    console.log(id);
+    this.solici.obserbacionSolicitud(this.obser!, id).subscribe((data) => {
+      $('#observacionesPlaza').modal('hide');
+      this.obser = '';
+    });
   }
   backToModal1() {
     this.close_modal2?.nativeElement.click();

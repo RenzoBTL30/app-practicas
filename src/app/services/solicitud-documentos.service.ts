@@ -3,11 +3,10 @@ import { Injectable } from '@angular/core';
 import Urlbackend from '../models/constante';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SolicitudDocumentosService {
-
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient) {}
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -17,31 +16,49 @@ export class SolicitudDocumentosService {
   insertDocumentosFinales(
     linkinforme: String,
     constanciahoras: String,
-    
-    idsolicitud: number,
- 
+
+    idsolicitud: number
   ) {
-    return this.http.post<any>(`${this.urlgeneral}solicituddocumentos/documentosfinales`, {
-      
-      linkinforme:linkinforme,
-      constanciahoras:constanciahoras,
-      idsolicitud:idsolicitud
-      
-    });
+    return this.http.post<any>(
+      `${this.urlgeneral}solicituddocumentos/documentosfinales`,
+      {
+        linkinforme: linkinforme,
+        constanciahoras: constanciahoras,
+        idsolicitud: idsolicitud,
+      }
+    );
+  }
+  insertDocumentosFinal(
+    idsolicitud: number,
+    idpostulante: number,
+    guia: string,
+    horas: number,
+    practica: number
+  ) {
+    return this.http.post<any>(
+      `${this.urlgeneral}solicituddocumentos/documentofinal`,
+      {
+        idsolicitud: idsolicitud,
+        idpostulante: idpostulante,
+        guia: guia,
+        horas: horas,
+        practica: practica,
+      }
+    );
   }
   updateDoucmentos(
     linkinforme: String,
     constanciahoras: String,
-    
-    idsolicitud: number,
- 
+
+    idsolicitud: number
   ) {
-    return this.http.put<any>(`${this.urlgeneral}solicituddocumentos/documentosfinales`, {
-      
-      linkinforme:linkinforme,
-      constanciahoras:constanciahoras,
-      idsolicitud:idsolicitud
-      
-    });
+    return this.http.put<any>(
+      `${this.urlgeneral}solicituddocumentos/documentosfinales`,
+      {
+        linkinforme: linkinforme,
+        constanciahoras: constanciahoras,
+        idsolicitud: idsolicitud,
+      }
+    );
   }
 }

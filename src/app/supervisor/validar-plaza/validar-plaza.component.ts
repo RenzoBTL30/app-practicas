@@ -18,7 +18,13 @@ export class ValidarPlazaComponent implements OnInit {
     this.solicitudes.listSolicitudesPorEstado(2).subscribe((data) => {
       this.reportes = data;
     });
+
     $('#validarPlaza').on('hide.bs.modal', (event: any) => {
+      this.solicitudes.listSolicitudesPorEstado(2).subscribe((data) => {
+        this.reportes = data;
+      });
+    });
+    $('#observacionesPlaza').on('hide.bs.modal', (event: any) => {
       this.solicitudes.listSolicitudesPorEstado(2).subscribe((data) => {
         this.reportes = data;
       });

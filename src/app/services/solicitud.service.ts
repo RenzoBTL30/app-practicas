@@ -45,6 +45,28 @@ export class SolicitudService {
       remcorreo: correodirector,
     });
   }
+  obserbacionSolicitud(
+    obserbacion: String,
+
+    idsolicitud: number
+  ) {
+    return this.http.post<any>(
+      `${this.urlgeneral}solicitud/observarsolicitud/${idsolicitud}`,
+      {
+        observacion: obserbacion,
+      }
+    );
+  }
+  validarSolicitud(
+    id: number,
+
+    estado: number
+  ) {
+    return this.http.post<any>(`${this.urlgeneral}solicitud/validarsolicitud`, {
+      id: id,
+      ESTADO: estado,
+    });
+  }
   getSolicitudes(id: number): Observable<any[]> {
     return this.http.get<any[]>(
       `${this.urlgeneral}solicitud/${id}`,

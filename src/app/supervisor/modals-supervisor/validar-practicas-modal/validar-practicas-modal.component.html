@@ -1,196 +1,378 @@
-<div class="modal fade" id="validarPracticas" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header p-1 justify-content-center">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="material-icons-outlined icon-cancel">
-                        cancel
-                    </i>
-                </button>
-            </div>
-            <div class="modal-body text">
-                <div class="section-title">
-                    <p>DATOS DEL SOLICITANTE:</p>
-                </div>
-                <div class="row section">
-                    <div class="col-3">
-                        <p class="label">CÓDIGO</p>
-                        <p class="text">201911287</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="label">NOMBRES Y APELLIDOS</p>
-                        <p class="text">Alex Garviel Serrano Montoya</p>
-                    </div>
-                    <div class="col-3">
-                        <p class="label">DNI</p>
-                        <p class="text">45989595</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="label">TIPO DE PRÁCTICA</p>
-                        <p class="text">PRÁCTICAS COMUNITARIAS</p>
-                    </div>
-                </div>
-
-                <div class="section-title">
-                    <p>DATOS DEL NUTRICIONISTA:</p>
-                </div>
-                <div class="row section">
-                    <div class="col-4">
-                        <p class="label">NOMBRES Y APELLIDOS</p>
-                        <p class="text">Juan Antonio Juarez Mandala</p>
-                    </div>
-                    <div class="col-3">
-                        <p class="label">DNI</p>
-                        <p class="text">45989595</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="label">CORREO ELECTRÓNICO</p>
-                        <p class="text">juanantjmandala@gmail.com</p>
-                    </div>
-                </div>
-
-                <div class="section-title">
-                    <p>DATOS DEL DIRECTOR O ESPECIALISTA ENCARGADO:</p>
-                </div>
-                <div class="row section">
-                    <div class="col-4">
-                        <p class="label">NOMBRES Y APELLIDOS</p>
-                        <p class="text">Juan Antonio Flores Muñoz</p>
-                    </div>
-                    <div class="col-3">
-                        <p class="label">DNI</p>
-                        <p class="text">45989595</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="label">CORREO ELECTRÓNICO</p>
-                        <p class="text">juanantjmandala@gmail.com</p>
-                    </div>
-                </div>
-
-                <div class="section-title">
-                    <p>PLAN DE ACTIVIDADES:</p>
-                </div>
-                <div class="row section">
-                    <div class="col-3">
-                        <p class="label">FECHA INICIO</p>
-                        <p class="text">29-12-2022</p>
-                    </div>
-                    <div class="col-3">
-                        <p class="label">FECHA FIN</p>
-                        <p class="text">23-04-2023</p>
-                    </div>
-                    <div class="col-4">
-                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"
-                        data-target="#descripcionPlan" (click)="ocultarModal1()">
-                            <i class="material-icons-outlined mr-2">
-                            visibility</i>Ver descripción
-                        </button>
-                    </div>
-                </div>
-
-                <div class="section-title">
-                    <p>DATOS DEL CENTRO DE PRÁCTICAS:</p>
-                </div>
-                <div class="row section">
-                    <div class="col-4">
-                        <p class="label">NOMBRE DE LA INSTITUCIÓN</p>
-                        <p class="text">Posta médica San Antonio</p>
-                    </div>
-                    <div class="col-3">
-                        <p class="label">DIRECCIÓN</p>
-                        <p class="text">Av. Los Geranios 769</p>
-                    </div>
-                    <div class="col-3">
-                        <p class="label">DISTRITO</p>
-                        <p class="text">Chosica</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="label">PROVINCIA</p>
-                        <p class="text">Lima</p>
-                    </div>
-                    <div class="col-3">
-                        <p class="label">DEPARTAMENTO</p>
-                        <p class="text">Lima</p>
-                    </div>
-                    <div class="col-4">
-                        <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"
-                        data-target="#cartaPresentacion" (click)="ocultarModal1()">
-                            <i class="material-icons-outlined mr-2">
-                            visibility</i>Ver carta presentación
-                        </button>
-                    </div>
-                </div>
-                <div class="botones d-inline-flex justify-content-end mt-4">
-                    <button mat-raised-button type="button" class="btn btn-success" data-toggle="modal"
-                    data-target="#validarHorasPracticas" (click)="ocultarModal1()">SEGUIR CON LA VALIDACIÓN</button>
-                </div>
-            </div>
+<div
+  class="modal fade"
+  id="validarPracticas"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered"
+  >
+    <div class="modal-content">
+      <div class="modal-header p-1 justify-content-center">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="material-icons-outlined icon-cancel"> cancel </i>
+        </button>
+      </div>
+      <div class="modal-body text">
+        <div class="section-title">
+          <p>DATOS DEL SOLICITANTE:</p>
         </div>
+        <div class="row section">
+          <div class="col-3">
+            <p class="label">CÓDIGO</p>
+            <p class="text">{{ soli?.cod_alumno }}</p>
+          </div>
+          <div class="col-4">
+            <p class="label">NOMBRES Y APELLIDOS</p>
+            <p class="text">{{ soli?.nom_usuario }}</p>
+          </div>
+          <div class="col-3">
+            <p class="label">DNI</p>
+            <p class="text">{{ soli?.num_doc }}</p>
+          </div>
+          <div class="col-4">
+            <p class="label">TIPO DE PRÁCTICA</p>
+            <p class="text">{{ soli?.nom_tipoprac }}</p>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <p>DATOS DEL NUTRICIONISTA:</p>
+        </div>
+        <div class="row section">
+          <div class="col-4">
+            <p class="label">NOMBRES Y APELLIDOS</p>
+            <p class="text">{{ soli?.sup_nombre }}</p>
+          </div>
+          <div class="col-3">
+            <p class="label">TELEFONO</p>
+            <p class="text">{{ soli?.sup_telefono }}</p>
+          </div>
+          <div class="col-4">
+            <p class="label">CORREO ELECTRÓNICO</p>
+            <p class="text">{{ soli?.sup_correo }}</p>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <p>DATOS DEL DIRECTOR O ESPECIALISTA ENCARGADO:</p>
+        </div>
+        <div class="row section">
+          <div class="col-4">
+            <p class="label">NOMBRES Y APELLIDOS</p>
+            <p class="text">{{ soli?.rem_nombre }}</p>
+          </div>
+          <div class="col-3">
+            <p class="label">CARGO</p>
+            <p class="text">{{ soli?.rem_cargo }}</p>
+          </div>
+          <div class="col-4">
+            <p class="label">CORREO ELECTRÓNICO</p>
+            <p class="text">{{ soli?.rem_correo }}</p>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <p>PLAN DE ACTIVIDADES:</p>
+        </div>
+        <div class="row section">
+          <div class="col-3">
+            <p class="label">FECHA INICIO</p>
+            <p class="text">{{ soli?.fecha_inicio | date : "dd/MM/yyyy" }}</p>
+          </div>
+          <div class="col-3">
+            <p class="label">FECHA FIN</p>
+            <p class="text">{{ soli?.fecha_fin | date : "dd/MM/yyyy" }}</p>
+          </div>
+          <div class="col-4">
+            <button
+              mat-raised-button
+              class="btn btn-info d-inline-flex align-items-center"
+              data-toggle="modal"
+              data-target="#descripcionPlan"
+              (click)="ocultarModal1('', '')"
+            >
+              <i class="material-icons-outlined mr-2"> visibility</i>Ver
+              descripción
+            </button>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <p>DATOS DEL CENTRO DE PRÁCTICAS:</p>
+        </div>
+        <div class="row section">
+          <div class="col-4">
+            <p class="label">NOMBRE DE LA INSTITUCIÓN</p>
+            <p class="text">{{ soli?.centro_practicas }}</p>
+          </div>
+          <div class="col-3">
+            <p class="label">DIRECCIÓN</p>
+            <p class="text">{{ soli?.direccion }}</p>
+          </div>
+          <div class="col-3">
+            <p class="label">DISTRITO</p>
+            <p class="text">{{ soli?.distrito }}</p>
+          </div>
+          <div class="col-4">
+            <p class="label">PROVINCIA</p>
+            <p class="text">{{ soli?.provincia }}</p>
+          </div>
+          <div class="col-3">
+            <p class="label">DEPARTAMENTO</p>
+            <p class="text">{{ soli?.departamento }}</p>
+          </div>
+          <div class="col-4">
+            <button
+              mat-raised-button
+              class="btn btn-info d-inline-flex align-items-center"
+              data-toggle="modal"
+              data-target="#cartaPresentacion"
+              (click)="ocultarModal1(soli?.link_carta!, 'Carta Presentacion')"
+            >
+              <i class="material-icons-outlined mr-2"> visibility</i>Ver carta
+              presentación
+            </button>
+          </div>
+          <div class="col-3 margen">
+            <button
+              mat-raised-button
+              class="btn btn-info d-inline-flex align-items-center"
+              data-toggle="modal"
+              data-target="#cartaPresentacion"
+              (click)="
+                ocultarModal1(soli?.link_guiapracticas!, 'Carta Guia Practicas')
+              "
+            >
+              <i class="material-icons-outlined mr-2"> visibility</i>Ver Guía de
+              Practicas Inicial
+            </button>
+          </div>
+          <div class="col-3 margen">
+            <button
+              mat-raised-button
+              class="btn btn-info d-inline-flex align-items-center"
+              data-toggle="modal"
+              data-target="#cartaPresentacion"
+              (click)="ocultarModal1(soli?.INFO!, 'Informe de Practicas')"
+            >
+              <i class="material-icons-outlined mr-2"> visibility</i>Ver Informe
+              de Practicas
+            </button>
+          </div>
+          <div class="col-3 margen">
+            <button
+              mat-raised-button
+              class="btn btn-info d-inline-flex align-items-center"
+              data-toggle="modal"
+              data-target="#cartaPresentacion"
+              (click)="
+                ocultarModal1(soli?.CONSTANCIAHORAS!, 'Constancia de Horas')
+              "
+            >
+              <i class="material-icons-outlined mr-2"> visibility</i>Ver
+              Constancia de Horas
+            </button>
+          </div>
+          <div class="col-3 margen">
+            <button
+              mat-raised-button
+              class="btn btn-info d-inline-flex align-items-center"
+              data-toggle="modal"
+              data-target="#cartaPresentacion"
+              (click)="ocultarModal1(soli?.GUIAPRACTICAS!, 'Guia de Practicas')"
+            >
+              <i class="material-icons-outlined mr-2"> visibility</i>Ver Guia de
+              Practicas Realizadas
+            </button>
+          </div>
+        </div>
+        <div class="botones d-inline-flex justify-content-end mt-4">
+          <button
+            mat-raised-button
+            type="button"
+            class="btn btn-success"
+            data-toggle="modal"
+            data-target="#validarHorasPracticas"
+            (click)="ocultarModal1('', '')"
+          >
+            SEGUIR CON LA VALIDACIÓN
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <!---Modal para mostrar descripcion-->
-<div class="modal fade" id="descripcionPlan" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header p-1">
-                <h4 class="title-submodal">Descripción del plan de actividades:</h4>
-            </div>
-            <div class="modal-body text">
-                <textarea name="texto" class="descripcion-actividades" cols="20" rows="10" disabled></textarea>
-                <div class="d-inline-flex justify-content-end mt-3 w-100">
-                    <button mat-raised-button class="btn btn-success" (click)="descBackToModal1()">VOLVER</button>
-                </div>
-            </div>
+<div
+  class="modal fade"
+  id="descripcionPlan"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header p-1">
+        <h4 class="title-submodal">Descripción del plan de actividades:</h4>
+      </div>
+      <div class="modal-body text">
+        <textarea
+          name="texto"
+          class="descripcion-actividades"
+          cols="20"
+          rows="10"
+          disabled
+          >{{ soli?.det_actividades }}</textarea
+        >
+        <div class="d-inline-flex justify-content-end mt-3 w-100">
+          <button
+            mat-raised-button
+            class="btn btn-success"
+            (click)="descBackToModal1()"
+          >
+            VOLVER
+          </button>
         </div>
+      </div>
     </div>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal1></button>
+  </div>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    data-dismiss="modal"
+    hidden
+    #close_modal1
+  ></button>
 </div>
-
 
 <!---Modal para mostrar carta presentacion-->
-<div class="modal fade" id="cartaPresentacion" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
-        <div class="modal-content" style="height: 600px;">
-            <div class="modal-header p-1">
-                <h4 class="title-submodal">Carta presentación:</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="material-icons-outlined icon-cancel">
-                        cancel
-                    </i>
-                </button>
-            </div>
-            <div class="modal-body pb-0">
-                <embed #mostrador src="https://ddd.uab.cat/pub/ree/02101025v15n3/02101025v15n3p433.pdf" type="application/pdf" width="100%" height="440">
-            </div>
-        </div>
+<div
+  class="modal fade"
+  id="cartaPresentacion"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered"
+  >
+    <div class="modal-content" style="height: 600px">
+      <div class="modal-header p-1">
+        <h4 class="title-submodal">{{ nombre }}:</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="descBackToModal1()"
+        >
+          <i class="material-icons-outlined icon-cancel"> cancel </i>
+        </button>
+      </div>
+      <div class="modal-body pb-0">
+        <embed
+          #mostrador
+          id="ver"
+          src=""
+          type="application/pdf"
+          width="100%"
+          height="440"
+        />
+      </div>
     </div>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal2></button>
+  </div>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    data-dismiss="modal"
+    hidden
+    #close_modal2
+  ></button>
 </div>
-
 
 <!---Modal para validar numero de horas prácticas-->
-<div class="modal fade" id="validarHorasPracticas" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header p-1">
-                <h4 class="title-validar-nro-practicas">Número de horas a validar:</h4>
-            </div>
-            <div class="modal-body text">
-                <p>Si usted ya reviso a detalle los documentos de finalización de prácticas, puede añadir aquí las horas validadas</p>
-                <input type="text" class="form-control input-nros" id="" placeholder="Escriba aquí el número de horas a validar">
-                <div class="d-inline-flex justify-content-end mt-4 w-100">
-                    <button mat-raised-button class="btn btn-success mr-3">VALIDAR NRO DE HORAS</button>
-                    <button mat-raised-button class="btn btn-danger" (click)="horasbackToModal1()">CANCELAR</button>
-                </div>
-            </div>
+<div
+  class="modal fade"
+  id="validarHorasPracticas"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header p-1">
+        <h4 class="title-validar-nro-practicas">Número de horas a validar:</h4>
+      </div>
+      <div class="modal-body text">
+        <p>
+          Si usted ya reviso a detalle los documentos de finalización de
+          prácticas, puede añadir aquí las horas validadas
+        </p>
+        <input
+          type="number"
+          class="form-control input-nros"
+          id=""
+          placeholder="Escriba aquí el número de horas a validar"
+          [(ngModel)]="horas"
+        />
+        <div class="col-12 mt-2">
+          <button mat-raised-button class="btn btn-white w-100">
+            <label
+              class="detalle-btn d-flex align-items-center"
+              for="file-upload-constancia"
+            >
+              Guia de Practicas Realizadas
+              <i class="material-icons-outlined icon-upload ml-auto">
+                upload
+              </i>
+            </label>
+          </button>
+          <input
+            id="file-upload-constancia"
+            type="file"
+            hidden
+            (change)="mostrarNombreArchivo(2); choseFiel($event)"
+          />
         </div>
+        <div class="d-inline-flex justify-content-end mt-4 w-100">
+          <button
+            mat-raised-button
+            class="btn btn-success mr-3"
+            (click)="
+              documentofinal(
+                soli?.id_solicitud,
+                soli?.id_postulante,
+                soli?.id_tipoprac
+              )
+            "
+          >
+            VALIDAR NRO DE HORAS
+          </button>
+
+          <button
+            mat-raised-button
+            class="btn btn-danger"
+            (click)="horasbackToModal1()"
+          >
+            CANCELAR
+          </button>
+        </div>
+      </div>
     </div>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal3></button>
+  </div>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    data-dismiss="modal"
+    hidden
+    #close_modal3
+  ></button>
 </div>
-
-

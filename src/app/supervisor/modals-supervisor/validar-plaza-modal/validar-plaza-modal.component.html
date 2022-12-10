@@ -117,6 +117,22 @@
             <p class="text">{{ soli?.departamento }}</p>
           </div>
         </div>
+        <div class="section-title">
+          <p>OBSERVACIONES</p>
+        </div>
+        <div class="row section">
+          <div class="col-12">
+            <textarea
+              name="texto"
+              class="observaciones"
+              cols="20"
+              rows="5"
+              style="width: 100%"
+              disabled
+              >{{ soli?.observacion }}</textarea
+            >
+          </div>
+        </div>
         <div
           *ngIf="TipoVisual == 1"
           class="botones d-inline-flex justify-content-end mt-5"
@@ -180,6 +196,7 @@
           cols="30"
           rows="10"
           placeholder="Escribe aquí las observaciones de la solicitud"
+          [(ngModel)]="obser"
         ></textarea>
         <div class="d-inline-flex justify-content-end mt-3 w-100">
           <button

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from 'express';
+import { ActivatedRoute, Route } from '@angular/router';
+import { Router } from '@angular/router';
 import { LoginsService } from 'src/app/login/logins.service';
 import { postulante } from 'src/app/models/postulante';
 import { EstudianteService } from 'src/app/services/estudiante.service';
@@ -33,7 +33,11 @@ export class RegistrarSolicitudComponent implements OnInit {
   comunitarias?: number;
   @ViewChild('clicSubir') clicSubir: any;
 
-  constructor(private user: EstudianteService, private route: ActivatedRoute) {}
+  constructor(
+    private user: EstudianteService,
+    private route: ActivatedRoute,
+    private rout: Router
+  ) {}
 
   ngOnInit(): void {
     this.seleccionado = 0;
@@ -64,26 +68,48 @@ export class RegistrarSolicitudComponent implements OnInit {
     this.showNotification('top', 'right', nombre);
   }
   registrarsolicitud() {
-    this.user
-      .crearDocumento(
-        this.centro!,
-        this.direccion!,
-        this.departamento!,
-        this.provincia!,
-        this.distrito!,
-        this.nombresupervisor!,
-        this.correosupervisor!,
-        this.telefonosupervisor!,
-        this.nombredirector!,
-        this.cargodirector!,
-        this.correodirector!,
-        this.fechainicio!,
-        this.fechafin!,
-        this.descripcion!,
-        this.seleccionado!,
-        this.idpostulante!
-      )
-      .subscribe((data) => {});
+    if (
+      this.centro == null ||
+      this.departamento == null ||
+      this.provincia == null ||
+      this.distrito == null ||
+      this.direccion == null ||
+      this.nombresupervisor == null ||
+      this.correosupervisor == null ||
+      this.telefonosupervisor == null ||
+      this.nombredirector == null ||
+      this.cargodirector == null ||
+      this.correodirector == null ||
+      this.descripcion == null ||
+      this.seleccionado == 0 ||
+      this.fechainicio == null ||
+      this.fechafin == null
+    ) {
+      this.showNotificationalert('top', 'right', 'asasasa');
+    } else {
+      this.user
+        .crearDocumento(
+          this.centro!,
+          this.direccion!,
+          this.departamento!,
+          this.provincia!,
+          this.distrito!,
+          this.nombresupervisor!,
+          this.correosupervisor!,
+          this.telefonosupervisor!,
+          this.nombredirector!,
+          this.cargodirector!,
+          this.correodirector!,
+          this.fechainicio!,
+          this.fechafin!,
+          this.descripcion!,
+          this.seleccionado!,
+          this.idpostulante!
+        )
+        .subscribe((data) => {
+          this.rout.navigate(['/estudiante/pages/mis-solicitudes']);
+        });
+    }
   }
   showNotification(from: any, align: any, nombreArchivo: any) {
     $.notify(
@@ -95,6 +121,25 @@ export class RegistrarSolicitudComponent implements OnInit {
 
       {
         type: 'success',
+        timer: 2500,
+        delay: 2500,
+        placement: {
+          from: from,
+          align: align,
+        },
+      }
+    );
+  }
+  showNotificationalert(from: any, align: any, nombreArchivo: any) {
+    $.notify(
+      {
+        icon: 'face',
+        title: 'Error:',
+        message: `Seleccione todos los campos`,
+      },
+
+      {
+        type: 'warning',
         timer: 2500,
         delay: 2500,
         placement: {

@@ -12,6 +12,7 @@ export class ValidarPlazaComponent implements OnInit {
   reportes?: any[];
   reportesv?: any[];
   soli?: any;
+  codigo = '';
   constructor(private solicitudes: SolicitudService) {}
 
   ngOnInit(): void {
@@ -32,6 +33,22 @@ export class ValidarPlazaComponent implements OnInit {
         this.reportes = data;
       });
     });
+  }
+  searchestado(estado: number) {
+    if (estado == 2) {
+      this.solicitudes
+        .getSolicitudesPorEstadoyCodigoAlumno(2, this.codigo!)
+        .subscribe((data) => {
+          this.reportes = data;
+        });
+    }
+    if (estado == 3) {
+      this.solicitudes
+        .getSolicitudesPorEstadoyCodigoAlumno(3, this.codigo!)
+        .subscribe((data) => {
+          this.reportesv = data;
+        });
+    }
   }
   visualizar1() {
     this.solicitudes.listSolicitudesPorEstado(2).subscribe((data) => {

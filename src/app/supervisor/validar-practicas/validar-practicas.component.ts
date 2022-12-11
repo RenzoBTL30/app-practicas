@@ -10,6 +10,7 @@ declare var $: any;
 export class ValidarPracticasComponent implements OnInit {
   reportes?: any[];
   soli?: any;
+  codigo = '';
   constructor(private solicitudes: SolicitudService) {}
 
   ngOnInit(): void {
@@ -21,6 +22,13 @@ export class ValidarPracticasComponent implements OnInit {
         this.reportes = data;
       });
     });
+  }
+  searchestado() {
+    this.solicitudes
+      .getSolicitudesPorEstadoyCodigoAlumno(5, this.codigo!)
+      .subscribe((data) => {
+        this.reportes = data;
+      });
   }
   cargarSolicitud(position: number) {
     this.soli = this.reportes![position];

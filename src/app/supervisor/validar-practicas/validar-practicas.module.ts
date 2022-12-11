@@ -6,23 +6,19 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { ModalsSupervisorModule } from '../modals-supervisor/modals-supervisor.module';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    ValidarPracticasComponent
-  ],
+  declarations: [ValidarPracticasComponent],
   imports: [
     CommonModule,
     ModalsSupervisorModule,
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatOptionModule
-
+    MatOptionModule,
+    FormsModule,
   ],
-  exports: [
-    ValidarPracticasComponent
-  ]
+  exports: [ValidarPracticasComponent],
 })
-export class ValidarPracticasModule { }
+export class ValidarPracticasModule {}

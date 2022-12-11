@@ -41,8 +41,13 @@
                 type="text"
                 placeholder="Buscar por Código de Alumno"
                 class="form-control input-codigo"
+                [(ngModel)]="codigo"
               />
-              <button mat-raised-button class="btn btn-info ml-3">
+              <button
+                mat-raised-button
+                class="btn btn-info ml-3"
+                (click)="searchestado(2)"
+              >
                 Buscar
               </button>
             </div>
@@ -58,7 +63,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let reporte of reportes; let i = index">
-                <td>{{ reporte.num_doc }}</td>
+                <td>{{ reporte.cod_alumno }}</td>
                 <td>{{ reporte.nom_usuario }}</td>
                 <td>{{ reporte.fecha_reg | date : "dd/MM/yyyy" }}</td>
                 <td>{{ reporte.nombre_solestado }}</td>
@@ -87,8 +92,13 @@
                 type="text"
                 placeholder="Buscar por Código de Alumno"
                 class="form-control input-codigo"
+                [(ngModel)]="codigo"
               />
-              <button mat-raised-button class="btn btn-info ml-3">
+              <button
+                mat-raised-button
+                class="btn btn-info ml-3"
+                (click)="searchestado(3)"
+              >
                 Buscar
               </button>
             </div>
@@ -104,7 +114,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let reporte of reportesv; let i = index">
-                <td>{{ reporte.num_doc }}</td>
+                <td>{{ reporte.cod_alumno }}</td>
                 <td>{{ reporte.nom_usuario }}</td>
                 <td>{{ reporte.fecha_reg | date : "dd/MM/yyyy" }}</td>
                 <td>{{ reporte.nombre_solestado }}</td>

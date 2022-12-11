@@ -12,8 +12,8 @@
           <div class="d-flex align-items-center">
             
             <div class="d-flex align-items-center">
-              <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
-              <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
+              <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" [(ngModel)]="codigoBusqueda"/>
+              <button mat-raised-button class="btn btn-info ml-3" (click)="searchCodigoAlumnoPostulante()">Buscar</button>
             </div>
   
           </div>

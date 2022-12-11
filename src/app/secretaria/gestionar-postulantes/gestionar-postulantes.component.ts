@@ -19,6 +19,8 @@ export class GestionarPostulantesComponent implements OnInit {
   practicasComun?: boolean;
   practicasClin?: boolean;
 
+  codigoBusqueda?: string;
+
   @Output() mostrarChecksenModalEditar = new EventEmitter<void>();
 
   @ViewChild(EditarPostulanteComponent) hijo?: EditarPostulanteComponent
@@ -80,7 +82,7 @@ export class GestionarPostulantesComponent implements OnInit {
       .then((resultado) => {
         if (resultado.value) {
 
-          this.postulanteService.updateestadoSupervisor(id,estado).subscribe(data =>{
+          this.postulanteService.updateestadoPostulante(id,estado).subscribe(data =>{
             this.listarPostulantes();
           })
 
@@ -91,8 +93,21 @@ export class GestionarPostulantesComponent implements OnInit {
           )
         }
       });
+  }
 
-   
+  searchCodigoAlumnoPostulante() {
+    // Si el valor del input para buscar codigo esta vacío, se ejecuta la linea 107
+    // en caso contrario, entra al if (lineas 102-106)
+    if (this.codigoBusqueda! != "") {
+      this.postulanteService.getPostulantePorCodigoAlumno(this.codigoBusqueda!).subscribe((data) => {
+        this.postulantes = data;
+  
+        this.postulantes = this.postulantes.filter(x => x.estado_usuario == '1');
+      });
+    } else {
+      this.listarPostulantes();
+    }
+    
   }
 
 }

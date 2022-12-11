@@ -46,7 +46,7 @@ div.container-fluid{
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     position: absolute;
-    top: 60px;
+    top: 10%;
     left: calc(50% - 75px);
 }
 
@@ -80,13 +80,6 @@ div.container-fluid{
 
     .login{
         padding: 100px 40px 95px 40px; /* arriba derecha abajo izquierda*/
-    }
-
-    .icono-login{
-        width: 180px;
-        height: 180px;
-        top: 90px;
-        left: calc(50% - 90px);
     }
 
     .input{

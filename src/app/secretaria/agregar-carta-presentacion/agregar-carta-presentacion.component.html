@@ -1,100 +1,121 @@
 <div class="col-lg-12 col-md-12">
-    <div class="card">
-      <div class="card-header card-header-tabs card-header-primary">
-        <div class="nav-tabs-navigation">
-          <div class="nav-tabs-wrapper">
-            <ul class="nav nav-tabs" data-tabs="tabs">
-              <li class="nav-item">
-                  <a class="nav-link active" href="#pendientes" data-toggle="tab">
-                      Solicitudes Pendientes de Carta Presentación
-                      <div class="ripple-container"></div>
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#listas" data-toggle="tab">
-                    Solicitudes ya con Carta Presentación
-                      <div class="ripple-container"></div>
-                  </a>
-              </li>
+  <div class="card">
+    <div class="card-header card-header-tabs card-header-primary">
+      <div class="nav-tabs-navigation">
+        <div class="nav-tabs-wrapper">
+          <ul class="nav nav-tabs" data-tabs="tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="#pendientes" data-toggle="tab">
+                Solicitudes Pendientes de Carta Presentación
+                <div class="ripple-container"></div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#listas" data-toggle="tab">
+                Solicitudes ya con Carta Presentación
+                <div class="ripple-container"></div>
+              </a>
+            </li>
           </ul>
-          </div>
         </div>
       </div>
-      <div class="card-body pt-4">
-        <div class="tab-content">
-          <div class="tab-pane active" id="pendientes">
+    </div>
+    <div class="card-body pt-4">
+      <div class="tab-content">
+        <div class="tab-pane active" id="pendientes">
+          <div class="d-flex align-items-center">
             <div class="d-flex align-items-center">
-              
-              <div class="d-flex align-items-center">
-                <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
-                <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
-              </div>
-  
+              <input
+                type="text"
+                placeholder="Buscar por Código de Alumno"
+                class="form-control input-codigo"
+              />
+              <button mat-raised-button class="btn btn-info ml-3">
+                Buscar
+              </button>
             </div>
-            <table class="table mt-3">
-              <thead class="text-danger">
-                <th>Código de Alumno</th>
-                <th>Nombre del Postulante</th>
-                <th style="text-align: center;">Acción</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>90231231</td>
-                  <td>Pomajulca</td>
-                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
-                    data-target="#agregarCartaPresentacion" (click)="TipoVisualizacion(1)">Agregar Carta Presentación</button></td>
-  
-                </tr>
-                <tr>
-                  <td>90231231</td>
-                  <td>Brickkk</td>
-                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Agregar Carta Presentación</button></td>
-      
-                </tr>
-                <tr>
-                  <td>90231231</td>
-                  <td>Jorgito Quispe Sumire</td>
-                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Agregar Carta Presentación</button></td>
-      
-                </tr>
-              </tbody>
-            </table>
           </div>
-          <div class="tab-pane" id="listas">
+          <table class="table mt-3">
+            <thead class="text-danger">
+              <th>Código de Alumno</th>
+              <th>Nombre del Postulante</th>
+              <th>Fecha Registro</th>
+              <th>Estado</th>
+              <th>Tipo Solicitud</th>
+              <th style="text-align: center">Acción</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reporte of reportes; let i = index">
+                <td>{{ reporte.cod_alumno }}</td>
+                <td>{{ reporte.nom_usuario }}</td>
+                <td>{{ reporte.fecha_reg | date : "dd/MM/yyyy" }}</td>
+                <td>{{ reporte.nombre_solestado }}</td>
+                <td>{{ reporte.nom_tipoprac }}</td>
+                <td style="text-align: center">
+                  <button
+                    mat-raised-button
+                    class="btn btn-info"
+                    data-toggle="modal"
+                    data-target="#agregarCartaPresentacion"
+                    (click)="TipoVisualizacion(1); solicitud(i)"
+                  >
+                    Agregar Carta Presentación
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" id="listas">
+          <div class="d-flex align-items-center">
             <div class="d-flex align-items-center">
-              
-              <div class="d-flex align-items-center">
-                <input type="text" placeholder="Buscar por Código de Alumno" class="form-control input-codigo" />
-                <button mat-raised-button class="btn btn-info ml-3">Buscar</button>
-              </div>
-  
+              <input
+                type="text"
+                placeholder="Buscar por Código de Alumno"
+                class="form-control input-codigo"
+              />
+              <button mat-raised-button class="btn btn-info ml-3">
+                Buscar
+              </button>
             </div>
-            <table class="table mt-3">
-              <thead class="text-danger">
-                <th>Código de Alumno</th>
-                <th>Nombre del Postulante</th>
-                <th style="text-align: center;">Acción</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>90231231</td>
-                  <td>Alvaron</td>
-                  <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
-                    data-target="#agregarCartaPresentacion" (click)="TipoVisualizacion(2)">Ver Solicitud</button></td>
-      
-                </tr>
-                <tr>
-                    <td>90231231</td>
-                    <td>Benja</td>
-                    <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Ver Solicitud</button></td>
-        
-                  </tr>
-              </tbody>
-            </table>
           </div>
+          <table class="table mt-3">
+            <thead class="text-danger">
+              <th>Código de Alumno</th>
+              <th>Nombre del Postulante</th>
+              <th>Fecha Registro</th>
+              <th>Estado</th>
+              <th>Tipo Solicitud</th>
+              <th style="text-align: center">Acción</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reporte of reportes2; let i = index">
+                <td>{{ reporte.cod_alumno }}</td>
+                <td>{{ reporte.nom_usuario }}</td>
+                <td>{{ reporte.fecha_reg | date : "dd/MM/yyyy" }}</td>
+                <td>{{ reporte.nombre_solestado }}</td>
+                <td>{{ reporte.nom_tipoprac }}</td>
+                <td style="text-align: center">
+                  <button
+                    mat-raised-button
+                    class="btn btn-info"
+                    data-toggle="modal"
+                    data-target="#agregarCartaPresentacion"
+                    (click)="TipoVisualizacion(2); solicitud1(i)"
+                  >
+                    Ver Solicitud
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-<app-agregar-carta-presentacion-modal [TipoVisual]="validator"></app-agregar-carta-presentacion-modal>
+<app-agregar-carta-presentacion-modal
+  [TipoVisual]="validator"
+  [soli]="soli"
+></app-agregar-carta-presentacion-modal>

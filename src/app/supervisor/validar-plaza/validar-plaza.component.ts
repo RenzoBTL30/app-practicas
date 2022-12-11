@@ -18,7 +18,10 @@ export class ValidarPlazaComponent implements OnInit {
     this.solicitudes.listSolicitudesPorEstado(2).subscribe((data) => {
       this.reportes = data;
     });
-
+    this.solicitudes.listSolicitudesPorEstado(3).subscribe((data) => {
+      this.reportesv = data;
+      console.log(data);
+    });
     $('#validarPlaza').on('hide.bs.modal', (event: any) => {
       this.solicitudes.listSolicitudesPorEstado(2).subscribe((data) => {
         this.reportes = data;
@@ -38,6 +41,7 @@ export class ValidarPlazaComponent implements OnInit {
   visualizar2() {
     this.solicitudes.listSolicitudesPorEstado(3).subscribe((data) => {
       this.reportesv = data;
+      console.log(data);
     });
   }
   // ---- Tipos de visualizacion: ----
@@ -51,5 +55,6 @@ export class ValidarPlazaComponent implements OnInit {
   TipoVisualizacion1(validator: number, position: number) {
     this.validator = validator;
     this.soli = this.reportesv![position];
+    console.log(this.soli);
   }
 }

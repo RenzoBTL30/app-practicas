@@ -33,7 +33,7 @@
           <tr *ngFor="let reporte of reportes; let i = index">
             <td>{{ reporte.num_doc }}</td>
             <td>{{ reporte.nom_usuario }}</td>
-            <td>{{ reporte.fecha_reg }}</td>
+            <td>{{ reporte.fecha_reg | date : "dd/MM/yyyy" }}</td>
             <td>{{ reporte.nombre_solestado }}</td>
             <td>{{ reporte.nom_tipoprac }}</td>
             <td style="text-align: center">

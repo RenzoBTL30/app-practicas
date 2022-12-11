@@ -28,6 +28,18 @@ export class SolicitudDocumentosService {
       }
     );
   }
+  cartadepresentacion(
+    link_carta: String,
+    link_guia: String,
+
+    id: number
+  ) {
+    return this.http.post<any>(`${this.urlgeneral}solicitud/agregarcarta`, {
+      link_carta: link_carta,
+      link_guia: link_guia,
+      id: id,
+    });
+  }
   insertDocumentosFinal(
     idsolicitud: number,
     idpostulante: number,

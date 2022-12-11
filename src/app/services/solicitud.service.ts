@@ -106,4 +106,12 @@ export class SolicitudService {
       `${this.urlgeneral}solicitud/search/${id}`
     );
   }
+
+  getSolicitudesPorEstadoyCodigoAlumno(idsolestado:number, codigo:string): Observable<any[]> {
+    return this.http.get<any[]>(
+      `${this.urlgeneral}solicitud/estado/nuevo/${idsolestado}/${codigo}`,
+      this.httpOptions
+    );
+  }
+
 }

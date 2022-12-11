@@ -9,13 +9,29 @@ import { SolicitudService } from 'src/app/services/solicitud.service';
 export class ValidarSolicitudComponent implements OnInit {
 
   validator?:number;
-  solicitud?:any[];
+
+  solicitud:any[]=[];
+
+  solicitudesRegistradas:any[]=[];
+  solicitudesAptas:any[]=[];
+  solicitudesObservadas:any[]=[];
+
+  soliEnviar?:any;
   idSolicitud?:number;
 
-  constructor(private solicitudservice: SolicitudService) { }
+  codigoRegBusqueda?: string;
+  codigoObsBusqueda?: string;
+  codigoAptBusqueda?: string;
+
+
+  solicitudObject:any;
+
+
+  constructor(private solicitudService: SolicitudService) { }
 
   ngOnInit(): void {
     this.listarSolicitudesRegistradas();
+    this.listarSolicitudesAptas();
   }
 
   // ---- Tipos de visualizacion: ----
@@ -27,15 +43,83 @@ export class ValidarSolicitudComponent implements OnInit {
     this.validator = validator;
   }
 
+  
   // Funcion para listar solicitudes con estado = 1 (registrado)
   listarSolicitudesRegistradas(){
-    this.solicitudservice.listSolicitudesPorEstado(1).subscribe(data => {
-      this.solicitud = data;
+    this.solicitudService.listSolicitudesPorEstado(1).subscribe(data => {
+      this.solicitudesRegistradas = data;
+
+      //Filtra las solicitudes que tengan observacion y las asigna a "solicitudesObservadas"
+      this.solicitudesObservadas = this.solicitudesRegistradas.filter(x => x.observacion != '');
+
+      //Filtra las solicitudes que no tengan observacion y las reeasigna a "solicitudesRegistradas"
+      this.solicitudesRegistradas = this.solicitudesRegistradas.filter(x => x.observacion == '');
+    })
+  }
+  
+
+  // Funcion para listar nuevamente las solicitudes luego de recibir un evento del modal hijo (el evento es cuando se registra una observacion)
+  listarSolicitudesRegistradasOtraVez($event:any){
+    this.solicitudService.listSolicitudesPorEstado(1).subscribe(data => {
+      this.solicitudesRegistradas = data;
+
+      //Filtra las solicitudes que tengan observacion y las asigna a "solicitudesObservadas"
+      this.solicitudesObservadas = this.solicitudesRegistradas.filter(x => x.observacion != '');
+
+      //Filtra las solicitudes que no tengan observacion y las reeasigna a "solicitudesRegistradas"
+      this.solicitudesRegistradas = this.solicitudesRegistradas.filter(x => x.observacion == '');
     })
   }
 
-  enviarId(id:number){
-    this.idSolicitud = id;
+
+  // Funcion para listar solicitudes con estado = 2 (aptitud validada) (la solicitud validada)
+  listarSolicitudesAptas(){
+    this.solicitudService.listSolicitudesPorEstado(2).subscribe(data => {
+      this.solicitudesAptas = data;
+    })
   }
 
+  listarSolicitudesAptasOtraVez($event:any){
+    this.solicitudService.listSolicitudesPorEstado(2).subscribe(data => {
+      this.solicitudesAptas = data;
+    })
+  }
+  
+  seleccionarSoliReg(posicion:number){
+    this.solicitudObject = this.solicitudesRegistradas[posicion];
+  }
+
+  seleccionarSoliObserv(posicion:number){
+    this.solicitudObject = this.solicitudesObservadas[posicion];
+  }
+
+  seleccionarSoliApt(posicion:number){
+    this.solicitudObject = this.solicitudesAptas[posicion];
+  }
+
+  
+  searchCodigoParaSolicitudesRegistradas() {
+    this.solicitudService.getSolicitudesPorEstadoyCodigoAlumno(1,this.codigoRegBusqueda!).subscribe((data) => {
+      this.solicitudesRegistradas = data;
+
+      this.solicitudesRegistradas = this.solicitudesRegistradas.filter(x => x.observacion == '');
+    });
+  }
+
+  searchCodigoParaSolicitudesObservadas() {
+    this.solicitudService.getSolicitudesPorEstadoyCodigoAlumno(1,this.codigoObsBusqueda!).subscribe((data) => {
+      this.solicitudesRegistradas = data;
+
+      this.solicitudesObservadas = this.solicitudesRegistradas.filter(x => x.observacion != '');
+
+    });
+  }
+  
+  searchCodigoParaSolicitudesAptas(){
+    this.solicitudService.getSolicitudesPorEstadoyCodigoAlumno(2,this.codigoAptBusqueda!).subscribe((data) => {
+      this.solicitudesAptas = data;
+    });
+  }
+  
+  
 }

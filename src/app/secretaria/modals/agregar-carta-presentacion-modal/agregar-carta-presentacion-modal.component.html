@@ -114,23 +114,42 @@
                         <p class="text">Lima</p>
                     </div>
                 </div>
+                
                 <div *ngIf="TipoVisual == 1" class="botones d-inline-flex justify-content-end mt-5">
-                        <button mat-raised-button type="button" class="btn btn-warning p-0">
-                            <label class="detalle-btn d-inline-flex align-items-center h-100" for="file-upload-guia">
-                                AÑADIR GUÍA DE PRÁCTICAS
-                            </label>
-                        </button>
-                    
-                        <button mat-raised-button type="button" class="btn btn-warning p-0">
-                            <label class="detalle-btn d-inline-flex align-items-center h-100" for="file-upload-carta">
-                                AÑADIR CARTA PRESENTACIÓN
-                            </label>
-                        </button>
-                    
+                    <button mat-raised-button type="button" class="btn btn-warning p-0">
+                        <label class="detalle-btn d-inline-flex align-items-center h-100" for="file-upload-guia">
+                            AÑADIR GUÍA DE PRÁCTICAS
+                        </label>
+                    </button>
+                
+                    <button mat-raised-button type="button" class="btn btn-warning p-0">
+                        <label class="detalle-btn d-inline-flex align-items-center h-100" for="file-upload-carta">
+                            AÑADIR CARTA PRESENTACIÓN
+                        </label>
+                    </button>
+                
                     <div>
                         <button mat-raised-button type="button" id="btnEnviar" class="btn btn-success" disabled>ENVIAR</button>
                     </div>
                 </div>
+
+                <div *ngIf="TipoVisual == 2" class="botones d-inline-flex justify-content-end mt-5">
+
+                    <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"
+                    data-target="#guiaPracticas" (click)="ocultarModal1()">
+                        <i class="material-icons-outlined mr-2">
+                        visibility</i>Ver guía de prácticas
+                    </button>
+                
+                    <button mat-raised-button class="btn btn-info d-inline-flex align-items-center" data-toggle="modal"
+                    data-target="#cartaPresentacion" (click)="ocultarModal1()">
+                        <i class="material-icons-outlined mr-2">
+                        visibility</i>Ver carta presentación
+                    </button>
+                
+                </div>
+
+                
 
                 <!--Cada vez que haya un cambio en el input, se ejecutara la funcion puesta en el (change)-->
                 <input (change)="archivosListosParaSubir(); mostrarNombreArchivo(1)" id="file-upload-guia" type="file" hidden/>
@@ -158,5 +177,98 @@
             </div>
         </div>
     </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal2></button>
+</div>
+
+
+<!---Modal para ver guia de practicas-->
+<div
+  class="modal fade"
+  id="guiaPracticas"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  >
+  <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content" style="height: 600px">
+      <div class="modal-header p-1">
+        <h4 class="title-submodal">Documento guía de prácticas:</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="descBackToModal1()">
+
+          <i class="material-icons-outlined icon-cancel"> cancel </i>
+        </button>
+      </div>
+      <div class="modal-body pb-0">
+        <embed
+          #mostrador
+          id="ver"
+          src=""
+          type="application/pdf"
+          width="100%"
+          height="440"
+        />
+      </div>
+    </div>
+  </div>
+    <button
+        type="button"
+        class="btn btn-secondary"
+        data-dismiss="modal"
+        hidden
+        #close_modal2>
+    </button>
+
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal2></button>
+</div>
+
+
+
+<!---Modal para ver carta presentacion-->
+<div
+  class="modal fade"
+  id="cartaPresentacion"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  >
+  <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content" style="height: 600px">
+      <div class="modal-header p-1">
+        <h4 class="title-submodal">Documento carta presentación:</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="descBackToModal1()">
+
+          <i class="material-icons-outlined icon-cancel"> cancel </i>
+        </button>
+      </div>
+      <div class="modal-body pb-0">
+        <embed
+          #mostrador
+          id="ver"
+          src=""
+          type="application/pdf"
+          width="100%"
+          height="440"
+        />
+      </div>
+    </div>
+  </div>
+    <button
+        type="button"
+        class="btn btn-secondary"
+        data-dismiss="modal"
+        hidden
+        #close_modal2>
+    </button>
+
     <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal2></button>
 </div>

@@ -100,6 +100,7 @@
               <i
                 class="material-icons-outlined icon-upload"
                 (click)="edicionsoli(i, 0, '')"
+                *ngIf="reporte.id_solestado <= 3"
               >
                 edit_note
               </i>

@@ -5,23 +5,17 @@ import { ValidarPracticasModalComponent } from './validar-practicas-modal/valida
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    ValidarPlazaModalComponent,
-    ValidarPracticasModalComponent
-  ],
+  declarations: [ValidarPlazaModalComponent, ValidarPracticasModalComponent],
   imports: [
     CommonModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
   ],
-  exports: [
-    ValidarPlazaModalComponent,
-    ValidarPracticasModalComponent
-  ]
+  exports: [ValidarPlazaModalComponent, ValidarPracticasModalComponent],
 })
-export class ModalsSupervisorModule { }
+export class ModalsSupervisorModule {}

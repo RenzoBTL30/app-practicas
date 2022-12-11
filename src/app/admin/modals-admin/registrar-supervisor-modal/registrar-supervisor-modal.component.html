@@ -31,7 +31,7 @@
                         <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-start ml-4" style="position: relative;">
                             <button style="display: block;" type="button" mat-raised-button id="btn-buscar" class="btn btn-info" >Buscar</button>
                         </div>
-                        <div *ngIf="selectValor != 1" class="col-3 d-flex justify-content-center">
+                        <div *ngIf="selectValor > 1" class="col-3 d-flex justify-content-center">
                             <mat-form-field class="example-full-width nroDoc" style="position: relative;">
                                 <input matInput type="text" placeholder="Numero de Documento" name="first"  [(ngModel)]="documento">
                             </mat-form-field>

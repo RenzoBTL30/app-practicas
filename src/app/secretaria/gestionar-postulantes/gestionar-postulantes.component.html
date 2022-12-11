@@ -24,29 +24,14 @@
               <th style="text-align: center;">Acción</th>
             </thead>
             <tbody>
-              <tr>
-                <td>90231231</td>
-                <td>Pomajulca</td>
+              <tr *ngFor="let p of postulantes">
+                <td>{{p.cod_alumno}}</td>
+                <td>{{p.postulante}}</td>
                 <td style="text-align: center;">
-                  <i class="material-icons-outlined icon-edit">edit</i>
-                  <i class="material-icons-outlined ml-4 icon-delete">delete</i>
+                  <i class="material-icons-outlined icon-edit" data-toggle="modal"
+                  data-target="#editarPostulante" (click)="edit(p.id_postulante!,p.id_usuario!,p.postulante!,p.correo!,p.h_comunitarias!,p.h_clinicas!)">edit</i>
+                  <i class="material-icons-outlined ml-4 icon-delete" (click)="cambiarEstado(p.id_usuario!,'0')">delete</i>
                 </td>
-              </tr>
-              <tr>
-                <td>90231231</td>
-                <td>Brickkk</td>
-                <td style="text-align: center;">
-                  <i class="material-icons-outlined icon-edit">edit</i>
-                  <i class="material-icons-outlined ml-4 icon-delete">delete</i>
-                </td>  
-              </tr>
-              <tr>
-                <td>90231231</td>
-                <td>Jorgito Quispe Sumire</td>
-                <td style="text-align: center;">
-                  <i class="material-icons-outlined icon-edit">edit</i>
-                  <i class="material-icons-outlined ml-4 icon-delete">delete</i>
-                </td>  
               </tr>
             </tbody>
           </table>
@@ -54,4 +39,13 @@
     </div>
 </div>
 
-<app-agregar-postulante></app-agregar-postulante>
+<app-agregar-postulante (volveraListarPostulantes)="listarPostulantesOtraVez($event)"></app-agregar-postulante>
+<app-editar-postulante
+  [idpostulan]="idpostulante"
+  [idusuario]="idusuario"
+  [nomusu]="nomusuario"
+  [correo]="correo"
+  [prac_comunitarias]="practicasComun"
+  [prac_clinicas]="practicasClin"
+  (volveraListarPostulantes)="listarPostulantesOtraVez($event)"
+></app-editar-postulante>

@@ -18,22 +18,21 @@
                             <label class="lbl-tipoDoc" for="tipoDoc">Tipo de documento</label>
                             <select class="form-control" id="tipoDoc" #tipoDoc (change)="showDNIorCarnet()" >
                                 <option value="0" selected>--- Seleccione un tipo ---</option>
-                                <option value="1">DNI</option>
-                                <option value="2">Carnet de extranjería</option>
+                                <option  *ngFor="let item of tipodocs" [value]="item.id_tipodoc">{{item.nombre_tipodoc}}</option>
                             </select>
                         </div>
 
                         <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-center">
                             <mat-form-field class="example-full-width nroDoc" style="position: relative;">
-                                <input matInput type="text" placeholder="DNI">
+                                <input matInput type="text" placeholder="DNI" [(ngModel)]="numdoc" name="numdoc">
                             </mat-form-field>
                         </div>
                         <div *ngIf="selectValor == 1" class="col-3 d-flex justify-content-start ml-4" style="position: relative;">
                             <button style="display: block;" type="button" mat-raised-button id="btn-buscar" class="btn btn-info" >Buscar</button>
                         </div>
-                        <div *ngIf="selectValor == 2" class="col-3 d-flex justify-content-center">
+                        <div *ngIf="selectValor > 1" class="col-3 d-flex justify-content-center">
                             <mat-form-field class="example-full-width nroDoc" style="position: relative;">
-                                <input matInput type="text" placeholder="Carnet de extranjería">
+                                <input matInput type="text" placeholder="Número de documento" [(ngModel)]="numdoc" name="numdoc">
                             </mat-form-field>
                         </div>
 
@@ -55,32 +54,32 @@
 
                     <div class="mb-5">
                         <label class="lbl-nom" for="nom">Nombres y Apellidos</label>
-                        <input type="text" class="form-control input-nom" style="width: 60%;" id="">
+                        <input type="text" class="form-control input-nom" style="width: 60%;" id="" [(ngModel)]="nomusuario" name="nomusuario">
                     </div>
 
                     <div class="mb-3">
                         <mat-form-field class="example-full-width" style="width: 60%;">
-                            <input matInput type="text" placeholder="Código de Estudiante">
+                            <input matInput type="text" placeholder="Código de Estudiante" [(ngModel)]="codalumno" name="codalumno">
                         </mat-form-field>
                     </div>
 
                     <div class="mb-3">
                         <mat-form-field class="example-full-width" style="width: 60%;">
-                            <input matInput type="email" placeholder="Correo Electrónico">
+                            <input matInput type="email" placeholder="Correo Electrónico" [(ngModel)]="correo" name="correo">
                         </mat-form-field>
                     </div>   
 
                     <div class="mt-5 mb-4">
                         <label class="lbl-SelectPracticas mb-3">Seleccionar las prácticas para las que esta apto:</label>
                         <div class="form-check d-flex">
-                            <input class="" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
+                            <input [(ngModel)]="practicascomunitarias" name="practicascomunitarias" #practicasComunCheck class="" type="checkbox" id="practicasComunCheck">
+                            <label class="form-check-label" for="practicasComunCheck">
                               Prácticas comunitarias
                             </label>
                         </div>
                         <div class="form-check d-flex">
-                            <input class="" type="checkbox" value="" id="defaultCheck2">
-                            <label class="form-check-label" for="defaultCheck2">
+                            <input [(ngModel)]="practicasclinicas" name="practicasclinicas" #practicasClinCheck class="" type="checkbox" value="" id="practicasClinCheck">
+                            <label class="form-check-label" for="practicasClinCheck">
                               Prácticas clínicas
                             </label>
                         </div>
@@ -88,7 +87,7 @@
 
                     <div class="botones d-inline-flex justify-content-end mt-2 w-100">
                         <button type="button" mat-raised-button class="btn btn-danger" data-dismiss="modal">CANCELAR</button>
-                        <button type="button" mat-raised-button class="btn btn-success">AÑADIR POSTULANTE</button>
+                        <button type="button" mat-raised-button class="btn btn-success" (click)="crearPostulante()">AÑADIR POSTULANTE</button>
                     </div>
 
                 </form>

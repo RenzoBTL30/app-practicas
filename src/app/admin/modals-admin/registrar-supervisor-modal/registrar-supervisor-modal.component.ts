@@ -33,7 +33,7 @@ export class RegistrarSupervisorModalComponent implements OnInit {
   registrar(){
     this.supervisor.crearSupervisor(this.documento!,this.nombre!,this.correo!,this.selectValor!).subscribe((data)=>{
       $("#registrarSupervisor").modal("hide");
-this.listSupervisores();
+      this.listSupervisores();
     })
   }
    listSupervisores(){

@@ -10,8 +10,6 @@ export class ValidarSolicitudComponent implements OnInit {
 
   validator?:number;
 
-  solicitud:any[]=[];
-
   solicitudesRegistradas:any[]=[];
   solicitudesAptas:any[]=[];
   solicitudesObservadas:any[]=[];

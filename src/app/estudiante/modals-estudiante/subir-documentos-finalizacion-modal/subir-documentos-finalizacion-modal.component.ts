@@ -70,7 +70,7 @@ export class SubirDocumentosFinalizacionModalComponent implements OnInit {
 
           getDownloadURL(starsRef).then((data) => {
             this.urlconstancias = data;
-            console.log(this.urlconstancias);
+            
             const storageRef = ref(this.storage, 'fileweb/' + this.file.name);
             uploadBytes(storageRef, this.file).then((response) => {
               const starsRef = ref(this.storage, 'fileweb/' + this.file.name);

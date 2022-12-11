@@ -38,15 +38,15 @@
                 <div class="row section">
                     <div class="col-4">
                         <p class="label">NOMBRES Y APELLIDOS</p>
-                        <p class="text"></p>
+                        <p class="text">{{Solicitud?.sup_nombre}}</p>
                     </div>
                     <div class="col-3">
                         <p class="label">TELÉFONO</p>
-                        <p class="text"></p>
+                        <p class="text">{{Solicitud?.sup_telefono}}</p>
                     </div>
                     <div class="col-4">
                         <p class="label">CORREO ELECTRÓNICO</p>
-                        <p class="text"></p>
+                        <p class="text">{{Solicitud?.sup_correo}}</p>
                     </div>
                 </div>
 
@@ -95,23 +95,23 @@
                 <div class="row section">
                     <div class="col-4">
                         <p class="label">NOMBRE DE LA INSTITUCIÓN</p>
-                        <p class="text">Posta médica San Antonio</p>
+                        <p class="text">{{Solicitud?.centro_practicas}}</p>
                     </div>
                     <div class="col-3">
                         <p class="label">DIRECCIÓN</p>
-                        <p class="text">Av. Los Geranios 769</p>
+                        <p class="text">{{Solicitud?.direccion}}</p>
                     </div>
                     <div class="col-3">
                         <p class="label">DISTRITO</p>
-                        <p class="text">Chosica</p>
+                        <p class="text">{{Solicitud?.distrito}}</p>
                     </div>
                     <div class="col-4">
                         <p class="label">PROVINCIA</p>
-                        <p class="text">Lima</p>
+                        <p class="text">{{Solicitud?.provincia}}</p>
                     </div>
                     <div class="col-4">
                         <p class="label">DEPARTAMENTO</p>
-                        <p class="text">Lima</p>
+                        <p class="text">{{Solicitud?.departamento}}</p>
                     </div>
                 </div>
 
@@ -121,20 +121,20 @@
                     </div>
                     <div class="row section">
                         <div class="col-12">
-                            <textarea name="texto" class="observaciones" cols="20" rows="5" disabled></textarea>
+                            <textarea name="texto" class="observaciones" cols="20" rows="5" disabled>{{Solicitud?.observacion}}</textarea>
                         </div>
                     </div>    
                 </div>
                 
                 <div *ngIf="TipoVisual == 1" class="botones d-inline-flex flex-row-reverse mt-5">
-                    <button mat-raised-button type="button" class="btn btn-success">VALIDAR SOLICITUD</button>
+                    <button mat-raised-button type="button" class="btn btn-success" (click)="validarSolicitud()">VALIDAR SOLICITUD</button>
                     <button mat-raised-button type="button" class="btn btn-warning" data-toggle="modal"
                     data-target="#observaciones" (click)="ocultarModal1()" >AÑADIR OBSERVACIÓN</button>
-                    <button mat-raised-button type="button" class="btn btn-danger">RECHAZAR SOLICITUD</button>
+                    <button mat-raised-button type="button" class="btn btn-danger" (click)="rechazarSolicitud()">RECHAZAR SOLICITUD</button>
                 </div>
 
                 <div *ngIf="TipoVisual == 2" class="botones d-inline-flex flex-row-reverse mt-4">
-                    <button mat-raised-button type="button" class="btn btn-success">VALIDAR SOLICITUD</button>
+                    <button mat-raised-button type="button" class="btn btn-success" (click)="validarSolicitud()">VALIDAR SOLICITUD</button>
                 </div>
 
             </div>
@@ -153,9 +153,9 @@
                 <h4 class="title-submodal">Observaciones:</h4>
             </div>
             <div class="modal-body text">
-                <textarea name="texto" class="input-observacion" cols="30" rows="10" placeholder="Escribe aquí las observaciones de la solicitud"></textarea>
+                <textarea #observacion name="texto" class="input-observacion" cols="30" rows="10" placeholder="Escribe aquí las observaciones de la solicitud"></textarea>
                 <div class="d-inline-flex justify-content-end mt-3 w-100">
-                    <button mat-raised-button class="btn btn-success mr-3">ENVIAR INFORMACIÓN</button>
+                    <button mat-raised-button class="btn btn-success mr-3" (click)="observarSolicitud()">ENVIAR INFORMACIÓN</button>
                     <button mat-raised-button class="btn btn-danger" (click)="backToModal1()">CANCELAR</button>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                 <h4 class="title-submodal">Descripción del plan de actividades:</h4>
             </div>
             <div class="modal-body text">
-                <textarea name="texto" class="descripcion-actividades" cols="20" rows="10" disabled></textarea>
+                <textarea name="texto" class="descripcion-actividades" cols="20" rows="10" disabled>{{Solicitud?.det_actividades}}</textarea>
                 <div class="d-inline-flex justify-content-end mt-3 w-100">
                     <button mat-raised-button class="btn btn-success" (click)="descBackToModal1()">VOLVER</button>
                 </div>

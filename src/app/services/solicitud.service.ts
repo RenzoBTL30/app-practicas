@@ -73,4 +73,19 @@ export class SolicitudService {
     return this.http.get<solicitud[]>(`${this.urlgeneral}solicitud/search/${id}`);
   }
 
+  // Agrega la observación (como parametro en la linea 78 y preparada para ser enviada en la linea 80)
+  // a la solicitud que coincida su id con el parametro de la linea 78
+  observarSolicitud(id:number, observacion:string): Observable<any[]> {
+    return this.http.post<any[]>(
+      `${this.urlgeneral}solicitud/observarsolicitud/${id}`,{
+        observacion:observacion
+      },
+      this.httpOptions
+    );
+  }
+
+  rechazarSolicitud(){
+    
+  }
+
 }

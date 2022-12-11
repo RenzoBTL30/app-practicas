@@ -50,15 +50,20 @@
             <thead class="text-danger">
               <th>Código de Alumno</th>
               <th>Nombre del Postulante</th>
+              <th>Fecha de Registro</th>
+              <th>Tipo de Prácticas</th>
+
               <th style="text-align: center;">Acción</th>
             </thead>
             <tbody>
-              <tr *ngFor="let s of solicitud, let i = index">
+              <tr *ngFor="let s of solicitudesRegistradas, let i = index">
                 <td>{{s.cod_alumno}}</td>
                 <td>{{s.nom_usuario}}</td>
+                <td>{{s.fecha_reg | date:'dd-MM-yyyy'}}</td>
+                <td>{{s.nom_tipoprac}}</td>
                 <td style="text-align: center;">
                   <button mat-raised-button class="btn btn-info" data-toggle="modal"
-                    data-target="#validarSolicitudPendiente" (click)="TipoVisualizacion(1); seleccionarSoli(i)">Validar
+                    data-target="#validarSolicitudPendiente" (click)="TipoVisualizacion(1); seleccionarSoliReg(i)">Validar
                   </button>
                 </td>
 
@@ -88,15 +93,22 @@
             <thead class="text-danger">
               <th>Código de Alumno</th>
               <th>Nombre del Postulante</th>
+              <th>Fecha de Registro</th>
+              <th>Tipo de Prácticas</th>
               <th style="text-align: center;">Acción</th>
             </thead>
             <tbody>
-              <tr>
-                <td>90231231</td>
-                <td>Alvaron</td>
-                <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
-                  data-target="#validarSolicitudPendiente" (click)="TipoVisualizacion(2)">Validar</button></td>
-    
+              <tr *ngFor="let s of solicitudesObservadas, let i = index">
+                <td>{{s.cod_alumno}}</td>
+                <td>{{s.nom_usuario}}</td>
+                <td>{{s.fecha_reg | date:'dd-MM-yyyy'}}</td>
+                <td>{{s.nom_tipoprac}}</td>
+                <td style="text-align: center;">
+                  <button mat-raised-button class="btn btn-info" data-toggle="modal"
+                    data-target="#validarSolicitudPendiente" (click)="TipoVisualizacion(2); seleccionarSoliObserv(i)">Validar
+                  </button>
+                </td>
+
               </tr>
             </tbody>
           </table>
@@ -123,21 +135,22 @@
             <thead class="text-danger">
               <th>Código de Alumno</th>
               <th>Nombre del Postulante</th>
+              <th>Fecha de Registro</th>
+              <th>Tipo de Prácticas</th>
               <th style="text-align: center;">Acción</th>
             </thead>
             <tbody>
-              <tr>
-                <td>90231231</td>
-                <td>Quinteros</td>
-                <td style="text-align: center;"><button mat-raised-button class="btn btn-info" data-toggle="modal"
-                  data-target="#validarSolicitudPendiente" (click)="TipoVisualizacion(3)">Ver</button></td>
-    
-              </tr>
-              <tr>
-                <td>90231231</td>
-                <td>Poma</td>
-                <td style="text-align: center;"><button mat-raised-button class="btn btn-info">Ver</button></td>
-    
+              <tr *ngFor="let s of solicitudesAptas, let i = index">
+                <td>{{s.cod_alumno}}</td>
+                <td>{{s.nom_usuario}}</td>
+                <td>{{s.fecha_reg | date:'dd-MM-yyyy'}}</td>
+                <td>{{s.nom_tipoprac}}</td>
+                <td style="text-align: center;">
+                  <button mat-raised-button class="btn btn-info" data-toggle="modal"
+                    data-target="#validarSolicitudPendiente" (click)="TipoVisualizacion(3); seleccionarSoliApt(i)">Ver
+                  </button>
+                </td>
+
               </tr>
             </tbody>
           </table>
@@ -147,4 +160,4 @@
   </div>
 </div>
 
-<app-validar-solicitud-pendiente [TipoVisual]="validator" [Solicitud]="solicitudObject" ></app-validar-solicitud-pendiente>
+<app-validar-solicitud-pendiente [TipoVisual]="validator" [Solicitud]="solicitudObject" (volveraListarSolicitudes)="listarSolicitudesRegistradasOtraVez($event)"></app-validar-solicitud-pendiente>

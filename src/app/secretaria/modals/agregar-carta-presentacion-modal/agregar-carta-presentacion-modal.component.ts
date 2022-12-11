@@ -23,6 +23,7 @@ export class AgregarCartaPresentacionModalComponent implements OnInit {
     // Quiere decir que si existe un archivo subido en '#file-upload-guia' y si existe un archivo también en '#file-upload-carta'
     if ($('#file-upload-guia').val() && $('#file-upload-carta').val()) {
 
+      // Si se cumple las condicionales de arriba, entonces el boton "Enviar" se habilitará
       $('#btnEnviar').removeAttr("disabled");
 
     }

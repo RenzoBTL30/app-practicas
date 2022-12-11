@@ -85,7 +85,9 @@ export class SolicitudService {
   }
 
   rechazarSolicitud(){
-    
+
   }
+
+  
 
 }

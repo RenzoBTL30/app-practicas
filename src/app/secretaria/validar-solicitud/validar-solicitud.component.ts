@@ -19,6 +19,11 @@ export class ValidarSolicitudComponent implements OnInit {
   soliEnviar?:any;
   idSolicitud?:number;
 
+  codigoRegBusqueda?: string;
+  codigoObsBusqueda?: string;
+  codigoAptBusqueda?: string;
+
+
   solicitudObject:any;
 
 
@@ -26,6 +31,7 @@ export class ValidarSolicitudComponent implements OnInit {
 
   ngOnInit(): void {
     this.listarSolicitudesRegistradas();
+    this.listarSolicitudesAptas();
   }
 
   // ---- Tipos de visualizacion: ----
@@ -72,6 +78,12 @@ export class ValidarSolicitudComponent implements OnInit {
       this.solicitudesAptas = data;
     })
   }
+
+  listarSolicitudesAptasOtraVez($event:any){
+    this.solicitudService.listSolicitudesPorEstado(2).subscribe(data => {
+      this.solicitudesAptas = data;
+    })
+  }
   
   seleccionarSoliReg(posicion:number){
     this.solicitudObject = this.solicitudesRegistradas[posicion];
@@ -84,5 +96,30 @@ export class ValidarSolicitudComponent implements OnInit {
   seleccionarSoliApt(posicion:number){
     this.solicitudObject = this.solicitudesAptas[posicion];
   }
+
+  
+  searchCodigoParaSolicitudesRegistradas() {
+    this.solicitudService.getSolicitudesPorEstadoyCodigoAlumno(1,this.codigoRegBusqueda!).subscribe((data) => {
+      this.solicitudesRegistradas = data;
+
+      this.solicitudesRegistradas = this.solicitudesRegistradas.filter(x => x.observacion == '');
+    });
+  }
+
+  searchCodigoParaSolicitudesObservadas() {
+    this.solicitudService.getSolicitudesPorEstadoyCodigoAlumno(1,this.codigoObsBusqueda!).subscribe((data) => {
+      this.solicitudesRegistradas = data;
+
+      this.solicitudesObservadas = this.solicitudesRegistradas.filter(x => x.observacion != '');
+
+    });
+  }
+  
+  searchCodigoParaSolicitudesAptas(){
+    this.solicitudService.getSolicitudesPorEstadoyCodigoAlumno(2,this.codigoAptBusqueda!).subscribe((data) => {
+      this.solicitudesAptas = data;
+    });
+  }
+  
   
 }

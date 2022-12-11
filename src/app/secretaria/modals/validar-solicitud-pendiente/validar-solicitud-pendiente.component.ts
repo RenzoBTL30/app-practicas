@@ -20,7 +20,10 @@ export class ValidarSolicitudPendienteComponent implements OnInit {
 
   @Input() TipoVisual?: number;
   @Input() Solicitud?: any;
+
   @Output() volveraListarSolicitudes = new EventEmitter<void>();
+  @Output() volveraListarSolicitudesAptas = new EventEmitter<void>();
+
 
   constructor(private solicitudService: SolicitudService) { }
 
@@ -42,9 +45,7 @@ export class ValidarSolicitudPendienteComponent implements OnInit {
     $('#validarSolicitudPendiente').modal('show');
   }
 
-  validarSolicitud(){
-
-  }
+  
 
   //lin 53: valida que el input de observacion no este vacio
   //si esta vacío mostrará una notificacion de error (lin 54)
@@ -63,7 +64,7 @@ export class ValidarSolicitudPendienteComponent implements OnInit {
       }).then((result) => {
         if (result.isConfirmed) {
   
-          this.solicitudService.observarSolicitud(this.Solicitud?.id_solicitud, this.observacion?.nativeElement.value).subscribe(data => {
+          this.solicitudService.obserbacionSolicitud(this.observacion?.nativeElement.value, this.Solicitud?.id_solicitud).subscribe(data => {
               this.observacion!.nativeElement.value = '';
               this.close_modal2?.nativeElement.click();
               this.volveraListarSolicitudes.emit();
@@ -102,8 +103,68 @@ export class ValidarSolicitudPendienteComponent implements OnInit {
     });
   }
 
-  rechazarSolicitud(){
+  validarSolicitud(idsolicitud:number){
+    Swal
+      .fire({
+        title: 'Se validara esta solicitud:',
+        text: '¿Esta seguro que desea hacer la validación?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, validar',
+        cancelButtonText: 'Cancelar',
+        cancelButtonColor: '#DD6B55',
+        footer: '<span class="red">Lea antes de confirmar</span>',
+        allowOutsideClick: false,
+      })
+      .then((resultado) => {
+        if (resultado.value) {
+          this.solicitudService.validarSolicitud(idsolicitud, 2).subscribe((data) => {
+            this.close_modal2?.nativeElement.click();
+            this.volveraListarSolicitudes.emit();
+            this.volveraListarSolicitudesAptas.emit();
+            $('#validarSolicitudPendiente').modal('hide');
+          });
 
+          Swal.fire(
+            'Completado!',
+            'Solicitud validada correctamente!',
+            'success'
+          )
+        }
+      });
   }
+
+
+  rechazarSolicitud(idsolicitud:number, idpostulante:number){
+    Swal
+      .fire({
+        title: 'Se rechazara la solicitud:',
+        text: '¿Esta seguro de continuar?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'Cancelar',
+        cancelButtonColor: '#DD6B55',
+        footer: '<span class="red">Lea antes de confirmar</span>',
+        allowOutsideClick: false,
+      })
+      .then((resultado) => {
+        if (resultado.value) {
+          this.solicitudService.deletesolicitud(idsolicitud, idpostulante).subscribe((data) => {
+            this.close_modal2?.nativeElement.click();
+            this.volveraListarSolicitudes.emit();
+            $('#validarSolicitudPendiente').modal('hide');
+          });
+
+          Swal.fire(
+            'Completado!',
+            'La solicitud ha sido rechazada',
+            'success'
+          )
+        }
+      });
+  }
+
+  
   
 }

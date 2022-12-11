@@ -127,14 +127,14 @@
                 </div>
                 
                 <div *ngIf="TipoVisual == 1" class="botones d-inline-flex flex-row-reverse mt-5">
-                    <button mat-raised-button type="button" class="btn btn-success" (click)="validarSolicitud()">VALIDAR SOLICITUD</button>
+                    <button mat-raised-button type="button" class="btn btn-success" (click)="validarSolicitud(Solicitud?.id_solicitud)">VALIDAR SOLICITUD</button>
                     <button mat-raised-button type="button" class="btn btn-warning" data-toggle="modal"
                     data-target="#observaciones" (click)="ocultarModal1()" >AÑADIR OBSERVACIÓN</button>
-                    <button mat-raised-button type="button" class="btn btn-danger" (click)="rechazarSolicitud()">RECHAZAR SOLICITUD</button>
+                    <button mat-raised-button type="button" class="btn btn-danger" (click)="rechazarSolicitud(Solicitud?.id_solicitud, Solicitud?.id_postulante)">RECHAZAR SOLICITUD</button>
                 </div>
 
                 <div *ngIf="TipoVisual == 2" class="botones d-inline-flex flex-row-reverse mt-4">
-                    <button mat-raised-button type="button" class="btn btn-success" (click)="validarSolicitud()">VALIDAR SOLICITUD</button>
+                    <button mat-raised-button type="button" class="btn btn-success" (click)="validarSolicitud(Solicitud?.id_solicitud)">VALIDAR SOLICITUD</button>
                 </div>
 
             </div>

@@ -1,1 +1,59 @@
-<p>editar-postulante works!</p>
+<div class="modal fade" id="editarPostulante" tabindex="-1" aria-labelledby="exampleModalLabel2"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" style="max-width: 650px;">
+        <div class="modal-content">
+            <div class="modal-header p-1">
+                <h4 class="title">Editar postulante</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="material-icons-outlined icon-cancel">
+                        cancel
+                    </i>
+                </button>
+            </div>
+            <div class="modal-body text">
+                <form>
+                    
+                    <div class="form-row mt-3 mb-4">                        
+
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="lbl-nom" for="nom">Nombres y Apellidos</label>
+                        <input type="text" class="form-control input-nom" style="width: 60%;" id="" [(ngModel)]="nomusu" name="nomusu">
+                    </div>
+
+                    <div class="mb-3">
+                        <mat-form-field class="example-full-width" style="width: 60%;">
+                            <input matInput type="email" placeholder="Correo Electrónico" [(ngModel)]="correo" name="correo">
+                        </mat-form-field>
+                    </div>   
+
+                    <div class="mt-5 mb-4">
+                        <label class="lbl-SelectPracticas mb-3">Seleccionar las prácticas para las que esta apto:</label>
+                        <div class="form-check d-flex">
+                            <input [(ngModel)]="prac_comunitarias" [value]="prac_comunitarias" name="prac_comunitarias" #practicasComunCheck class="" type="checkbox" id="practicasComunCheck">
+                            <label class="form-check-label" for="practicasComunCheck">
+                              Prácticas comunitarias
+                            </label>
+                        </div>
+                        <div class="form-check d-flex">
+                            <input [(ngModel)]="prac_clinicas" [value]="prac_clinicas" name="prac_clinicas" #practicasClinCheck class="" type="checkbox" value="" id="practicasClinCheck">
+                            <label class="form-check-label" for="practicasClinCheck">
+                              Prácticas clínicas
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="botones d-inline-flex justify-content-end mt-2 w-100">
+                        <button type="button" mat-raised-button class="btn btn-danger" data-dismiss="modal">CANCELAR</button>
+                        <button type="button" mat-raised-button class="btn btn-success" (click)="editarPostulante()">EDITAR POSTULANTE</button>
+                    </div>
+
+                </form>
+                
+                
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden #close_modal2></button>
+</div>

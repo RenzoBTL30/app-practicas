@@ -22,11 +22,6 @@ export class PostulanteService {
     );
   }
 
-  getPostulantePorCodigo(){
-    
-  }
-
-
   insertPostulante(
     numdoc: String,
     nomusuario: String,
@@ -66,13 +61,20 @@ export class PostulanteService {
   }
 
   // Actualiza el campo "estado_usuario"
-  updateestadoSupervisor(id:number, estado:string): Observable<any[]> {
+  updateestadoPostulante(id:number, estado:string): Observable<any[]> {
     return this.http.put<any[]>(
-      `${this.urlgeneral}usuario/estado/${id}`,{
+      `${this.urlgeneral}postulante/update/estado/${id}`,{
         estado:estado
       },
         this.httpOptions
-      );
-    }
+    );
+  }
+
+  getPostulantePorCodigoAlumno(codigo:string): Observable<any[]> {
+    return this.http.get<any[]>(
+      `${this.urlgeneral}postulante/search/${codigo}`,
+      this.httpOptions
+    );
+  }
   
 }

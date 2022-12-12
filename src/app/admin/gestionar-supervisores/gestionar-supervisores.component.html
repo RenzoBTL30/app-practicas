@@ -10,17 +10,8 @@
       </div>
       <div class="card-body table-responsive pt-4">
         <div class="d-flex align-items-center">
-          <div class="d-flex align-items-center">
-            <i class="material-icons-outlined mt-1 mx-3 icon-filtro">
-              filter_list
-            </i>
-            <select class="form-control select-filtro">
-              <option>Todos</option>
-              <option>Hace un mes</option>
-            </select>
-          </div>
           
-          <div class="d-flex align-items-center ml-auto">
+          <div class="d-flex align-items-center">
             <input type="text" placeholder="Buscar por DNI" class="form-control input-dni" [(ngModel)]="documentobusqueda" />
             <button mat-raised-button class="btn btn-info ml-3" (click)="searchdni()">Buscar</button>
           </div>

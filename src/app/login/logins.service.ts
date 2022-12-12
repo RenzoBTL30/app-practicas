@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 import { Observable } from 'rxjs';
 import { Usuario } from 'src/app/login/usuario';
@@ -19,7 +20,11 @@ export class LoginsService {
   private urlusuario: string =
     'https://app-chosica-back-2022.herokuapp.com/api/auth/usuario/validar';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private cookieService: CookieService
+  ) {}
   validarUsuario(user: String, pass: String): Observable<Usuario[]> {
     console.log({ usuario: user, password: pass });
     return this.http.post<Usuario[]>(this.urlusuario, {
@@ -44,6 +49,7 @@ export class LoginsService {
   }
   guardarToken(accessToken: string): void {
     sessionStorage.setItem('token', accessToken);
+    this.cookieService.set('token_access', accessToken, 4, '/');
   }
 
   eliminarToken() {

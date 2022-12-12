@@ -8,7 +8,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { SupervisorLayoutComponent } from './layouts/supervisor-layout/supervisor-layout.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ModalsModule } from './secretaria/modals/modals.module';
-
+import { VigilanteGuard } from './vigilante.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -24,47 +24,66 @@ const routes: Routes = [
   {
     path: 'estudiante',
     component: EstudianteLayoutComponent,
-    children: [{
-      path: 'pages',
-      loadChildren: () => import('./layouts/estudiante-layout/estudiante-layout.module').then(m => m.EstudianteLayoutModule)
-    }]
+    canActivate: [VigilanteGuard],
+    children: [
+      {
+        path: 'pages',
+        loadChildren: () =>
+          import('./layouts/estudiante-layout/estudiante-layout.module').then(
+            (m) => m.EstudianteLayoutModule
+          ),
+      },
+    ],
   },
 
   {
     path: 'secretaria',
     component: SecretariaLayoutComponent,
-    children: [{
-      path: 'pages',
-      loadChildren: () => import('./layouts/secretaria-layout/secretaria-layout.module').then(m => m.SecretariaLayoutModule)
-    }]
+    canActivate: [VigilanteGuard],
+    children: [
+      {
+        path: 'pages',
+        loadChildren: () =>
+          import('./layouts/secretaria-layout/secretaria-layout.module').then(
+            (m) => m.SecretariaLayoutModule
+          ),
+      },
+    ],
   },
 
   {
     path: 'admin',
     component: AdminLayoutComponent,
-    children: [{
-      path: 'pages',
-      loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
-    }]
+    canActivate: [VigilanteGuard],
+    children: [
+      {
+        path: 'pages',
+        loadChildren: () =>
+          import('./layouts/admin-layout/admin-layout.module').then(
+            (m) => m.AdminLayoutModule
+          ),
+      },
+    ],
   },
 
   {
     path: 'supervisor',
     component: SupervisorLayoutComponent,
-    children: [{
-      path: 'pages',
-      loadChildren: () => import('./layouts/supervisor-layout/supervisor-layout.module').then(m => m.SupervisorLayoutModule)
-    }]
-  }
-
+    canActivate: [VigilanteGuard],
+    children: [
+      {
+        path: 'pages',
+        loadChildren: () =>
+          import('./layouts/supervisor-layout/supervisor-layout.module').then(
+            (m) => m.SupervisorLayoutModule
+          ),
+      },
+    ],
+  },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-    LoginModule,
-    ModalsModule
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), LoginModule, ModalsModule],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

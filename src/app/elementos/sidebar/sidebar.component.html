@@ -19,7 +19,10 @@
         <strong class="codigo">Codigo: {{ postu?.cod_alumno }}</strong>
       </div>
 
-      <a href="" mat-raised-button class="btn btn-warning btn-salir mt-5"
+      <a
+        mat-raised-button
+        class="btn btn-warning btn-salir mt-5"
+        (click)="borrar()"
         >SALIR</a
       >
     </div>

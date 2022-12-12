@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginsService } from './logins.service';
 import swal from 'sweetalert2';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,9 +13,16 @@ export class LoginComponent implements OnInit {
   usuario?: string;
   contra?: string;
   reportes: any = [];
-  constructor(private router: Router, private user: LoginsService) {}
+  constructor(
+    private router: Router,
+    private user: LoginsService,
+    private cookieService: CookieService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    sessionStorage.clear();
+    this.cookieService.deleteAll();
+  }
 
   // <---- temporal ---->
   // -- Credenciales:

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { postulante } from 'src/app/models/postulante';
 import { EstudianteService } from 'src/app/services/estudiante.service';
 
@@ -8,7 +10,11 @@ import { EstudianteService } from 'src/app/services/estudiante.service';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  constructor(private postulante: EstudianteService) {}
+  constructor(
+    private postulante: EstudianteService,
+    private cookieService: CookieService,
+    private router: Router
+  ) {}
   postu?: postulante;
   nombre?: string;
   dni?: string;
@@ -20,5 +26,10 @@ export class SidebarComponent implements OnInit {
     this.postulante.getSolicitud(idpostulante).subscribe((data) => {
       this.postu = data[0];
     });
+  }
+  borrar() {
+    sessionStorage.clear();
+    this.cookieService.deleteAll();
+    this.router.navigate(['']);
   }
 }

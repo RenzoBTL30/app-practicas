@@ -8,12 +8,10 @@ import { HomeEstudianteModule } from 'src/app/estudiante/home-estudiante/home-es
 import { MenuSolicitudModule } from 'src/app/estudiante/menu-solicitud/menu-solicitud.module';
 import { RegistrarSolicitudModule } from 'src/app/estudiante/registrar-solicitud/registrar-solicitud.module';
 import { EstadoSolicitudModule } from 'src/app/estudiante/estado-solicitud/estado-solicitud.module';
-
+import { ReporteEstudianteModule } from 'src/app/estudiante/reporte-estudiante/reporte-estudiante.module';
 
 @NgModule({
-  declarations: [
-    EstudianteLayoutComponent
-  ],
+  declarations: [EstudianteLayoutComponent],
   imports: [
     CommonModule,
     ElementosModule,
@@ -21,10 +19,9 @@ import { EstadoSolicitudModule } from 'src/app/estudiante/estado-solicitud/estad
     MenuSolicitudModule,
     RegistrarSolicitudModule,
     EstadoSolicitudModule,
-    EstudianteLayoutRoutingModule
+    ReporteEstudianteModule,
+    EstudianteLayoutRoutingModule,
   ],
-  exports: [
-    EstudianteLayoutComponent
-  ]
+  exports: [EstudianteLayoutComponent],
 })
-export class EstudianteLayoutModule { }
+export class EstudianteLayoutModule {}

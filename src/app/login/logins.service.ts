@@ -18,7 +18,7 @@ export class LoginsService {
     }),
   };
   private urlusuario: string =
-    'https://app-chosica-back-2022.herokuapp.com/api/auth/usuario/validar';
+    'https://backendnodeintegrador-production.up.railway.app/api/auth/usuario/validar';
 
   constructor(
     private http: HttpClient,
@@ -66,7 +66,8 @@ export class LoginsService {
   }
 
   login(user: String, pass: String): Observable<any> {
-    const urlEndpoint = 'http://localhost:3000/api/auth/';
+    const urlEndpoint =
+      'https://backendnodeintegrador-production.up.railway.app/api/auth/';
 
     return this.http.post<any>(urlEndpoint, { username: user, password: pass });
   }

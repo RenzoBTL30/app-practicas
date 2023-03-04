@@ -18,7 +18,7 @@ export class LoginsService {
     }),
   };
   private urlusuario: string =
-    'https://backendnodeintegrador-production.up.railway.app/api/auth/usuario/validar';
+    'https://app-back-practicas.onrender.com/api/auth/usuario/validar';
 
   constructor(
     private http: HttpClient,
@@ -67,7 +67,7 @@ export class LoginsService {
 
   login(user: String, pass: String): Observable<any> {
     const urlEndpoint =
-      'https://backendnodeintegrador-production.up.railway.app/api/auth/';
+      'https://app-back-practicas.onrender.com/api/auth/';
 
     return this.http.post<any>(urlEndpoint, { username: user, password: pass });
   }
